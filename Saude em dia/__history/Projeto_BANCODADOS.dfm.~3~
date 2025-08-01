@@ -1,0 +1,19 @@
+object DMDataBase: TDMDataBase
+  Height = 750
+  Width = 1000
+  PixelsPerInch = 120
+  object Connection: TFDConnection
+    LoginPrompt = False
+    Left = 120
+    Top = 152
+  end
+  object FDPhysPgDriverLink1: TFDPhysPgDriverLink
+    Left = 176
+    Top = 304
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 416
+    Top = 120
+  end
+end

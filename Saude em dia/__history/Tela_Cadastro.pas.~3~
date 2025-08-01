@@ -1,0 +1,39 @@
+unit Tela_Cadastro;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask;
+
+type
+  TForm2 = class(TForm)
+    Painel: TPanel;
+    Painel_Titulo: TPanel;
+    Label1: TLabel;
+    Panel_Dados_Cadastro: TPanel;
+    LNome_Completo: TLabel;
+    LTipo_Pessoa: TLabel;
+    edtNome_Completo1: TEdit;
+    ComboBoxTipo_Pessoa: TComboBox;
+    CPF: TLabel;
+    medtCPF: TMaskEdit;
+    medtCPF1: TMaskEdit;
+    Telefone: TLabel;
+    ACadastrar: TButton;
+    Panel_Botao: TPanel;
+    AVoltar: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+end.

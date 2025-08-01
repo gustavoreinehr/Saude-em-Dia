@@ -1,0 +1,27 @@
+object DMDataBase: TDMDataBase
+  Height = 750
+  Width = 1000
+  PixelsPerInch = 120
+  object FDPhysPgDriverLink1: TFDPhysPgDriverLink
+    VendorLib = 
+      'C:\Users\Gustavo\Desktop\3'#186' Semestre\Delphi\Saude em dia\libpq.d' +
+      'll'
+    Left = 672
+    Top = 56
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 824
+    Top = 48
+  end
+  object aConnection: TFDConnection
+    Params.Strings = (
+      'DriverID=PG'
+      'Database=postgres'
+      'Password=masterkey'
+      'Server=localhost')
+    LoginPrompt = False
+    Left = 312
+    Top = 168
+  end
+end

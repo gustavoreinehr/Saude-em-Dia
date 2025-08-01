@@ -1,0 +1,32 @@
+unit Projeto.Produto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ExtCtrls, Vcl.Grids,
+  Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TProjeto_Produto = class(TForm)
+    ds1: TDataSource;
+    Grid: TDBGrid;
+    PanelTop: TPanel;
+    edt_id: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Projeto_Produto: TProjeto_Produto;
+
+implementation
+
+uses
+  Projeto_BANCODADOS;
+
+{$R *.dfm}
+
+end.

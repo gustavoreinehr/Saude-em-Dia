@@ -1,0 +1,54 @@
+unit Projeto.Produto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ExtCtrls, Vcl.Grids,
+  Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TProjeto_Produto = class(TForm)
+    datasource: TDataSource;
+    Grid: TDBGrid;
+    PanelTop: TPanel;
+    DBEditID: TDBEdit;
+    DBEditDescricao: TDBEdit;
+    Label_ID: TLabel;
+    Label_Descricao: TLabel;
+    DBEdit_Preco: TDBEdit;
+    Label_Preco: TLabel;
+    Label_Quantidade: TLabel;
+    DBEditQuantidade: TDBEdit;
+    procedure DBEditQuantidadeKeyPress(Sender: TObject; var Key: Char);
+    procedure DBEdit_PrecoKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Projeto_Produto: TProjeto_Produto;
+
+implementation
+
+uses
+  Projeto_BANCODADOS;
+
+{$R *.dfm}
+
+procedure TProjeto_Produto.DBEditQuantidadeKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+if not CharInSet(Key, ['0'..'9']) then
+   Key := #0;
+end;
+
+procedure TProjeto_Produto.DBEdit_PrecoKeyPress(Sender: TObject; var Key: Char);
+begin
+   if not CharInSet(Key, ['0'..'9', '.']) then
+   Key := #0;
+end;
+
+end.

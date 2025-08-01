@@ -1,0 +1,25 @@
+program Project3;
+
+uses
+  Vcl.Forms,
+  Saude_em_dia in 'Saude_em_dia.pas' {Form3},
+  Vcl.Themes,
+  Vcl.Styles,
+  Projeto_BANCODADOS in 'Projeto_BANCODADOS.pas' {DMDataBase: TDataModule},
+  Tela3 in 'Tela3.pas' {Form1},
+  Tela4 in 'Tela4.pas' {Cadastro_Conta_Tela},
+  Tela_Cadastro in 'Tela_Cadastro.pas' {Form2};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Iceberg Classico');
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TCadastro_Conta_Tela, Cadastro_Conta_Tela);
+  Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(TDMDataBase, DMDataBase);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

@@ -1,0 +1,19 @@
+program Project3;
+
+uses
+  Vcl.Forms,
+  Saude_em_dia in 'Saude_em_dia.pas' {Form3},
+  Vcl.Themes,
+  Vcl.Styles,
+  Projeto_BANCODADOS in 'Projeto_BANCODADOS.pas' {DMDataBase: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Iceberg Classico');
+  Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(TDMDataBase, DMDataBase);
+  Application.Run;
+end.

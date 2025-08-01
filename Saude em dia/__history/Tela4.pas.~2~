@@ -1,0 +1,24 @@
+unit Tela4;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TCadastro_Conta_Tela = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Cadastro_Conta_Tela: TCadastro_Conta_Tela;
+
+implementation
+
+{$R *.dfm}
+
+end.

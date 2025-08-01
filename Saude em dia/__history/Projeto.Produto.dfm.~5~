@@ -1,0 +1,130 @@
+object Projeto_Produto: TProjeto_Produto
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro_Produto'
+  ClientHeight = 691
+  ClientWidth = 1084
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Grid: TDBGrid
+    Left = 0
+    Top = 362
+    Width = 1084
+    Height = 329
+    Align = alClient
+    DataSource = datasource
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'preco'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'quantidade'
+        Visible = True
+      end>
+  end
+  object PanelTop: TPanel
+    Left = 0
+    Top = 0
+    Width = 1084
+    Height = 362
+    Align = alTop
+    Caption = 'PanelTop'
+    TabOrder = 1
+    object Label_ID: TLabel
+      Left = 72
+      Top = 48
+      Width = 11
+      Height = 15
+      Caption = 'ID'
+    end
+    object Label_Descricao: TLabel
+      Left = 72
+      Top = 101
+      Width = 51
+      Height = 15
+      Caption = 'Descricao'
+    end
+    object Label_Preco: TLabel
+      Left = 72
+      Top = 160
+      Width = 30
+      Height = 15
+      Caption = 'Preco'
+    end
+    object Label_Quantidade: TLabel
+      Left = 72
+      Top = 203
+      Width = 62
+      Height = 15
+      Caption = 'Quantidade'
+    end
+    object DBEditID: TDBEdit
+      Left = 72
+      Top = 64
+      Width = 121
+      Height = 23
+      DataField = 'id'
+      DataSource = datasource
+      Enabled = False
+      TabOrder = 0
+    end
+    object DBEditDescricao: TDBEdit
+      Left = 72
+      Top = 114
+      Width = 305
+      Height = 23
+      DataField = 'nome'
+      DataSource = datasource
+      TabOrder = 1
+    end
+    object DBEdit_Preco: TDBEdit
+      Left = 72
+      Top = 174
+      Width = 121
+      Height = 23
+      DataField = 'preco'
+      DataSource = datasource
+      TabOrder = 2
+      OnKeyPress = DBEdit_PrecoKeyPress
+    end
+    object DBEditQuantidade: TDBEdit
+      Left = 72
+      Top = 224
+      Width = 121
+      Height = 23
+      DataField = 'quantidade'
+      DataSource = datasource
+      TabOrder = 3
+      OnKeyPress = DBEditQuantidadeKeyPress
+    end
+  end
+  object datasource: TDataSource
+    DataSet = DMDataBase.FDProduto
+    Left = 648
+    Top = 384
+  end
+end

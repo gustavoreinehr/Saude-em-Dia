@@ -1,0 +1,79 @@
+object Form4: TForm4
+  Left = 0
+  Top = 0
+  Caption = 'Form4'
+  ClientHeight = 706
+  ClientWidth = 1094
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Panel_Cabecalho: TPanel
+    Left = 0
+    Top = 0
+    Width = 1097
+    Height = 73
+    BevelOuter = bvNone
+    Color = clLightskyblue
+    ParentBackground = False
+    ShowCaption = False
+    TabOrder = 0
+    StyleName = 'Windows'
+    object Label1: TLabel
+      AlignWithMargins = True
+      Left = 3
+      Top = 0
+      Width = 73
+      Height = 73
+      Margins.Top = 0
+      Margins.Bottom = 0
+      Align = alLeft
+      Caption = #55357#56473
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -53
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      StyleName = 'Windows'
+      ExplicitHeight = 71
+    end
+    object Label2: TLabel
+      Left = 88
+      Top = 6
+      Width = 164
+      Height = 37
+      Caption = 'Saude em Dia'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -27
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      StyleName = 'Windows'
+    end
+    object Label3: TLabel
+      Left = 88
+      Top = 46
+      Width = 196
+      Height = 21
+      Caption = 'Sistema de Gest'#227'o de Sa'#250'de'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      StyleName = 'Windows'
+    end
+  end
+end

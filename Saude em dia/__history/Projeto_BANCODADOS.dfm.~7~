@@ -1,0 +1,31 @@
+object DMDataBase: TDMDataBase
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  Height = 750
+  Width = 1000
+  PixelsPerInch = 120
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 824
+    Top = 48
+  end
+  object Connect: TFDConnection
+    Params.Strings = (
+      'DriverID=SQLite'
+      
+        'Database=C:\Users\Gustavo\Desktop\3'#186' Semestre\Delphi\Saude em di' +
+        'a\Saude_em_dia.db')
+    LoginPrompt = False
+    Left = 232
+    Top = 272
+  end
+  object fdphysqltdrvrlnk1: TFDPhysSQLiteDriverLink
+    Left = 576
+    Top = 288
+  end
+  object FDProduto: TFDQuery
+    Connection = Connect
+    Left = 400
+    Top = 456
+  end
+end
