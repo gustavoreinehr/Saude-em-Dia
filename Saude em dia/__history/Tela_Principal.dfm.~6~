@@ -27,7 +27,7 @@ object TelaPrincipal: TTelaPrincipal
       Left = 3
       Top = 0
       Width = 73
-      Height = 73
+      Height = 71
       Margins.Top = 0
       Margins.Bottom = 0
       Align = alLeft
@@ -41,7 +41,6 @@ object TelaPrincipal: TTelaPrincipal
       ParentColor = False
       ParentFont = False
       StyleName = 'Windows'
-      ExplicitHeight = 71
     end
     object Label2: TLabel
       Left = 88
@@ -88,7 +87,7 @@ object TelaPrincipal: TTelaPrincipal
       AlignWithMargins = True
       Left = 151
       Top = 31
-      Width = 795
+      Width = 642
       Height = 48
       Margins.Left = 150
       Margins.Top = 30
@@ -104,13 +103,12 @@ object TelaPrincipal: TTelaPrincipal
       Font.Style = []
       ParentFont = False
       StyleName = 'Windows'
-      ExplicitWidth = 642
     end
     object Label5: TLabel
       AlignWithMargins = True
       Left = 11
       Top = 79
-      Width = 1075
+      Width = 421
       Height = 56
       Margins.Left = 10
       Margins.Top = 0
@@ -128,7 +126,6 @@ object TelaPrincipal: TTelaPrincipal
       Font.Style = []
       ParentFont = False
       StyleName = 'Windows'
-      ExplicitWidth = 421
     end
     object Panel_Menu: TPanel
       Left = 0
@@ -610,8 +607,8 @@ object TelaPrincipal: TTelaPrincipal
         object Label6: TLabel
           Left = 1
           Top = 125
-          Width = 257
-          Height = 136
+          Width = 141
+          Height = 70
           Align = alClient
           Alignment = taCenter
           Caption = 'Cadastro de '#13#10'Pessoas'
@@ -622,15 +619,13 @@ object TelaPrincipal: TTelaPrincipal
           Font.Style = []
           ParentFont = False
           StyleName = 'Windows'
-          ExplicitWidth = 141
-          ExplicitHeight = 70
         end
         object Label7: TLabel
           AlignWithMargins = True
           Left = 4
           Top = 205
-          Width = 251
-          Height = 56
+          Width = 244
+          Height = 42
           Margins.Top = 80
           Margins.Bottom = 0
           Align = alClient
@@ -643,8 +638,6 @@ object TelaPrincipal: TTelaPrincipal
           Font.Style = []
           ParentFont = False
           StyleName = 'Windows'
-          ExplicitWidth = 244
-          ExplicitHeight = 42
         end
         object A1: TButton
           AlignWithMargins = True
@@ -665,7 +658,6 @@ object TelaPrincipal: TTelaPrincipal
           Font.Style = []
           ParentFont = False
           TabOrder = 0
-          OnClick = A1Click
         end
       end
       object PanelCadastro_Medicamentos: TPanel
@@ -956,8 +948,8 @@ object TelaPrincipal: TTelaPrincipal
         object Label8: TLabel
           Left = 1
           Top = 125
-          Width = 257
-          Height = 136
+          Width = 141
+          Height = 105
           Align = alClient
           Alignment = taCenter
           Caption = 'Cadastro de '#13#10'Lembretes'#13#10
@@ -968,15 +960,13 @@ object TelaPrincipal: TTelaPrincipal
           Font.Style = []
           ParentFont = False
           StyleName = 'Windows'
-          ExplicitWidth = 141
-          ExplicitHeight = 105
         end
         object Label9: TLabel
           AlignWithMargins = True
           Left = 4
           Top = 205
-          Width = 251
-          Height = 56
+          Width = 204
+          Height = 42
           Margins.Top = 80
           Margins.Bottom = 0
           Align = alClient
@@ -989,8 +979,6 @@ object TelaPrincipal: TTelaPrincipal
           Font.Style = []
           ParentFont = False
           StyleName = 'Windows'
-          ExplicitWidth = 204
-          ExplicitHeight = 42
         end
         object A2: TButton
           AlignWithMargins = True
@@ -1378,8 +1366,8 @@ object TelaPrincipal: TTelaPrincipal
         object Label10: TLabel
           Left = 1
           Top = 125
-          Width = 257
-          Height = 136
+          Width = 164
+          Height = 70
           Align = alClient
           Alignment = taCenter
           Caption = 'Cadastro de '#13#10'Medicamentos'
@@ -1390,15 +1378,13 @@ object TelaPrincipal: TTelaPrincipal
           Font.Style = []
           ParentFont = False
           StyleName = 'Windows'
-          ExplicitWidth = 164
-          ExplicitHeight = 70
         end
         object Label11: TLabel
           AlignWithMargins = True
           Left = 4
           Top = 205
-          Width = 251
-          Height = 56
+          Width = 213
+          Height = 42
           Margins.Top = 80
           Margins.Bottom = 0
           Align = alClient
@@ -1411,8 +1397,6 @@ object TelaPrincipal: TTelaPrincipal
           Font.Style = []
           ParentFont = False
           StyleName = 'Windows'
-          ExplicitWidth = 213
-          ExplicitHeight = 42
         end
         object A3: TButton
           AlignWithMargins = True

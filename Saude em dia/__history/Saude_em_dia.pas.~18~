@@ -11,15 +11,14 @@ type
   TForm3 = class(TForm)
     img1: TImage;
     pnl1: TPanel;
-    PanelCNPJ: TLabel;
+    Label1: TLabel;
     pnlPAINEL_CNPJ: TPanel;
     medtCNPJEdit: TMaskEdit;
     pnlPAINEL_CNPJ1: TPanel;
     Label2: TLabel;
     edtSenha: TEdit;
     ALoginButton: TButton;
-    Panel1: TPanel;
-    PanelEditCNPJ: TPanel;
+    pnl2: TPanel;
     procedure medtCNPJEditChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure edtSenhaChange(Sender: TObject);

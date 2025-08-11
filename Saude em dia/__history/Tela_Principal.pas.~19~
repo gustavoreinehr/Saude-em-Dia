@@ -51,17 +51,8 @@ uses
 
 procedure TTelaPrincipal.A1Click(Sender: TObject);
 begin
-Self.Hide;
-try
-   Tela_Cadastrp := TTela_Cadastrp.Create(nil);
-   try
+  Tela_Cadastrp := TTela_Cadastrp.Create(nil);
   Tela_Cadastrp.ShowModal;
-finally
-     FreeAndNil(Tela_Cadastrp);
-     end;
-     finally
-close;
-end;
 end;
 
 end.

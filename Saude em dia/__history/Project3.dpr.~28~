@@ -1,14 +1,17 @@
 program Project3;
 
-{$R 'Tela_Principal.dfm' :TForm}
-
 uses
+  Saude_em_dia in 'Saude_em_dia.pas' {Form3},
   Vcl.Forms,
   Vcl.Themes,
   Vcl.Styles,
-  Saude_em_dia in 'Saude_em_dia.pas' {Form3},
   Tela_Cadastro in 'Tela_Cadastro.pas' {/  Tela_Principal in 'Tela_Principal.pas' {Form4},
-  TTela_Principal in 'Tela_Principal.pas' {TelaPrincipal};
+  Tela_Principal in 'Tela_Principal.pas';
+
+{/  Tela_Principal in 'Tela_Principal.pas' {Form4}
+
+//  Tela_Principal in 'Tela_Principal.pas' {Form4},
+//  Projeto.Produto in 'Projeto.Produto.pas' {Projeto_Produto};
 
 {$R *.res}
 

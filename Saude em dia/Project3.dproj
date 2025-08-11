@@ -132,28 +132,13 @@
         </DelphiCompile>
         <DCCReference Include="Saude_em_dia.pas">
             <Form>Form3</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Projeto_BANCODADOS.pas">
-            <Form>DMDataBase</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
-        <DCCReference Include="Tela3.pas">
-            <Form>Form1</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Tela_Cadastro.pas">
-            <Form>Form2</Form>
-            <FormType>dfm</FormType>
+            <Form>/  Tela_Principal in &apos;Tela_Principal.pas&apos; {Form4</Form>
         </DCCReference>
         <DCCReference Include="Tela_Principal.pas">
-            <Form>Form4</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Projeto.Produto.pas">
-            <Form>Projeto_Produto</Form>
-            <FormType>dfm</FormType>
+            <ModuleName>TTela_Principal</ModuleName>
+            <Form>TelaPrincipal</Form>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

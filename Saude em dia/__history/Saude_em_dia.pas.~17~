@@ -11,15 +11,14 @@ type
   TForm3 = class(TForm)
     img1: TImage;
     pnl1: TPanel;
-    PanelCNPJ: TLabel;
+    Label1: TLabel;
     pnlPAINEL_CNPJ: TPanel;
     medtCNPJEdit: TMaskEdit;
     pnlPAINEL_CNPJ1: TPanel;
     Label2: TLabel;
     edtSenha: TEdit;
     ALoginButton: TButton;
-    Panel1: TPanel;
-    PanelEditCNPJ: TPanel;
+    pnl2: TPanel;
     procedure medtCNPJEditChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure edtSenhaChange(Sender: TObject);
@@ -42,16 +41,16 @@ implementation
 
 procedure TForm3.ALoginButtonClick(Sender: TObject);
 begin
-  Self.Hide;
+  Self.Hide;  // Esconde o Form3 (a tela atual)
   try
-    TelaPrincipal := TTelaPrincipal.Create(nil);
+    TelaPrincipal := TTelaPrincipal.Create(nil);  // Cria a nova tela
     try
-      TelaPrincipal.ShowModal;
+      TelaPrincipal.ShowModal;   // Mostra a nova tela modal
     finally
-      FreeAndNil(TelaPrincipal);
+      FreeAndNil(TelaPrincipal); // Libera a nova tela ao fechar
     end;
   finally
-    Close;
+    Close;  // Fecha o Form3 após a TelaPrincipal ser fechada
   end;
 end;
 

@@ -8,7 +8,7 @@ uses
   Vcl.Imaging.pngimage, Tela_Cadastro;
 
 type
-  TTelaPrincipal = class(TForm)
+  TForm4 = class(TForm)
     Panel_Cabecalho: TPanel;
     Label1: TLabel;
     Label2: TLabel;
@@ -39,29 +39,21 @@ type
     { Public declarations }
   end;
 
-{$R *.dfm}  // <-- mover para cá, fora do bloco 'type'
+  {$R *.dfm}
 
 var
-  TelaPrincipal: TTelaPrincipal;
+  TelaPrincipal: TForm4;
 
 implementation
 
 uses
-  Saude_em_dia;
+Saude_em_dia;
 
-procedure TTelaPrincipal.A1Click(Sender: TObject);
+procedure TForm4.A1Click(Sender: TObject);
 begin
-Self.Hide;
-try
    Tela_Cadastrp := TTela_Cadastrp.Create(nil);
-   try
-  Tela_Cadastrp.ShowModal;
-finally
-     FreeAndNil(Tela_Cadastrp);
-     end;
-     finally
-close;
+    Tela_Cadastrp.ShowModal;
 end;
-end;
+
 
 end.

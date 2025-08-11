@@ -128,6 +128,7 @@ object TelaPrincipal: TTelaPrincipal
       Font.Style = []
       ParentFont = False
       StyleName = 'Windows'
+      ExplicitTop = 81
       ExplicitWidth = 421
     end
     object Panel_Menu: TPanel
@@ -665,7 +666,6 @@ object TelaPrincipal: TTelaPrincipal
           Font.Style = []
           ParentFont = False
           TabOrder = 0
-          OnClick = A1Click
         end
       end
       object PanelCadastro_Medicamentos: TPanel

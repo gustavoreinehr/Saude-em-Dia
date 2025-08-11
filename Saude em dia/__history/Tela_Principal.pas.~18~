@@ -42,26 +42,17 @@ type
 {$R *.dfm}  // <-- mover para cá, fora do bloco 'type'
 
 var
-  TelaPrincipal: TTelaPrincipal;
+  TelaPrincipal: TForm4;
 
 implementation
 
 uses
   Saude_em_dia;
 
-procedure TTelaPrincipal.A1Click(Sender: TObject);
+procedure TForm4.A1Click(Sender: TObject);
 begin
-Self.Hide;
-try
-   Tela_Cadastrp := TTela_Cadastrp.Create(nil);
-   try
+  Tela_Cadastrp := TTela_Cadastrp.Create(nil);
   Tela_Cadastrp.ShowModal;
-finally
-     FreeAndNil(Tela_Cadastrp);
-     end;
-     finally
-close;
-end;
 end;
 
 end.

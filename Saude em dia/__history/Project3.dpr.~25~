@@ -1,0 +1,23 @@
+program Project3;
+
+uses
+  Saude_em_dia in 'Saude_em_dia.pas' {Form3},
+
+Vcl.Forms,
+  Vcl.Themes,
+  Vcl.Styles,
+  Tela_Cadastro in 'Tela_Cadastro.pas' {/  Tela_Principal in 'Tela_Principal.pas' {Form4};
+
+{/  Tela_Principal in 'Tela_Principal.pas' {Form4}
+
+//  Tela_Principal in 'Tela_Principal.pas' {Form4},
+//  Projeto.Produto in 'Projeto.Produto.pas' {Projeto_Produto};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Iceberg Classico');
+  Application.Run;
+end.

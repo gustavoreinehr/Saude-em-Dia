@@ -33,13 +33,12 @@ type
     Label11: TLabel;
     A3: TButton;
     procedure A1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
   end;
-
-{$R *.dfm}  // <-- mover para cá, fora do bloco 'type'
 
 var
   TelaPrincipal: TTelaPrincipal;
@@ -47,21 +46,17 @@ var
 implementation
 
 uses
-  Saude_em_dia;
+Saude_em_dia;
 
 procedure TTelaPrincipal.A1Click(Sender: TObject);
 begin
-Self.Hide;
-try
    Tela_Cadastrp := TTela_Cadastrp.Create(nil);
-   try
-  Tela_Cadastrp.ShowModal;
-finally
-     FreeAndNil(Tela_Cadastrp);
-     end;
-     finally
-close;
+    Tela_Cadastrp.ShowModal;
 end;
+
+procedure TTelaPrincipal.FormCreate(Sender: TObject);
+begin
+Saude_em_dia.Close;
 end;
 
 end.

@@ -39,29 +39,19 @@ type
     { Public declarations }
   end;
 
-{$R *.dfm}  // <-- mover para cá, fora do bloco 'type'
-
 var
   TelaPrincipal: TTelaPrincipal;
 
 implementation
 
 uses
-  Saude_em_dia;
+Saude_em_dia;
 
 procedure TTelaPrincipal.A1Click(Sender: TObject);
 begin
-Self.Hide;
-try
    Tela_Cadastrp := TTela_Cadastrp.Create(nil);
-   try
-  Tela_Cadastrp.ShowModal;
-finally
-     FreeAndNil(Tela_Cadastrp);
-     end;
-     finally
-close;
+    Tela_Cadastrp.ShowModal;
 end;
-end;
+
 
 end.
