@@ -14,8 +14,6 @@ type
     PanelCNPJ: TLabel;
     pnlPAINEL_CNPJ: TPanel;
     medtCNPJEdit: TMaskEdit;
-    pnlPAINEL_CNPJ1: TPanel;
-    Label2: TLabel;
     edtSenha: TEdit;
     ALoginButton: TButton;
     Panel1: TPanel;

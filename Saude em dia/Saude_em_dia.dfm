@@ -37,9 +37,9 @@ object Form3: TForm3
       Align = alTop
       BevelOuter = bvNone
       Caption = 'Panel1'
-      TabOrder = 4
-      ExplicitLeft = 0
-      ExplicitTop = 33
+      TabOrder = 3
+      ExplicitLeft = 2
+      ExplicitTop = 17
       object img1: TImage
         AlignWithMargins = True
         Left = 0
@@ -506,6 +506,7 @@ object Form3: TForm3
       Caption = 'Painel_CNPJ'
       ShowCaption = False
       TabOrder = 0
+      ExplicitWidth = 980
       object PanelCNPJ: TLabel
         AlignWithMargins = True
         Left = 1
@@ -529,46 +530,6 @@ object Form3: TForm3
         ExplicitWidth = 80
       end
     end
-    object pnlPAINEL_CNPJ1: TPanel
-      AlignWithMargins = True
-      Left = 441
-      Top = 607
-      Width = 102
-      Height = 0
-      Margins.Left = 440
-      Margins.Top = 350
-      Margins.Right = 440
-      Margins.Bottom = 265
-      Align = alClient
-      Caption = 'Painel_CNPJ'
-      ShowCaption = False
-      TabOrder = 1
-      ExplicitTop = 351
-      ExplicitWidth = 100
-      ExplicitHeight = 36
-      object Label2: TLabel
-        AlignWithMargins = True
-        Left = 1
-        Top = 1
-        Width = 100
-        Height = 42
-        Margins.Left = 0
-        Margins.Top = 0
-        Margins.Right = 0
-        Margins.Bottom = 0
-        Align = alClient
-        Alignment = taCenter
-        Caption = 'Senha'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -33
-        Font.Name = 'Segoe UI'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ExplicitWidth = 95
-        ExplicitHeight = 45
-      end
-    end
     object edtSenha: TEdit
       AlignWithMargins = True
       Left = 301
@@ -587,10 +548,9 @@ object Form3: TForm3
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 1
       TextHint = 'Senha'
       OnChange = edtSenhaChange
-      ExplicitTop = 401
       ExplicitWidth = 380
       ExplicitHeight = 58
     end
@@ -599,7 +559,7 @@ object Form3: TForm3
       Left = 441
       Top = 727
       Width = 102
-      Height = 39
+      Height = 0
       Margins.Left = 440
       Margins.Top = 470
       Margins.Right = 440
@@ -613,11 +573,9 @@ object Form3: TForm3
       Font.Style = []
       ImageAlignment = iaCenter
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 2
       OnClick = ALoginButtonClick
-      ExplicitTop = 471
       ExplicitWidth = 100
-      ExplicitHeight = 31
     end
     object PanelEditCNPJ: TPanel
       Left = 0
@@ -627,7 +585,7 @@ object Form3: TForm3
       BevelOuter = bvNone
       Caption = '0'
       ShowCaption = False
-      TabOrder = 5
+      TabOrder = 4
       object medtCNPJEdit: TMaskEdit
         AlignWithMargins = True
         Left = 270
@@ -651,10 +609,7 @@ object Form3: TForm3
         TabOrder = 0
         Text = '  .   .   /    '#8722'  '
         OnChange = medtCNPJEditChange
-        ExplicitLeft = 271
-        ExplicitTop = 1
-        ExplicitWidth = 442
-        ExplicitHeight = 40
+        ExplicitHeight = 58
       end
     end
   end
