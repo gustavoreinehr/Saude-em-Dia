@@ -9,7 +9,8 @@ uses
   Saude_em_dia in 'Saude_em_dia.pas' {Form3},
   Tela_Cadastro in 'Tela_Cadastro.pas' {/  Tela_Principal in 'Tela_Principal.pas' {Form4},
   TTela_Principal in 'Tela_Principal.pas' {TelaPrincipal},
-  Castro_Meicamento in 'Castro_Meicamento.pas' {Form5};
+  Castro_Meicamento in 'Castro_Meicamento.pas' {Form5},
+  Tela_Lembrete in 'Tela_Lembrete.pas' {Tela_Lembretes};
 
 {$R *.res}
 
@@ -19,6 +20,7 @@ begin
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TForm3, Form3);
   Application.CreateForm(TTelaPrincipal, TelaPrincipal);
+  Application.CreateForm(TTela_Lembretes, Tela_Lembretes);
   TStyleManager.TrySetStyle('Iceberg Classico');
   Application.Run;
 end.
