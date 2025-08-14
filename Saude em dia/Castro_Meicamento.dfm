@@ -1,7 +1,7 @@
 object Form5: TForm5
   Left = 0
   Top = 0
-  Caption = 'Form5'
+  Caption = 'Cadastro de Medicamento '
   ClientHeight = 700
   ClientWidth = 1000
   Color = clBtnFace
@@ -537,7 +537,7 @@ object Form5: TForm5
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
   end
-  object ComboBox5: TComboBox
+  object Fabricante: TComboBox
     Left = 16
     Top = 296
     Width = 330
