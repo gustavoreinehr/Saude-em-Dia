@@ -144,9 +144,6 @@
             <Form>Form5</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="..\..\..\Saude em dia-20250807T232549Z-1-001\Saude em dia\Cadastro_Medicamento.pas">
-            <FormType>dfm</FormType>
-        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
