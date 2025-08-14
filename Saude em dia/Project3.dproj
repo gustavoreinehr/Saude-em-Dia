@@ -140,6 +140,10 @@
             <ModuleName>TTela_Principal</ModuleName>
             <Form>TelaPrincipal</Form>
         </DCCReference>
+        <DCCReference Include="Castro_Meicamento.pas">
+            <Form>Form5</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
