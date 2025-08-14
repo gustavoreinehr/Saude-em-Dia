@@ -144,6 +144,10 @@
             <Form>Form5</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Tela_Lembrete.pas">
+            <Form>Tela_Lembretes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

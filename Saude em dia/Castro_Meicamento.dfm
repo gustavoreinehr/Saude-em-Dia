@@ -18,6 +18,7 @@ object Form5: TForm5
     Height = 529
     Align = alTop
     TabOrder = 11
+    ExplicitWidth = 998
     object Button1: TButton
       Left = 0
       Top = 1
