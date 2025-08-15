@@ -23,22 +23,16 @@ type
     Painel_Principal: TPanel;
     Button1: TButton;
     Button2: TButton;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    ComboBox3: TComboBox;
+    DateTimePicker1: TDateTimePicker;
+    ComboBox4: TComboBox;
     Grid_Cadastrados: TDBGrid;
     DBGrid1: TDBGrid;
     Fabricante: TComboBox;
-    Lote_Edit: TEdit;
-    Button3: TButton;
-    CheckBox1: TCheckBox;
-    Edit1: TEdit;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
-    Label7: TLabel;
-    Label9: TLabel;
-    Label8: TLabel;
   private
     { Private declarations }
   public
