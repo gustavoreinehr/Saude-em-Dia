@@ -48,7 +48,5 @@
     <File Path="Tela_Principal.pas"/>
     <File Path="Castro_Meicamento.pas"/>
     <File Path="Castro_Meicamento.dfm"/>
-    <File Path="Tela_Lembrete.pas"/>
-    <File Path="Tela_Lembrete.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

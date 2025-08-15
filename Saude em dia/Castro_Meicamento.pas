@@ -32,7 +32,7 @@ type
     ComboBox4: TComboBox;
     Grid_Cadastrados: TDBGrid;
     DBGrid1: TDBGrid;
-    ComboBox5: TComboBox;
+    Fabricante: TComboBox;
   private
     { Private declarations }
   public

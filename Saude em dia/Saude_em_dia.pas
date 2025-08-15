@@ -22,6 +22,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure edtSenhaChange(Sender: TObject);
     procedure ALoginButtonClick(Sender: TObject);
+    procedure FormResize(Sender: TObject);
 
   private
      CNPJPrench: Boolean;
@@ -70,6 +71,13 @@ end;
 procedure TForm3.FormCreate(Sender: TObject);
 begin
 ALoginButton.Enabled := False;
+end;
+
+procedure TForm3.FormResize(Sender: TObject);
+begin
+medtCNPJEdit.Width := 442;
+medtCNPJEdit.Height := 52;
+ medtCNPJEdit.Left := (Form3.Width - medtCNPJEdit.Width) div 2;
 end;
 
 procedure TForm3.medtCNPJEditChange(Sender: TObject);
