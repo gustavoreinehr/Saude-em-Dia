@@ -10,6 +10,7 @@ object Tela_Lembretes: TTela_Lembretes
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
   TextHeight = 15
   object BarraInferior: TPanel
     Left = 0
@@ -18,7 +19,6 @@ object Tela_Lembretes: TTela_Lembretes
     Height = 100
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 982
     object BotaoEditar: TButton
       Left = 100
       Top = 25
@@ -82,13 +82,12 @@ object Tela_Lembretes: TTela_Lembretes
     Width = 984
     Height = 561
     Align = alClient
-    Caption = 'SW'
     TabOrder = 1
     ExplicitWidth = 982
     ExplicitHeight = 553
     object DataInicio: TLabel
-      Left = 100
-      Top = 22
+      Left = 352
+      Top = 136
       Width = 158
       Height = 35
       Caption = 'Data de inicio:'
@@ -138,9 +137,22 @@ object Tela_Lembretes: TTela_Lembretes
       Font.Style = []
       ParentFont = False
     end
-    object Calendario: TCalendarPicker
+    object NomePaciente: TLabel
       Left = 100
-      Top = 63
+      Top = 29
+      Width = 173
+      Height = 35
+      Caption = 'Nome Paciente:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -25
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Calendario: TCalendarPicker
+      Left = 352
+      Top = 167
       Width = 189
       Height = 42
       CalendarHeaderInfo.DaysOfWeekFont.Charset = DEFAULT_CHARSET
@@ -163,15 +175,14 @@ object Tela_Lembretes: TTela_Lembretes
       TabOrder = 0
       TextHint = 'Selecione a Data'
     end
-    object ComboBox1: TComboBox
+    object Dosagem: TComboBox
       Left = 352
       Top = 63
       Width = 150
       Height = 23
       TabOrder = 1
-      Text = 'ComboBox1'
     end
-    object TimePicker1: TTimePicker
+    object Horario: TTimePicker
       Left = 100
       Top = 177
       Width = 189
@@ -181,10 +192,9 @@ object Tela_Lembretes: TTela_Lembretes
       Font.Name = 'Segoe UI'
       Font.Style = []
       TabOrder = 2
-      Time = 45876.891205104170000000
       TimeFormat = 'hh:nn'
     end
-    object MemoLembrete: TMemo
+    object Lembrete: TMemo
       Left = 728
       Top = 63
       Width = 249
@@ -193,6 +203,7 @@ object Tela_Lembretes: TTela_Lembretes
         'Lembrete')
       ScrollBars = ssVertical
       TabOrder = 3
+      StyleName = 'Windows'
     end
     object DBGrid1: TDBGrid
       AlignWithMargins = True
@@ -207,6 +218,13 @@ object Tela_Lembretes: TTela_Lembretes
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+    end
+    object Edit1: TEdit
+      Left = 100
+      Top = 63
+      Width = 189
+      Height = 23
+      TabOrder = 5
     end
   end
 end

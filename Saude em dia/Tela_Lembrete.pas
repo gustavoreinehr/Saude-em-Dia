@@ -20,10 +20,13 @@ type
     Label2: TLabel;
     Label3: TLabel;
     Calendario: TCalendarPicker;
-    ComboBox1: TComboBox;
-    TimePicker1: TTimePicker;
-    MemoLembrete: TMemo;
+    Horario: TTimePicker;
     DBGrid1: TDBGrid;
+    Edit1: TEdit;
+    NomePaciente: TLabel;
+    Dosagem: TComboBox;
+    Lembrete: TMemo;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,5 +39,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TTela_Lembretes.FormCreate(Sender: TObject);
+begin
+Lembrete.Text := '';
+end;
 
 end.
