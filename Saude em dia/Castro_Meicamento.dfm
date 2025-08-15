@@ -1,7 +1,7 @@
 object Form5: TForm5
   Left = 0
   Top = 0
-  Caption = 'Cadastro de Medicamento '
+  Caption = 'e'
   ClientHeight = 700
   ClientWidth = 1000
   Color = clBtnFace
@@ -18,8 +18,6 @@ object Form5: TForm5
     Height = 529
     Align = alTop
     TabOrder = 11
-    ExplicitLeft = 32
-    ExplicitTop = -30
     object Label1: TLabel
       Left = 16
       Top = 52
@@ -82,6 +80,13 @@ object Form5: TForm5
       Width = 3
       Height = 15
       Caption = #39
+    end
+    object Label10: TLabel
+      Left = 354
+      Top = 108
+      Width = 103
+      Height = 15
+      Caption = 'Unidade de Medida'
     end
     object Button1: TButton
       Left = 0
@@ -154,15 +159,16 @@ object Form5: TForm5
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    OnClick = Incluir_ButtonClick
   end
   object Nome_Medicamento_Edit: TEdit
     Left = 16
     Top = 73
     Width = 619
-    Height = 29
+    Height = 25
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -172,10 +178,10 @@ object Form5: TForm5
     Left = 16
     Top = 129
     Width = 281
-    Height = 29
+    Height = 25
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -185,10 +191,10 @@ object Form5: TForm5
     Left = 354
     Top = 129
     Width = 281
-    Height = 29
+    Height = 25
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -212,10 +218,10 @@ object Form5: TForm5
     Left = 354
     Top = 185
     Width = 281
-    Height = 29
+    Height = 25
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -250,10 +256,10 @@ object Form5: TForm5
     Left = 16
     Top = 185
     Width = 281
-    Height = 29
+    Height = 25
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -316,12 +322,12 @@ object Form5: TForm5
     Left = 16
     Top = 240
     Width = 281
-    Height = 29
-    Date = 45876.000000000000000000
+    Height = 25
+    Date = 45883.000000000000000000
     Time = 0.910627071760245600
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -331,10 +337,10 @@ object Form5: TForm5
     Left = 354
     Top = 240
     Width = 281
-    Height = 29
+    Height = 25
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -423,10 +429,10 @@ object Form5: TForm5
     Left = 16
     Top = 296
     Width = 281
-    Height = 29
+    Height = 25
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -449,10 +455,10 @@ object Form5: TForm5
     Left = 354
     Top = 296
     Width = 281
-    Height = 29
+    Height = 25
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -476,10 +482,10 @@ object Form5: TForm5
     Left = 16
     Top = 352
     Width = 619
-    Height = 152
+    Height = 25
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -16
+    Font.Height = -13
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
