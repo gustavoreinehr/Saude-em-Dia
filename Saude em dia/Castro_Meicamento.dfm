@@ -1,4 +1,4 @@
-object Form5: TForm5
+object Cadastro_Medicamento: TCadastro_Medicamento
   Left = 0
   Top = 0
   Caption = 'e'
@@ -145,6 +145,7 @@ object Form5: TForm5
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    OnClick = AVoltarClick
   end
   object Incluir_Button: TButton
     Left = 320

@@ -4,11 +4,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls,Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls,
   Data.DB, Vcl.Grids, System.IniFiles, Vcl.DBGrids;
 
 type
-  TForm5 = class(TForm)
+  TCadastro_Medicamento = class(TForm)
     AVoltar: TButton;
     Incluir_Button: TButton;
     Nome_Medicamento_Edit: TEdit;
@@ -41,6 +41,7 @@ type
     Label8: TLabel;
     Label10: TLabel;
     procedure Incluir_ButtonClick(Sender: TObject);
+    procedure AVoltarClick(Sender: TObject);
   private
     Procedure Nome_Obrigatorio;
     Procedure Quantidade_Obrigatorio;
@@ -49,7 +50,7 @@ type
   end;
 
 var
-  Form5: TForm5;
+  Cadastro_Medicamento: TCadastro_Medicamento;
 
 implementation
 
@@ -57,13 +58,18 @@ implementation
 
 { TForm5 }
 
-procedure TForm5.Incluir_ButtonClick(Sender: TObject);
+procedure TCadastro_Medicamento.AVoltarClick(Sender: TObject);
+begin
+Self.Close
+end;
+
+procedure TCadastro_Medicamento.Incluir_ButtonClick(Sender: TObject);
 begin
 Nome_Obrigatorio;
 Quantidade_Obrigatorio;
 end;
 
-procedure TForm5.Nome_Obrigatorio;
+procedure TCadastro_Medicamento.Nome_Obrigatorio;
 
 begin
 if Nome_Medicamento_Edit.text = '' then
@@ -71,7 +77,7 @@ ShowMessage('O Campo Nome é Obrigatório');
 
 end;
 
-procedure TForm5.Quantidade_Obrigatorio;
+procedure TCadastro_Medicamento.Quantidade_Obrigatorio;
 begin
 
 if Quantidade_Medicamento_Edit.text = '' then

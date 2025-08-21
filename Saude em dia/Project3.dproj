@@ -138,7 +138,7 @@
             <Form>TelaPrincipal</Form>
         </DCCReference>
         <DCCReference Include="Castro_Meicamento.pas">
-            <Form>Form5</Form>
+            <Form>Cadastro_Medicamento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Tela_Lembrete.pas">
