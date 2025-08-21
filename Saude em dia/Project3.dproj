@@ -145,9 +145,6 @@
         </DCCReference>
         <DCCReference Include="Tela_Cadastro.pas">
             <Form>Tela_Cadastrp</Form>
-        </DCCReference>
-        <DCCReference Include="Tela_Cadastro.pas">
-            <Form>Tela_Cadastrp</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

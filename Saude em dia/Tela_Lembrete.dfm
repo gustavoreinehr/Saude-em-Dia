@@ -10,7 +10,9 @@ object Tela_Lembretes: TTela_Lembretes
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnClick = BotaoExcluirClick
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   TextHeight = 15
   object BarraInferior: TPanel
     Left = 0
@@ -19,6 +21,7 @@ object Tela_Lembretes: TTela_Lembretes
     Height = 100
     Align = alTop
     TabOrder = 0
+    ExplicitWidth = 982
     object BotaoEditar: TButton
       Left = 100
       Top = 25
@@ -32,6 +35,7 @@ object Tela_Lembretes: TTela_Lembretes
       Font.Style = []
       ParentFont = False
       TabOrder = 0
+      OnClick = BotaoEditarClick
     end
     object BotaoExcluir: TButton
       Left = 300
@@ -46,6 +50,7 @@ object Tela_Lembretes: TTela_Lembretes
       Font.Style = []
       ParentFont = False
       TabOrder = 1
+      OnClick = BotaoExcluirClick
     end
     object BotaoIncluir: TButton
       Left = 500
@@ -60,6 +65,7 @@ object Tela_Lembretes: TTela_Lembretes
       Font.Style = []
       ParentFont = False
       TabOrder = 2
+      OnClick = BotaoIncluirClick
     end
     object AVoltar: TButton
       Left = 0
@@ -74,6 +80,7 @@ object Tela_Lembretes: TTela_Lembretes
       Font.Style = []
       ParentFont = False
       TabOrder = 3
+      OnClick = AVoltarClick
     end
   end
   object PainelBotoes: TPanel
@@ -83,8 +90,6 @@ object Tela_Lembretes: TTela_Lembretes
     Height = 561
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 982
-    ExplicitHeight = 553
     object DataInicio: TLabel
       Left = 352
       Top = 136
@@ -192,6 +197,7 @@ object Tela_Lembretes: TTela_Lembretes
       Font.Name = 'Segoe UI'
       Font.Style = []
       TabOrder = 2
+      Time = 45890.799382546300000000
       TimeFormat = 'hh:nn'
     end
     object Lembrete: TMemo
@@ -205,26 +211,20 @@ object Tela_Lembretes: TTela_Lembretes
       TabOrder = 3
       StyleName = 'Windows'
     end
-    object DBGrid1: TDBGrid
-      AlignWithMargins = True
-      Left = 4
-      Top = 240
-      Width = 976
-      Height = 317
-      Align = alBottom
-      TabOrder = 4
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -12
-      TitleFont.Name = 'Segoe UI'
-      TitleFont.Style = []
-    end
     object Edit1: TEdit
       Left = 100
       Top = 63
       Width = 189
       Height = 23
+      TabOrder = 4
+    end
+    object Tabela: TStringGrid
+      Left = 0
+      Top = 240
+      Width = 984
+      Height = 321
       TabOrder = 5
+      OnSelectCell = TabelaSelectCell
     end
   end
 end
