@@ -23,7 +23,6 @@ object TelaPrincipal: TTelaPrincipal
     ShowCaption = False
     TabOrder = 0
     StyleName = 'Windows'
-    ExplicitWidth = 1092
     object Label1: TLabel
       AlignWithMargins = True
       Left = 3
@@ -88,8 +87,6 @@ object TelaPrincipal: TTelaPrincipal
     Caption = 'Panel_Principal'
     ShowCaption = False
     TabOrder = 1
-    ExplicitLeft = 112
-    ExplicitTop = 89
     object Label4: TLabel
       AlignWithMargins = True
       Left = 151
@@ -176,9 +173,6 @@ object TelaPrincipal: TTelaPrincipal
           Caption = 'PanelCadastro_Pessoa'
           ShowCaption = False
           TabOrder = 0
-          ExplicitLeft = 803
-          ExplicitTop = 50
-          ExplicitHeight = 370
           object img2: TImage
             AlignWithMargins = True
             Left = 86
@@ -508,7 +502,7 @@ object TelaPrincipal: TTelaPrincipal
             Font.Style = []
             ParentFont = False
             TabOrder = 0
-            ExplicitTop = 314
+            OnClick = A2Click
           end
         end
         object PanelCadastro_Pessoa: TPanel
@@ -525,8 +519,6 @@ object TelaPrincipal: TTelaPrincipal
           Caption = 'PanelCadastro_Pessoa'
           ShowCaption = False
           TabOrder = 1
-          ExplicitTop = 50
-          ExplicitHeight = 370
           object img1: TImage
             AlignWithMargins = True
             Left = 86
@@ -1040,7 +1032,6 @@ object TelaPrincipal: TTelaPrincipal
             ParentFont = False
             TabOrder = 0
             OnClick = A1Click
-            ExplicitTop = 314
           end
         end
         object PanelCadastro_Lembretes: TPanel
@@ -1420,9 +1411,8 @@ object TelaPrincipal: TTelaPrincipal
             Font.Style = []
             ParentFont = False
             StyleName = 'Windows'
-            ExplicitTop = 128
-            ExplicitWidth = 287
-            ExplicitHeight = 293
+            ExplicitWidth = 164
+            ExplicitHeight = 70
           end
           object Label11: TLabel
             AlignWithMargins = True
@@ -1465,8 +1455,7 @@ object TelaPrincipal: TTelaPrincipal
             Font.Style = []
             ParentFont = False
             TabOrder = 0
-            ExplicitTop = 335
-            ExplicitWidth = 167
+            OnClick = A3Click
           end
         end
       end
