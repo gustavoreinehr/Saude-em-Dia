@@ -25,6 +25,7 @@ type
     ButtonExcluir: TButton;
     ButtonIncluir: TButton;
     DBGrid1: TDBGrid;
+    Button3: TButton;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }

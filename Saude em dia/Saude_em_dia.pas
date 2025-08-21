@@ -9,15 +9,19 @@ uses
 
 type
   TForm3 = class(TForm)
-    img1: TImage;
     pnl1: TPanel;
-    PanelCNPJ: TLabel;
-    pnlPAINEL_CNPJ: TPanel;
-    medtCNPJEdit: TMaskEdit;
-    edtSenha: TEdit;
-    ALoginButton: TButton;
     Panel1: TPanel;
+    img1: TImage;
+    PanelCNPJ: TPanel;
+    LabelCNPJ: TLabel;
     PanelEditCNPJ: TPanel;
+    medtCNPJEdit: TMaskEdit;
+    PanelEditSenha: TPanel;
+    Label1: TLabel;
+    Panel3: TPanel;
+    EdtSenha: TEdit;
+    Panel2: TPanel;
+    ALoginButton: TButton;
     procedure medtCNPJEditChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure edtSenhaChange(Sender: TObject);
@@ -75,9 +79,10 @@ end;
 
 procedure TForm3.FormResize(Sender: TObject);
 begin
-medtCNPJEdit.Width := 442;
-medtCNPJEdit.Height := 52;
+
  medtCNPJEdit.Left := (Form3.Width - medtCNPJEdit.Width) div 2;
+ EdtSenha.Left := (Form3.Width - EdtSenha.Width) div 2;
+  ALoginButton.Left := (Form3.Width - ALoginButton.Width) div 2;
 end;
 
 procedure TForm3.medtCNPJEditChange(Sender: TObject);
