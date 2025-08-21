@@ -32,6 +32,7 @@ type
     Label10: TLabel;
     Label11: TLabel;
     A3: TButton;
+    Panel2: TPanel;
     procedure A1Click(Sender: TObject);
   private
     { Private declarations }

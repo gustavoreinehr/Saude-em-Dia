@@ -28,28 +28,33 @@ object Form3: TForm3
     Align = alClient
     ShowCaption = False
     TabOrder = 0
+    ExplicitWidth = 982
+    ExplicitHeight = 653
     object Panel1: TPanel
-      Left = 1
-      Top = 1
-      Width = 982
+      AlignWithMargins = True
+      Left = 4
+      Top = 61
+      Width = 976
       Height = 209
+      Margins.Top = 60
       Align = alTop
       BevelOuter = bvNone
       Caption = 'Panel1'
-      TabOrder = 3
+      TabOrder = 1
+      ExplicitLeft = 1
+      ExplicitTop = 1
       ExplicitWidth = 980
       object img1: TImage
         AlignWithMargins = True
         Left = 0
-        Top = 30
-        Width = 982
-        Height = 179
+        Top = 40
+        Width = 976
+        Height = 169
         Margins.Left = 0
-        Margins.Top = 30
+        Margins.Top = 40
         Margins.Right = 0
         Margins.Bottom = 0
         Align = alClient
-        Anchors = []
         Center = True
         Picture.Data = {
           0A544A504547496D616765BF350000FFD8FFE000104A46494600010100000100
@@ -490,10 +495,10 @@ object Form3: TForm3
         ExplicitHeight = 0
       end
     end
-    object pnlPAINEL_CNPJ: TPanel
+    object PanelCNPJ: TPanel
       AlignWithMargins = True
       Left = 1
-      Top = 210
+      Top = 273
       Width = 982
       Height = 47
       Margins.Left = 0
@@ -501,23 +506,24 @@ object Form3: TForm3
       Margins.Right = 0
       Margins.Bottom = 0
       Align = alTop
+      BevelOuter = bvNone
       Caption = 'Painel_CNPJ'
       ShowCaption = False
       TabOrder = 0
+      ExplicitTop = 210
       ExplicitWidth = 980
-      object PanelCNPJ: TLabel
+      object LabelCNPJ: TLabel
         AlignWithMargins = True
-        Left = 1
-        Top = 1
-        Width = 980
-        Height = 45
+        Left = 0
+        Top = 0
+        Width = 982
+        Height = 47
         Margins.Left = 0
         Margins.Top = 0
         Margins.Right = 0
         Margins.Bottom = 0
         Align = alClient
         Alignment = taCenter
-        Anchors = []
         Caption = 'CNPJ'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -525,68 +531,22 @@ object Form3: TForm3
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitHeight = 43
+        ExplicitWidth = 80
+        ExplicitHeight = 45
       end
-    end
-    object edtSenha: TEdit
-      AlignWithMargins = True
-      Left = 301
-      Top = 1333
-      Width = 382
-      Height = 0
-      Margins.Left = 300
-      Margins.Top = 400
-      Margins.Right = 300
-      Margins.Bottom = 215
-      Align = alClient
-      Alignment = taCenter
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 50
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 1
-      TextHint = 'Senha'
-      OnChange = edtSenhaChange
-      ExplicitTop = 657
-      ExplicitWidth = 380
-      ExplicitHeight = 58
-    end
-    object ALoginButton: TButton
-      AlignWithMargins = True
-      Left = 441
-      Top = 783
-      Width = 102
-      Height = 0
-      Margins.Left = 440
-      Margins.Top = 470
-      Margins.Right = 440
-      Margins.Bottom = 150
-      Align = alTop
-      Caption = 'Log-in'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = 40
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ImageAlignment = iaCenter
-      ParentFont = False
-      TabOrder = 2
-      OnClick = ALoginButtonClick
-      ExplicitTop = 727
-      ExplicitWidth = 100
     end
     object PanelEditCNPJ: TPanel
       Left = 1
-      Top = 257
+      Top = 320
       Width = 982
       Height = 56
       Align = alTop
       BevelOuter = bvNone
       Caption = '0'
       ShowCaption = False
-      TabOrder = 4
+      TabOrder = 2
+      ExplicitTop = 257
+      ExplicitWidth = 980
       object medtCNPJEdit: TMaskEdit
         AlignWithMargins = True
         Left = 270
@@ -609,6 +569,114 @@ object Form3: TForm3
         TabOrder = 0
         Text = '  .   .   /    '#8722'  '
         OnChange = medtCNPJEditChange
+      end
+    end
+    object PanelEditSenha: TPanel
+      Left = 1
+      Top = 376
+      Width = 982
+      Height = 40
+      Align = alTop
+      BevelOuter = bvNone
+      Caption = 'PanelSenha'
+      ShowCaption = False
+      TabOrder = 3
+      ExplicitTop = 313
+      ExplicitWidth = 980
+      object Label1: TLabel
+        AlignWithMargins = True
+        Left = 0
+        Top = 0
+        Width = 982
+        Height = 45
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Senha'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -33
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitWidth = 95
+      end
+    end
+    object Panel3: TPanel
+      AlignWithMargins = True
+      Left = 4
+      Top = 419
+      Width = 976
+      Height = 56
+      Margins.Bottom = 50
+      Align = alTop
+      BevelOuter = bvNone
+      Caption = 'PanelSenha'
+      ShowCaption = False
+      TabOrder = 4
+      ExplicitTop = 356
+      ExplicitWidth = 974
+      object EdtSenha: TEdit
+        AlignWithMargins = True
+        Left = 267
+        Top = 2
+        Width = 442
+        Height = 48
+        Margins.Left = 270
+        Margins.Top = 5
+        Margins.Right = 270
+        Alignment = taCenter
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = 40
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        PasswordChar = '*'
+        TabOrder = 0
+        TextHint = 'Senha'
+        OnChange = edtSenhaChange
+      end
+    end
+    object Panel2: TPanel
+      AlignWithMargins = True
+      Left = 1
+      Top = 525
+      Width = 982
+      Height = 41
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 150
+      Align = alTop
+      BevelOuter = bvNone
+      Caption = 'Panel2'
+      TabOrder = 5
+      ExplicitTop = 462
+      ExplicitWidth = 980
+      object ALoginButton: TButton
+        AlignWithMargins = True
+        Left = 454
+        Top = 7
+        Width = 72
+        Height = 32
+        Margins.Left = 450
+        Margins.Top = 0
+        Margins.Right = 450
+        Margins.Bottom = 0
+        Caption = 'Log-in'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = 30
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ImageAlignment = iaCenter
+        ParentFont = False
+        TabOrder = 0
+        OnClick = ALoginButtonClick
       end
     end
   end

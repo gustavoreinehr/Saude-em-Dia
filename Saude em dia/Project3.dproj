@@ -133,9 +133,6 @@
         <DCCReference Include="Saude_em_dia.pas">
             <Form>Form3</Form>
         </DCCReference>
-        <DCCReference Include="Tela_Cadastro.pas">
-            <Form>/  Tela_Principal in &apos;Tela_Principal.pas&apos; {Form4</Form>
-        </DCCReference>
         <DCCReference Include="Tela_Principal.pas">
             <ModuleName>TTela_Principal</ModuleName>
             <Form>TelaPrincipal</Form>
@@ -147,6 +144,9 @@
         <DCCReference Include="Tela_Lembrete.pas">
             <Form>Tela_Lembretes</Form>
             <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Tela_Cadastro.pas">
+            <Form>Tela_Cadastrp</Form>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
