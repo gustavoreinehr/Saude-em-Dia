@@ -3,9 +3,10 @@ unit Tela_Principal;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Imaging.pngimage, Tela_Cadastro;
+  Vcl.Imaging.pngimage, Tela_Cadastro, Cadastro_Medicamento,Tela_Lembrete;
 
 type
   TTelaPrincipal = class(TForm)
@@ -34,6 +35,8 @@ type
     A3: TButton;
     Panel2: TPanel;
     procedure A1Click(Sender: TObject);
+    procedure A3Click(Sender: TObject);
+    procedure A2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,17 +55,48 @@ uses
 
 procedure TTelaPrincipal.A1Click(Sender: TObject);
 begin
-Self.Hide;
-try
-   Tela_Cadastrp := TTela_Cadastrp.Create(nil);
-   try
-  Tela_Cadastrp.ShowModal;
-finally
-     FreeAndNil(Tela_Cadastrp);
-     end;
-     finally
-close;
+  Self.Hide;
+  try
+    Tela_Cadastrp := TTela_Cadastrp.Create(nil);
+    try
+      Tela_Cadastrp.ShowModal;
+    finally
+      FreeAndNil(Tela_Cadastrp);
+      Self.show
+    end;
+  finally
+  end;
 end;
+
+procedure TTelaPrincipal.A2Click(Sender: TObject);
+begin
+  Self.Hide;
+  try
+    Tela_Lembretes := TTela_Lembretes.Create(nil);
+    try
+      Tela_Lembretes.ShowModal;
+    finally
+      FreeAndNil(Tela_Lembretes);
+      Self.show
+    end;
+  finally
+  end;
+end;
+
+procedure TTelaPrincipal.A3Click(Sender: TObject);
+
+begin
+  Self.Hide;
+  try
+    FCadastro_Medicamento := TFCadastro_Medicamento.Create(nil);
+    try
+      FCadastro_Medicamento.ShowModal;
+    finally
+      FreeAndNil(FCadastro_Medicamento);
+      Self.show
+    end;
+  finally
+  end;
 end;
 
 end.
