@@ -137,7 +137,7 @@
             <ModuleName>TTela_Principal</ModuleName>
             <Form>TelaPrincipal</Form>
         </DCCReference>
-        <DCCReference Include="Castro_Meicamento.pas">
+        <DCCReference Include="Cadastro_Meicamento.pas">
             <Form>Form5</Form>
             <FormType>dfm</FormType>
         </DCCReference>

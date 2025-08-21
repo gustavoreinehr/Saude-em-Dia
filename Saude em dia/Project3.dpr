@@ -8,7 +8,7 @@ uses
   Vcl.Styles,
   Saude_em_dia in 'Saude_em_dia.pas' {Form3},
   TTela_Principal in 'Tela_Principal.pas' {TelaPrincipal},
-  Castro_Meicamento in 'Castro_Meicamento.pas' {Form5},
+  Cadastro_Meicamento in 'Cadastro_Meicamento.pas' {Form5},
   Tela_Lembrete in 'Tela_Lembrete.pas' {Tela_Lembretes},
   Tela_Cadastro in 'Tela_Cadastro.pas' {Tela_Cadastrp};
 
