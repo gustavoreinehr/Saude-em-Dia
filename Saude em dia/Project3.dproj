@@ -137,8 +137,13 @@
             <ModuleName>TTela_Principal</ModuleName>
             <Form>TelaPrincipal</Form>
         </DCCReference>
+<<<<<<< HEAD
         <DCCReference Include="Castro_Meicamento.pas">
             <Form>Cadastro_Medicamento</Form>
+=======
+        <DCCReference Include="Cadastro_Meicamento.pas">
+            <Form>Form5</Form>
+>>>>>>> 4495b01bed033a00e8132d0a097fb2fd42f965d4
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Tela_Lembrete.pas">
