@@ -4,8 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Data.DB, Vcl.Grids, Vcl.DBGrids;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls,Vcl.StdCtrls, Vcl.ExtCtrls,
+  Data.DB, Vcl.Grids, System.IniFiles, Vcl.DBGrids;
 
 type
   TForm5 = class(TForm)
@@ -39,8 +39,11 @@ type
     Label7: TLabel;
     Label9: TLabel;
     Label8: TLabel;
+    Label10: TLabel;
+    procedure Incluir_ButtonClick(Sender: TObject);
   private
-    { Private declarations }
+    Procedure Nome_Obrigatorio;
+    Procedure Quantidade_Obrigatorio;
   public
     { Public declarations }
   end;
@@ -51,5 +54,28 @@ var
 implementation
 
 {$R *.dfm}
+
+{ TForm5 }
+
+procedure TForm5.Incluir_ButtonClick(Sender: TObject);
+begin
+Nome_Obrigatorio;
+Quantidade_Obrigatorio;
+end;
+
+procedure TForm5.Nome_Obrigatorio;
+
+begin
+if Nome_Medicamento_Edit.text = '' then
+ShowMessage('O Campo Nome é Obrigatório');
+
+end;
+
+procedure TForm5.Quantidade_Obrigatorio;
+begin
+
+if Quantidade_Medicamento_Edit.text = '' then
+ShowMessage('O Campo Quantidade é Obrigatório');
+end;
 
 end.

@@ -1,4 +1,4 @@
-program Project3;
+  program Project3;
 
 
 
@@ -17,12 +17,11 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TTela_Cadastrp, Tela_Cadastrp);
-  TStyleManager.TrySetStyle('Iceberg Classico');
-  Application.CreateForm(TTela_Lembretes, Tela_Lembretes);
-  Application.CreateForm(TTela_Cadastrp, Tela_Cadastrp);
   Application.CreateForm(TTelaPrincipal, TelaPrincipal);
+  Application.CreateForm(TTela_Cadastrp, Tela_Cadastrp);
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(TTela_Lembretes, Tela_Lembretes);
+  TStyleManager.TrySetStyle('Iceberg Classico');
   Application.Run;
 end.
