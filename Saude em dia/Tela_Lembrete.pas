@@ -103,11 +103,11 @@ begin
   Tabela.Cells[3, 0] := 'Data';
   Tabela.Cells[4, 0] := 'Lembrete';
 
-  Tabela.ColWidths[0] := 150;
-  Tabela.ColWidths[1] := 120;
-  Tabela.ColWidths[2] := 80;
-  Tabela.ColWidths[3] := 100;
-  Tabela.ColWidths[4] := 250;
+  Tabela.ColWidths[0] := 300;
+  Tabela.ColWidths[1] := 300;
+  Tabela.ColWidths[2] := 120;
+  Tabela.ColWidths[3] := 200;
+  Tabela.ColWidths[4] := 300;
 
   Tabela.Options := Tabela.Options - [goEditing];
 end;
