@@ -27,8 +27,8 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TTela_Lembretes, Tela_Lembretes);
   Application.CreateForm(TTelaPrincipal, TelaPrincipal);
+  Application.CreateForm(TTela_Lembretes, Tela_Lembretes);
   Application.CreateForm(TTela_Cadastrp, Tela_Cadastrp);
   Application.CreateForm(TForm3, Form3);
   Application.CreateForm(TFCadastro_Medicamento, FCadastro_Medicamento);

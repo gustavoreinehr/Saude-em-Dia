@@ -1,7 +1,7 @@
 object FCadastro_Medicamento: TFCadastro_Medicamento
   Left = 0
   Top = 0
-  Caption = 'e'
+  Caption = 'Cadastro Medicamento'
   ClientHeight = 700
   ClientWidth = 1000
   Color = clBtnFace
@@ -10,6 +10,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
   TextHeight = 15
   object Painel_Principal: TPanel
     Left = 0
@@ -18,61 +19,111 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Height = 529
     Align = alTop
     TabOrder = 11
+    ExplicitLeft = 32
+    ExplicitTop = 1
     object Label1: TLabel
       Left = 16
       Top = 52
-      Width = 33
-      Height = 15
+      Width = 43
+      Height = 21
       Caption = 'Nome'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object Label2: TLabel
       Left = 16
       Top = 108
-      Width = 62
-      Height = 15
+      Width = 81
+      Height = 21
       Caption = 'Quantidade'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object Label3: TLabel
       Left = 16
       Top = 164
-      Width = 108
-      Height = 15
+      Width = 140
+      Height = 21
       Caption = 'Forma Farmaceutica'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object Label4: TLabel
       Left = 16
       Top = 220
-      Width = 44
-      Height = 15
+      Width = 59
+      Height = 21
       Caption = 'Validade'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object Label5: TLabel
       Left = 16
       Top = 275
-      Width = 55
-      Height = 15
+      Width = 71
+      Height = 21
       Caption = 'Fabricante'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object Label6: TLabel
-      Left = 354
-      Top = 275
-      Width = 23
-      Height = 15
-      Caption = 'Lote'
+      Left = 16
+      Top = 435
+      Width = 46
+      Height = 21
+      Caption = 'Buscar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object Label7: TLabel
       Left = 354
       Top = 219
-      Width = 68
-      Height = 15
+      Width = 88
+      Height = 21
       Caption = 'Classifica'#231#227'o'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object Label9: TLabel
       Left = 354
       Top = 164
-      Width = 112
-      Height = 15
+      Width = 147
+      Height = 21
       Caption = 'Via de Administra'#231#227'o'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object Label8: TLabel
       Left = 354
@@ -84,9 +135,28 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     object Label10: TLabel
       Left = 354
       Top = 108
-      Width = 103
-      Height = 15
+      Width = 135
+      Height = 21
       Caption = 'Unidade de Medida'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label11: TLabel
+      Left = 16
+      Top = 331
+      Width = 67
+      Height = 21
+      Caption = 'Descri'#231#227'o'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
     object Button1: TButton
       Left = 0
@@ -131,6 +201,20 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       ParentFont = False
       TabOrder = 2
     end
+    object Buscar_Button: TButton
+      Left = 648
+      Top = 457
+      Width = 75
+      Height = 25
+      Caption = 'Buscar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+    end
   end
   object AVoltar: TButton
     Left = 0
@@ -145,6 +229,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    OnClick = AVoltarClick
   end
   object Incluir_Button: TButton
     Left = 320
@@ -165,10 +250,10 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Left = 16
     Top = 73
     Width = 619
-    Height = 25
+    Height = 29
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -16
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -178,10 +263,10 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Left = 16
     Top = 129
     Width = 281
-    Height = 25
+    Height = 29
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -16
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -191,10 +276,10 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Left = 354
     Top = 129
     Width = 281
-    Height = 25
+    Height = 29
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -16
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -218,10 +303,10 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Left = 354
     Top = 185
     Width = 281
-    Height = 25
+    Height = 29
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -16
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -256,10 +341,10 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Left = 16
     Top = 185
     Width = 281
-    Height = 25
+    Height = 29
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -16
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -291,7 +376,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       'Elixir'
       'Emuls'#227'o'
       'Tintura'
-      'Enxaguante bucal'#11
+      'Enxaguante bucal'
       'Spray nasal'
       'Spray bucal'
       'Spray t'#243'pico'
@@ -322,12 +407,12 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Left = 16
     Top = 240
     Width = 281
-    Height = 25
+    Height = 29
     Date = 45883.000000000000000000
     Time = 0.910627071760245600
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -16
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -337,10 +422,10 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Left = 354
     Top = 240
     Width = 281
-    Height = 25
+    Height = 29
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -16
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -414,7 +499,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -12
+    Font.Height = -16
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -428,11 +513,11 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
   object Fabricante: TComboBox
     Left = 16
     Top = 296
-    Width = 281
-    Height = 25
+    Width = 619
+    Height = 29
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -16
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -451,14 +536,14 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       'Venda Sob Prescri'#231#227'o'
       'Venda Livre')
   end
-  object Lote_Edit: TEdit
-    Left = 354
-    Top = 296
-    Width = 281
-    Height = 25
+  object Edit_Buscar: TEdit
+    Left = 16
+    Top = 456
+    Width = 619
+    Height = 29
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -16
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
@@ -477,15 +562,16 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Font.Style = []
     ParentFont = False
     TabOrder = 16
+    OnClick = Button3Click
   end
-  object Edit1: TEdit
+  object Edit_Descricao: TEdit
     Left = 16
-    Top = 352
+    Top = 350
     Width = 619
-    Height = 25
+    Height = 29
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
+    Font.Height = -16
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
