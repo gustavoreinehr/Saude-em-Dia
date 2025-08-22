@@ -4,8 +4,8 @@ object Form3: TForm3
   Top = 0
   Anchors = []
   Caption = 'Form3'
-  ClientHeight = 661
-  ClientWidth = 984
+  ClientHeight = 705
+  ClientWidth = 1100
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,8 +19,8 @@ object Form3: TForm3
     AlignWithMargins = True
     Left = 0
     Top = 0
-    Width = 984
-    Height = 661
+    Width = 1100
+    Height = 705
     Margins.Left = 0
     Margins.Top = 0
     Margins.Right = 0
@@ -28,27 +28,25 @@ object Form3: TForm3
     Align = alClient
     ShowCaption = False
     TabOrder = 0
-    ExplicitWidth = 982
-    ExplicitHeight = 653
+    ExplicitWidth = 984
+    ExplicitHeight = 661
     object Panel1: TPanel
       AlignWithMargins = True
       Left = 4
       Top = 61
-      Width = 976
+      Width = 1092
       Height = 209
       Margins.Top = 60
       Align = alTop
       BevelOuter = bvNone
       Caption = 'Panel1'
       TabOrder = 1
-      ExplicitLeft = 1
-      ExplicitTop = 1
-      ExplicitWidth = 980
+      ExplicitWidth = 976
       object img1: TImage
         AlignWithMargins = True
         Left = 0
         Top = 40
-        Width = 976
+        Width = 1092
         Height = 169
         Margins.Left = 0
         Margins.Top = 40
@@ -499,7 +497,7 @@ object Form3: TForm3
       AlignWithMargins = True
       Left = 1
       Top = 273
-      Width = 982
+      Width = 1098
       Height = 47
       Margins.Left = 0
       Margins.Top = 0
@@ -510,13 +508,12 @@ object Form3: TForm3
       Caption = 'Painel_CNPJ'
       ShowCaption = False
       TabOrder = 0
-      ExplicitTop = 210
-      ExplicitWidth = 980
+      ExplicitWidth = 982
       object LabelCNPJ: TLabel
         AlignWithMargins = True
         Left = 0
         Top = 0
-        Width = 982
+        Width = 1098
         Height = 47
         Margins.Left = 0
         Margins.Top = 0
@@ -538,15 +535,14 @@ object Form3: TForm3
     object PanelEditCNPJ: TPanel
       Left = 1
       Top = 320
-      Width = 982
+      Width = 1098
       Height = 56
       Align = alTop
       BevelOuter = bvNone
       Caption = '0'
       ShowCaption = False
       TabOrder = 2
-      ExplicitTop = 257
-      ExplicitWidth = 980
+      ExplicitWidth = 982
       object medtCNPJEdit: TMaskEdit
         AlignWithMargins = True
         Left = 270
@@ -574,20 +570,19 @@ object Form3: TForm3
     object PanelEditSenha: TPanel
       Left = 1
       Top = 376
-      Width = 982
+      Width = 1098
       Height = 40
       Align = alTop
       BevelOuter = bvNone
       Caption = 'PanelSenha'
       ShowCaption = False
       TabOrder = 3
-      ExplicitTop = 313
-      ExplicitWidth = 980
+      ExplicitWidth = 982
       object Label1: TLabel
         AlignWithMargins = True
         Left = 0
         Top = 0
-        Width = 982
+        Width = 1098
         Height = 45
         Margins.Left = 0
         Margins.Top = 0
@@ -609,7 +604,7 @@ object Form3: TForm3
       AlignWithMargins = True
       Left = 4
       Top = 419
-      Width = 976
+      Width = 1092
       Height = 56
       Margins.Bottom = 50
       Align = alTop
@@ -617,8 +612,7 @@ object Form3: TForm3
       Caption = 'PanelSenha'
       ShowCaption = False
       TabOrder = 4
-      ExplicitTop = 356
-      ExplicitWidth = 974
+      ExplicitWidth = 976
       object EdtSenha: TEdit
         AlignWithMargins = True
         Left = 267
@@ -645,7 +639,7 @@ object Form3: TForm3
       AlignWithMargins = True
       Left = 1
       Top = 525
-      Width = 982
+      Width = 1098
       Height = 41
       Margins.Left = 0
       Margins.Top = 0
@@ -655,8 +649,7 @@ object Form3: TForm3
       BevelOuter = bvNone
       Caption = 'Panel2'
       TabOrder = 5
-      ExplicitTop = 462
-      ExplicitWidth = 980
+      ExplicitWidth = 982
       object ALoginButton: TButton
         AlignWithMargins = True
         Left = 454

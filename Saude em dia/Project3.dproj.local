@@ -6,5 +6,15 @@
     <Transaction>2025/08/21 20:07:25.000.021,=C:\Users\rafae\OneDrive\Área de Trabalho\saude em dia\Saude-em-Dia\Saude em dia\Tela_Lembrete.pas</Transaction>
     <Transaction>2025/08/21 20:08:05.000.703,C:\Users\rafae\OneDrive\Área de Trabalho\saude em dia\Saude-em-Dia\Saude em dia\Cadastro_Medicamento.dfm=C:\Users\rafae\OneDrive\Área de Trabalho\saude em dia\Saude-em-Dia\Saude em dia\Cadastro_Meicamento.dfm</Transaction>
     <Transaction>2025/08/21 20:08:05.000.703,C:\Users\rafae\OneDrive\Área de Trabalho\saude em dia\Saude-em-Dia\Saude em dia\Cadastro_Medicamento.pas=C:\Users\rafae\OneDrive\Área de Trabalho\saude em dia\Saude-em-Dia\Saude em dia\Cadastro_Meicamento.pas</Transaction>
-  </Transactions>
+  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Cadastro_Medicamento.pas"/>
+    <File Path="Cadastro_Medicamento.dfm"/>
+    <File Path="Saude_em_dia.pas"/>
+    <File Path="Saude_em_dia.dfm"/>
+    <File Path="Tela_Cadastro.pas"/>
+    <File Path="Tela_Cadastro.dfm"/>
+    <File Path="Tela_Lembrete.pas"/>
+    <File Path="Tela_Lembrete.dfm"/>
+    <File Path="Tela_Principal.pas"/>
+  </ProjectSortOrder>
 </BorlandProject>

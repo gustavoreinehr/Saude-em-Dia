@@ -2,8 +2,8 @@ object Tela_Lembretes: TTela_Lembretes
   Left = 0
   Top = 0
   Caption = 'Tela_Lembretes'
-  ClientHeight = 661
-  ClientWidth = 984
+  ClientHeight = 705
+  ClientWidth = 1100
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,11 +17,11 @@ object Tela_Lembretes: TTela_Lembretes
   object BarraInferior: TPanel
     Left = 0
     Top = 0
-    Width = 984
+    Width = 1100
     Height = 100
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 982
+    ExplicitWidth = 984
     object BotaoEditar: TButton
       Left = 100
       Top = 25
@@ -86,12 +86,12 @@ object Tela_Lembretes: TTela_Lembretes
   object PainelBotoes: TPanel
     Left = 0
     Top = 100
-    Width = 984
-    Height = 561
+    Width = 1100
+    Height = 605
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 982
-    ExplicitHeight = 553
+    ExplicitWidth = 984
+    ExplicitHeight = 561
     object DataInicio: TLabel
       Left = 352
       Top = 145

@@ -2,8 +2,8 @@ object TelaPrincipal: TTelaPrincipal
   Left = 0
   Top = 0
   Caption = 'TelaPrincipal'
-  ClientHeight = 706
-  ClientWidth = 1094
+  ClientHeight = 705
+  ClientWidth = 1100
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,7 +14,7 @@ object TelaPrincipal: TTelaPrincipal
   object Panel_Cabecalho: TPanel
     Left = 0
     Top = 0
-    Width = 1094
+    Width = 1100
     Height = 73
     Align = alTop
     BevelOuter = bvNone
@@ -23,7 +23,7 @@ object TelaPrincipal: TTelaPrincipal
     ShowCaption = False
     TabOrder = 0
     StyleName = 'Windows'
-    ExplicitWidth = 1092
+    ExplicitWidth = 1094
     object Label1: TLabel
       AlignWithMargins = True
       Left = 3
@@ -81,20 +81,20 @@ object TelaPrincipal: TTelaPrincipal
   object Panel_Principal: TPanel
     Left = 0
     Top = 73
-    Width = 1094
-    Height = 625
+    Width = 1100
+    Height = 624
     Align = alTop
     Anchors = [akLeft, akTop, akRight, akBottom]
     Caption = 'Panel_Principal'
     ShowCaption = False
     TabOrder = 1
-    ExplicitWidth = 1092
-    ExplicitHeight = 617
+    ExplicitWidth = 1094
+    ExplicitHeight = 625
     object Label4: TLabel
       AlignWithMargins = True
       Left = 151
       Top = 31
-      Width = 792
+      Width = 798
       Height = 48
       Margins.Left = 150
       Margins.Top = 30
@@ -116,7 +116,7 @@ object TelaPrincipal: TTelaPrincipal
       AlignWithMargins = True
       Left = 11
       Top = 79
-      Width = 1072
+      Width = 1078
       Height = 56
       Margins.Left = 10
       Margins.Top = 0
@@ -139,20 +139,20 @@ object TelaPrincipal: TTelaPrincipal
     object Panel_Menu: TPanel
       Left = 1
       Top = 135
-      Width = 1092
+      Width = 1098
       Height = 490
       Align = alTop
       BevelOuter = bvNone
       Caption = 'Panel_Menu'
       ShowCaption = False
       TabOrder = 0
-      ExplicitWidth = 1090
+      ExplicitWidth = 1092
       DesignSize = (
-        1092
+        1098
         490)
       object Panel2: TPanel
         AlignWithMargins = True
-        Left = 3
+        Left = 6
         Top = 20
         Width = 1086
         Height = 409
@@ -163,7 +163,7 @@ object TelaPrincipal: TTelaPrincipal
         Caption = 'Panel2'
         ShowCaption = False
         TabOrder = 0
-        ExplicitLeft = 2
+        ExplicitLeft = 3
         object PanelCadastro_Medicamentos: TPanel
           AlignWithMargins = True
           Left = 773

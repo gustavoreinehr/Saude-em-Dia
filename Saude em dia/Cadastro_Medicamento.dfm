@@ -2,8 +2,8 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
   Left = 0
   Top = 0
   Caption = 'Cadastro Medicamento'
-  ClientHeight = 700
-  ClientWidth = 1000
+  ClientHeight = 705
+  ClientWidth = 1100
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,12 +15,11 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
   object Painel_Principal: TPanel
     Left = 0
     Top = 0
-    Width = 1000
+    Width = 1100
     Height = 529
     Align = alTop
     TabOrder = 11
-    ExplicitLeft = 32
-    ExplicitTop = 1
+    ExplicitWidth = 1000
     object Label1: TLabel
       Left = 16
       Top = 52
@@ -475,8 +474,8 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
   object Grid_Cadastrados: TDBGrid
     Left = 0
     Top = 529
-    Width = 1000
-    Height = 171
+    Width = 1100
+    Height = 176
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -494,8 +493,8 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
   object DBGrid1: TDBGrid
     Left = 0
     Top = 529
-    Width = 1000
-    Height = 171
+    Width = 1100
+    Height = 176
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
