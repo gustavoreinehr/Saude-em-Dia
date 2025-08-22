@@ -90,67 +90,69 @@ object Tela_Lembretes: TTela_Lembretes
     Height = 561
     Align = alClient
     TabOrder = 1
+    ExplicitWidth = 982
+    ExplicitHeight = 553
     object DataInicio: TLabel
       Left = 352
-      Top = 136
-      Width = 158
-      Height = 35
+      Top = 145
+      Width = 97
+      Height = 21
       Caption = 'Data de inicio:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -25
+      Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
     end
     object Label1: TLabel
       Left = 352
-      Top = 22
-      Width = 302
-      Height = 35
+      Top = 42
+      Width = 185
+      Height = 21
       Caption = 'Periodicidade da dosagem:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -25
+      Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
     end
     object Label2: TLabel
       Left = 100
-      Top = 136
-      Width = 191
-      Height = 35
+      Top = 155
+      Width = 118
+      Height = 21
       Caption = 'Horario de inicio:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -25
+      Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
     end
     object Label3: TLabel
       Left = 728
-      Top = 22
-      Width = 110
-      Height = 35
+      Top = 41
+      Width = 69
+      Height = 21
       Caption = 'Lembrete:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -25
+      Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
     end
     object NomePaciente: TLabel
       Left = 100
-      Top = 29
-      Width = 173
-      Height = 35
+      Top = 43
+      Width = 107
+      Height = 21
       Caption = 'Nome Paciente:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -25
+      Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
@@ -184,7 +186,13 @@ object Tela_Lembretes: TTela_Lembretes
       Left = 352
       Top = 63
       Width = 150
-      Height = 23
+      Height = 29
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 1
     end
     object Horario: TTimePicker
@@ -205,8 +213,14 @@ object Tela_Lembretes: TTela_Lembretes
       Top = 63
       Width = 249
       Height = 146
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Lines.Strings = (
         'Lembrete')
+      ParentFont = False
       ScrollBars = ssVertical
       TabOrder = 3
       StyleName = 'Windows'
@@ -215,7 +229,13 @@ object Tela_Lembretes: TTela_Lembretes
       Left = 100
       Top = 63
       Width = 189
-      Height = 23
+      Height = 29
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 4
     end
     object Tabela: TStringGrid
