@@ -237,10 +237,11 @@ object Tela_Lembretes: TTela_Lembretes
     end
     object Tabela: TStringGrid
       Left = 1
-      Top = 283
+      Top = 272
       Width = 1098
-      Height = 321
+      Height = 332
       Align = alBottom
+      Anchors = [akLeft, akTop, akRight, akBottom]
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -249,9 +250,6 @@ object Tela_Lembretes: TTela_Lembretes
       ParentFont = False
       TabOrder = 5
       OnSelectCell = TabelaSelectCell
-      ExplicitLeft = 0
-      ExplicitTop = 240
-      ExplicitWidth = 984
     end
   end
 end
