@@ -113,7 +113,7 @@ procedure TFCadastro_Medicamento.Nome_Obrigatorio;
 begin
   if Nome_Medicamento_Edit.text = '' then
     ShowMessage('O Campo Nome é Obrigatório');
-
+    Nome_Medicamento_Edit.SetFocus;
 end;
 
 procedure TFCadastro_Medicamento.Quantidade_Obrigatorio;
@@ -124,19 +124,21 @@ begin
     ShowMessage('O Campo Quantidade é Obrigatório')
   else if not TryStrToInt(Quantidade_Medicamento_Edit.text, DummyInt) then
     ShowMessage('O Campo Quantidade Deve Ser Numérico');
-
+    Quantidade_Medicamento_Edit.SetFocus;
 end;
 
 procedure TFCadastro_Medicamento.Unidade_Obrigatorio;
 begin
   if Unidade_Medida_Comb.text = '' then
-    ShowMessage('O Campo Unidade de Medida é Obrigatório')
+    ShowMessage('O Campo Unidade de Medida é Obrigatório');
+    Unidade_Medida_Comb.SetFocus;
 end;
 
 procedure TFCadastro_Medicamento.Validade_Obrigatorio;
 begin
   if (Validade_Time.Date <= Date) then
-    ShowMessage('Data de validade inválida!')
+    ShowMessage('Data de validade inválida!');
+    Validade_Time.SetFocus;
 end;
 
 end.

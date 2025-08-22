@@ -21,16 +21,15 @@ object Tela_Lembretes: TTela_Lembretes
     Height = 100
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 984
     object BotaoEditar: TButton
-      Left = 100
-      Top = 25
-      Width = 150
-      Height = 50
-      Caption = 'Editar'
+      Left = 68
+      Top = 7
+      Width = 118
+      Height = 40
+      Caption = 'Salvar'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -25
+      Font.Height = -20
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
@@ -38,14 +37,14 @@ object Tela_Lembretes: TTela_Lembretes
       OnClick = BotaoEditarClick
     end
     object BotaoExcluir: TButton
-      Left = 300
-      Top = 25
-      Width = 150
-      Height = 50
+      Left = 192
+      Top = 7
+      Width = 118
+      Height = 40
       Caption = 'Excluir'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -25
+      Font.Height = -20
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
@@ -53,14 +52,14 @@ object Tela_Lembretes: TTela_Lembretes
       OnClick = BotaoExcluirClick
     end
     object BotaoIncluir: TButton
-      Left = 500
-      Top = 25
-      Width = 150
-      Height = 50
+      Left = 316
+      Top = 7
+      Width = 118
+      Height = 40
       Caption = 'Incluir'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -25
+      Font.Height = -20
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
@@ -90,11 +89,9 @@ object Tela_Lembretes: TTela_Lembretes
     Height = 605
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 984
-    ExplicitHeight = 561
     object DataInicio: TLabel
       Left = 352
-      Top = 145
+      Top = 155
       Width = 97
       Height = 21
       Caption = 'Data de inicio:'
@@ -159,9 +156,9 @@ object Tela_Lembretes: TTela_Lembretes
     end
     object Calendario: TCalendarPicker
       Left = 352
-      Top = 167
+      Top = 177
       Width = 189
-      Height = 42
+      Height = 32
       CalendarHeaderInfo.DaysOfWeekFont.Charset = DEFAULT_CHARSET
       CalendarHeaderInfo.DaysOfWeekFont.Color = clWindowText
       CalendarHeaderInfo.DaysOfWeekFont.Height = -17
@@ -175,7 +172,7 @@ object Tela_Lembretes: TTela_Lembretes
       Color = clWindow
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clGray
-      Font.Height = -20
+      Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
@@ -185,7 +182,7 @@ object Tela_Lembretes: TTela_Lembretes
     object Dosagem: TComboBox
       Left = 352
       Top = 63
-      Width = 150
+      Width = 185
       Height = 29
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -201,7 +198,7 @@ object Tela_Lembretes: TTela_Lembretes
       Width = 189
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -20
+      Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
       TabOrder = 2
@@ -239,12 +236,22 @@ object Tela_Lembretes: TTela_Lembretes
       TabOrder = 4
     end
     object Tabela: TStringGrid
-      Left = 0
-      Top = 240
-      Width = 984
+      Left = 1
+      Top = 283
+      Width = 1098
       Height = 321
+      Align = alBottom
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 5
       OnSelectCell = TabelaSelectCell
+      ExplicitLeft = 0
+      ExplicitTop = 240
+      ExplicitWidth = 984
     end
   end
 end
