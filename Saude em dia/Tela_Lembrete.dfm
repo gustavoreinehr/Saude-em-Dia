@@ -90,6 +90,8 @@ object Tela_Lembretes: TTela_Lembretes
     Height = 561
     Align = alClient
     TabOrder = 1
+    ExplicitWidth = 982
+    ExplicitHeight = 553
     object DataInicio: TLabel
       Left = 352
       Top = 136
@@ -184,7 +186,13 @@ object Tela_Lembretes: TTela_Lembretes
       Left = 352
       Top = 63
       Width = 150
-      Height = 23
+      Height = 36
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 1
     end
     object Horario: TTimePicker
@@ -205,8 +213,14 @@ object Tela_Lembretes: TTela_Lembretes
       Top = 63
       Width = 249
       Height = 146
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Lines.Strings = (
         'Lembrete')
+      ParentFont = False
       ScrollBars = ssVertical
       TabOrder = 3
       StyleName = 'Windows'
@@ -215,7 +229,13 @@ object Tela_Lembretes: TTela_Lembretes
       Left = 100
       Top = 63
       Width = 189
-      Height = 23
+      Height = 36
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 4
     end
     object Tabela: TStringGrid
@@ -223,6 +243,12 @@ object Tela_Lembretes: TTela_Lembretes
       Top = 240
       Width = 984
       Height = 321
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 5
       OnSelectCell = TabelaSelectCell
     end
