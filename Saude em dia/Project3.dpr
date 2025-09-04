@@ -10,7 +10,8 @@ uses
   TTela_Principal in 'Tela_Principal.pas' {TelaPrincipal},
   Cadastro_Medicamento in 'Cadastro_Medicamento.pas' {FCadastro_Medicamento},
   Tela_Cadastro in 'Tela_Cadastro.pas' {Tela_Cadastrp},
-  Tela_Lembrete in 'Tela_Lembrete.pas' {Tela_Lembretes};
+  Tela_Lembrete in 'Tela_Lembrete.pas' {Tela_Lembretes},
+  DataModulePrincipal in 'DataModulePrincipal.pas' {DmPrincipal: TDataModule};
 
 (*uses
   Vcl.Forms,
@@ -34,6 +35,7 @@ begin
   Application.CreateForm(TFCadastro_Medicamento, FCadastro_Medicamento);
   Application.CreateForm(TTela_Cadastrp, Tela_Cadastrp);
   Application.CreateForm(TTela_Lembretes, Tela_Lembretes);
+  Application.CreateForm(TDmPrincipal, DmPrincipal);
   TStyleManager.TrySetStyle('Iceberg Classico');
   Application.Run;
 end.
