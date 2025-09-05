@@ -38,6 +38,8 @@ begin
   Application.CreateForm(TTela_Lembretes, Tela_Lembretes);
   Application.CreateForm(TDmPrincipal, DmPrincipal);
   Application.CreateForm(TDMCadastroPessoa, DMCadastroPessoa);
+  Application.CreateForm(TDMCadastroPessoa, DMCadastroPessoa);
+  Application.CreateForm(TDMCadastroPessoa, DMCadastroPessoa);
   TStyleManager.TrySetStyle('Iceberg Classico');
   Application.Run;
 end.
