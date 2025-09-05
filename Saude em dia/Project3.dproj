@@ -154,8 +154,8 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="DataModuleCadastroPessoas.pas">
-            <Form>DMCadastroPessoa</Form>
+        <DCCReference Include="DataModuleMeticamento.pas">
+            <Form>DMMedicamento</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
