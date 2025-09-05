@@ -11,7 +11,8 @@ uses
   Cadastro_Medicamento in 'Cadastro_Medicamento.pas' {FCadastro_Medicamento},
   Tela_Cadastro in 'Tela_Cadastro.pas' {Tela_Cadastrp},
   Tela_Lembrete in 'Tela_Lembrete.pas' {Tela_Lembretes},
-  DataModulePrincipal in 'DataModulePrincipal.pas' {DmPrincipal: TDataModule};
+  DataModulePrincipal in 'DataModulePrincipal.pas' {DmPrincipal: TDataModule},
+  DataModuleCadastroPessoas in 'DataModuleCadastroPessoas.pas' {DMCadastroPessoa: TDataModule};
 
 (*uses
   Vcl.Forms,
@@ -36,6 +37,7 @@ begin
   Application.CreateForm(TTela_Cadastrp, Tela_Cadastrp);
   Application.CreateForm(TTela_Lembretes, Tela_Lembretes);
   Application.CreateForm(TDmPrincipal, DmPrincipal);
+  Application.CreateForm(TDMCadastroPessoa, DMCadastroPessoa);
   TStyleManager.TrySetStyle('Iceberg Classico');
   Application.Run;
 end.
