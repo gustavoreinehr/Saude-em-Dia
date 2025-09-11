@@ -21,6 +21,7 @@ object Tela_Lembretes: TTela_Lembretes
     Height = 100
     Align = alTop
     TabOrder = 0
+    ExplicitTop = -6
     object BotaoEditar: TButton
       Left = 68
       Top = 7
@@ -89,6 +90,8 @@ object Tela_Lembretes: TTela_Lembretes
     Height = 605
     Align = alClient
     TabOrder = 1
+    ExplicitWidth = 1098
+    ExplicitHeight = 597
     object DataInicio: TLabel
       Left = 352
       Top = 155
@@ -179,9 +182,22 @@ object Tela_Lembretes: TTela_Lembretes
       TabOrder = 0
       TextHint = 'Selecione a Data'
     end
-    object Dosagem: TComboBox
+    object Horario: TTimePicker
+      Left = 100
+      Top = 182
+      Width = 189
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      TabOrder = 1
+      Time = 45890.799382546300000000
+      TimeFormat = 'hh:nn'
+    end
+    object Dosagem: TDBComboBox
       Left = 352
-      Top = 63
+      Top = 69
       Width = 185
       Height = 29
       Font.Charset = DEFAULT_CHARSET
@@ -190,66 +206,65 @@ object Tela_Lembretes: TTela_Lembretes
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 1
-    end
-    object Horario: TTimePicker
-      Left = 100
-      Top = 177
-      Width = 189
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
       TabOrder = 2
-      Time = 45890.799382546300000000
-      TimeFormat = 'hh:nn'
     end
-    object Lembrete: TMemo
+    object Lembrete: TDBMemo
       Left = 728
-      Top = 63
+      Top = 70
       Width = 249
       Height = 146
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      Lines.Strings = (
-        'Lembrete')
-      ParentFont = False
-      ScrollBars = ssVertical
       TabOrder = 3
-      StyleName = 'Windows'
     end
-    object Edit1: TEdit
-      Left = 100
-      Top = 63
-      Width = 189
-      Height = 29
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 4
-    end
-    object Tabela: TStringGrid
+    object Tabela: TDBGrid
       Left = 1
       Top = 272
-      Width = 1098
-      Height = 332
-      Align = alBottom
-      Anchors = [akLeft, akTop, akRight, akBottom]
+      Width = 1099
+      Height = 329
+      DataSource = DSLembrete
+      TabOrder = 4
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -12
+      TitleFont.Name = 'Segoe UI'
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'DATA_E_HORA'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DOSAGEM'
+          Width = 202
+          Visible = True
+        end>
+    end
+    object Nome_Paciente: TDBLookupComboBox
+      Left = 100
+      Top = 70
+      Width = 185
+      Height = 29
+      DataField = 'NOME'
+      DataSource = DSPessoa
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
+      ListSource = DSPessoa
       ParentFont = False
       TabOrder = 5
-      OnSelectCell = TabelaSelectCell
     end
+  end
+  object DSLembrete: TDataSource
+    DataSet = DataModuleLembrete.QryLembretes
+    Left = 992
+    Top = 24
+  end
+  object DSPessoa: TDataSource
+    DataSet = DataModuleLembrete.QryPessoas
+    Left = 888
+    Top = 24
   end
 end
