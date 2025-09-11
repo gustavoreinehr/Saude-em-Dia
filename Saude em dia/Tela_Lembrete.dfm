@@ -258,12 +258,10 @@ object Tela_Lembretes: TTela_Lembretes
     end
   end
   object DSLembrete: TDataSource
-    DataSet = DataModuleLembrete.QryLembretes
     Left = 992
     Top = 24
   end
   object DSPessoa: TDataSource
-    DataSet = DataModuleLembrete.QryPessoas
     Left = 888
     Top = 24
   end

@@ -23,8 +23,7 @@ type
     PanelInferior: TPanel;
     DBGrid1: TDBGrid;
     AVoltar: TButton;
-    Label1: TLabel;
-    Edit1: TEdit;
+    LblPesquisa: TLabel;
     edtNome_Completo1: TDBEdit;
     ComboBoxTipo_Pessoa: TDBComboBox;
     medtcpf: TDBEdit;
@@ -46,6 +45,7 @@ type
 var
   Tela_Cadastrp: TTela_Cadastrp;
   GQtdLetrasEditNome: Integer;
+  GTDMCadastroPessoa: TDMCadastroPessoa;
 
 implementation
 
@@ -60,7 +60,6 @@ procedure TTela_Cadastrp.ButtonIncluirClick(Sender: TObject);
 var
   LCpfFormatado: string;
 begin
-
   LCpfFormatado := StringReplace(medtcpf.Text, '.', '', [rfReplaceAll]);
   LCpfFormatado := StringReplace(LCpfFormatado, '-', '', [rfReplaceAll]);
 
@@ -85,6 +84,13 @@ begin
     medttelefone.SetFocus;
   end;
 
+  if (Length(edtNome_Completo1.Text) >= 10) and
+    (ComboBoxTipo_Pessoa.ItemIndex = 1) or (ComboBoxTipo_Pessoa.ItemIndex = 2) and (Length(LCpfFormatado) = 11) and
+    (Length(medttelefone.Text) = 14) then
+  begin
+    GTDMCadastroPessoa.QueryDadosPessoa.Append;
+  end;
+
 end;
 
 procedure TTela_Cadastrp.ButtonLimparClick(Sender: TObject);
@@ -96,11 +102,10 @@ begin
 end;
 
 procedure TTela_Cadastrp.FormShow(Sender: TObject);
-Var
-  LTDMCadastroPessoa : TDMCadastroPessoa;
 begin
   try
-    LTDMCadastroPessoa := TDMCadastroPessoa.Create(self);
+    GTDMCadastroPessoa := TDMCadastroPessoa.Create(Self);
+    GTDMCadastroPessoa.BuscarDadosPessoas;
   finally
 
   end;
