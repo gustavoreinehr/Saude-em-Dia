@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.WinXPickers, Vcl.WinXCalendars, Vcl.Grids, System.Math;
+  Vcl.WinXPickers, Vcl.WinXCalendars, Vcl.Grids, System.Math, Vcl.Mask,
+  Vcl.DBCtrls, Data.DB, Vcl.DBGrids, DataModuleLembretes;
 
 type
   TTela_Lembretes = class(TForm)
@@ -20,12 +21,14 @@ type
     Label2: TLabel;
     Label3: TLabel;
     Calendario: TCalendarPicker;
-    Horario: TTimePicker;
-    Edit1: TEdit;         // Nome do paciente
+    Horario: TTimePicker;         // Nome do paciente
     NomePaciente: TLabel;
-    Dosagem: TComboBox;
-    Lembrete: TMemo;
-    Tabela: TStringGrid;
+    Dosagem: TDBComboBox;
+    Lembrete: TDBMemo;
+    Tabela: TDBGrid;
+    DSLembrete: TDataSource;
+    Nome_Paciente: TDBLookupComboBox;
+    DSPessoa: TDataSource;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure AVoltarClick(Sender: TObject);
