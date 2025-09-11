@@ -36,7 +36,6 @@ type
     Label11: TLabel;
     Nome_Medicamento_Edit: TDBEdit;
     Unidade_Medida_Comb: TDBComboBox;
-    DBCheckBox1: TDBCheckBox;
     Forma_Farmaceutica_Comb: TDBComboBox;
     Via_Adm_Comb: TDBComboBox;
     Classificacao_Comb: TDBComboBox;
@@ -49,6 +48,8 @@ type
     procedure Button3Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Editar_ButtonClick(Sender: TObject);
+    procedure Excluir_ButtonClick(Sender: TObject);
   private
     Procedure Nome_Obrigatorio;
     Procedure Quantidade_Obrigatorio;
@@ -94,6 +95,20 @@ begin
 
 end;
 
+procedure TFCadastro_Medicamento.Editar_ButtonClick(Sender: TObject);
+begin
+
+  if (DMMedicamentos.FDQRYBuscarMedicamntos.State in [dsEdit, dsInsert]) and (Nome_Medicamento_Edit.Text <> '' ) and (Quantidade_Medicamento_Edit.Text <> '' ) and (Unidade_Medida_Comb.Text <> '' ) and (Validade_Time.Date <= Date) and (Classificacao_Comb.Text <> '' ) then
+    DMMedicamentos.FDQRYBuscarMedicamntos.Post;
+
+  DMMedicamentos.FDQRYBuscarMedicamntos.ApplyUpdates;
+end;
+
+procedure TFCadastro_Medicamento.Excluir_ButtonClick(Sender: TObject);
+begin
+DMMedicamentos.FDQRYBuscarMedicamntos.Delete;
+end;
+
 procedure TFCadastro_Medicamento.FormCreate(Sender: TObject);
 begin
   Validade_Time.Date := Date;
@@ -113,11 +128,19 @@ end;
 
 procedure TFCadastro_Medicamento.Incluir_ButtonClick(Sender: TObject);
 begin
-  Nome_Obrigatorio;
-  Quantidade_Obrigatorio;
-  Unidade_Obrigatorio;
-  Validade_Obrigatorio;
-  Class_Obrigatorio;
+ if (Nome_Medicamento_Edit.Text <> '' ) and (Quantidade_Medicamento_Edit.Text <> '' ) and (Unidade_Medida_Comb.Text <> '' ) and (Validade_Time.Date <= Date) and (Classificacao_Comb.Text <> '' ) then
+  DMMedicamentos.FDQRYBuscarMedicamntos.Append
+  else if Nome_Medicamento_Edit.Text = '' then
+   Nome_Obrigatorio
+  else if Quantidade_Medicamento_Edit.Text = '' then
+   Quantidade_Obrigatorio
+  else if Unidade_Medida_Comb.Text = '' then
+   Unidade_Obrigatorio
+  else if Validade_Time.Date <= Date then
+   Validade_Obrigatorio
+  else if Classificacao_Comb.Text = '' then
+   Class_Obrigatorio;
+
 end;
 
 procedure TFCadastro_Medicamento.Nome_Obrigatorio;

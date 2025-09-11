@@ -20,7 +20,6 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Height = 425
     Align = alTop
     TabOrder = 5
-    ExplicitWidth = 1098
     object Label1: TLabel
       Left = 16
       Top = 52
@@ -213,20 +212,6 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       ParentFont = False
       TabOrder = 4
     end
-    object DBCheckBox1: TDBCheckBox
-      Left = 696
-      Top = 85
-      Width = 209
-      Height = 17
-      Caption = 'Medicamento Gen'#233'rico'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 5
-    end
     object Forma_Farmaceutica_Comb: TDBComboBox
       Left = 16
       Top = 185
@@ -238,7 +223,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 6
+      TabOrder = 5
     end
     object Via_Adm_Comb: TDBComboBox
       Left = 354
@@ -251,7 +236,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 7
+      TabOrder = 6
     end
     object Classificacao_Comb: TDBComboBox
       Left = 354
@@ -264,7 +249,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 8
+      TabOrder = 7
     end
     object Edit_Descricao: TDBEdit
       Left = 16
@@ -277,7 +262,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 9
+      TabOrder = 8
     end
     object Quantidade_Medicamento_Edit: TDBEdit
       Left = 16
@@ -290,7 +275,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 10
+      TabOrder = 9
     end
     object Edit_Buscar: TDBLookupListBox
       Left = 651
@@ -305,7 +290,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 11
+      TabOrder = 10
     end
   end
   object AVoltar: TButton
@@ -366,6 +351,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Font.Style = []
     ParentFont = False
     TabOrder = 3
+    OnClick = Editar_ButtonClick
   end
   object Excluir_Button: TButton
     Left = 200
@@ -380,6 +366,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Font.Style = []
     ParentFont = False
     TabOrder = 4
+    OnClick = Excluir_ButtonClick
   end
   object Grid_Cadastrados: TDBGrid
     Left = 0
