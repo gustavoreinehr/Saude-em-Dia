@@ -11,7 +11,9 @@ uses
   Cadastro_Medicamento in 'Cadastro_Medicamento.pas' {FCadastro_Medicamento},
   Tela_Cadastro in 'Tela_Cadastro.pas' {Tela_Cadastrp},
   Tela_Lembrete in 'Tela_Lembrete.pas' {Tela_Lembretes},
-  DataModulePrincipal in 'DataModulePrincipal.pas' {DmPrincipal: TDataModule};
+  DataModulePrincipal in 'DataModulePrincipal.pas' {DmPrincipal: TDataModule},
+  DataModuleMeticamento in 'DataModuleMeticamento.pas' {DMMedicamento: TDataModule},
+  DataModuleCadastroPessoas in 'DataModuleCadastroPessoas.pas' {DMCadastroPessoa: TDataModule};
 
 (*uses
   Vcl.Forms,

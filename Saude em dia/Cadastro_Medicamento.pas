@@ -7,19 +7,14 @@ uses
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls,
   Vcl.ExtCtrls,
-  Data.DB, Vcl.Grids, System.IniFiles, Vcl.DBGrids;
+  Data.DB, Vcl.Grids, System.IniFiles, Vcl.DBGrids, Vcl.Mask, Vcl.DBCtrls,
+  DataModuleMeticamento;
 
 type
   TFCadastro_Medicamento = class(TForm)
     AVoltar: TButton;
     Incluir_Button: TButton;
-    Nome_Medicamento_Edit: TEdit;
-    Quantidade_Medicamento_Edit: TEdit;
-    Unidade_Medida_Comb: TComboBox;
-    Via_Adm_Comb: TComboBox;
-    Forma_Farmaceutica_Comb: TComboBox;
     Validade_Time: TDateTimePicker;
-    Classificacao_Comb: TComboBox;
     Editar_Button: TButton;
     Excluir_Button: TButton;
     Painel_Principal: TPanel;
@@ -27,16 +22,11 @@ type
     Button2: TButton;
     Grid_Cadastrados: TDBGrid;
     DBGrid1: TDBGrid;
-    Fabricante: TComboBox;
-    Edit_Buscar: TEdit;
     Button3: TButton;
-    CheckBox1: TCheckBox;
-    Edit_Descricao: TEdit;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
     Label9: TLabel;
@@ -44,10 +34,21 @@ type
     Label10: TLabel;
     Buscar_Button: TButton;
     Label11: TLabel;
+    Nome_Medicamento_Edit: TDBEdit;
+    Unidade_Medida_Comb: TDBComboBox;
+    DBCheckBox1: TDBCheckBox;
+    Forma_Farmaceutica_Comb: TDBComboBox;
+    Via_Adm_Comb: TDBComboBox;
+    Classificacao_Comb: TDBComboBox;
+    Edit_Descricao: TDBEdit;
+    Quantidade_Medicamento_Edit: TDBEdit;
+    DataSourceBuscarMedicamentos: TDataSource;
+    Edit_Buscar: TDBLookupListBox;
     procedure Incluir_ButtonClick(Sender: TObject);
     procedure AVoltarClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     Procedure Nome_Obrigatorio;
     Procedure Quantidade_Obrigatorio;
@@ -60,6 +61,7 @@ type
 
 var
   FCadastro_Medicamento: TFCadastro_Medicamento;
+  DMMedicamentos: TDMMedicamento;
 
 implementation
 
@@ -81,8 +83,6 @@ begin
   Forma_Farmaceutica_Comb.text := '';
   Validade_Time.Date := Date;
   Classificacao_Comb.text := '';
-  Fabricante.text := '';
-  Edit_Buscar.text := '';
   Edit_Descricao.text := '';
 
 end;
@@ -99,6 +99,18 @@ begin
   Validade_Time.Date := Date;
 end;
 
+procedure TFCadastro_Medicamento.FormShow(Sender: TObject);
+begin
+  try
+    DMMedicamentos := TDMMedicamento.Create(Self);
+    DMMedicamentos.FDQRYBuscarMedicamntos.Close;
+    DMMedicamentos.FDQRYBuscarMedicamntos.Open;
+  finally
+
+  end;
+
+end;
+
 procedure TFCadastro_Medicamento.Incluir_ButtonClick(Sender: TObject);
 begin
   Nome_Obrigatorio;
@@ -113,7 +125,7 @@ procedure TFCadastro_Medicamento.Nome_Obrigatorio;
 begin
   if Nome_Medicamento_Edit.text = '' then
     ShowMessage('O Campo Nome é Obrigatório');
-    Nome_Medicamento_Edit.SetFocus;
+  Nome_Medicamento_Edit.SetFocus;
 end;
 
 procedure TFCadastro_Medicamento.Quantidade_Obrigatorio;
@@ -124,21 +136,21 @@ begin
     ShowMessage('O Campo Quantidade é Obrigatório')
   else if not TryStrToInt(Quantidade_Medicamento_Edit.text, DummyInt) then
     ShowMessage('O Campo Quantidade Deve Ser Numérico');
-    Quantidade_Medicamento_Edit.SetFocus;
+  Quantidade_Medicamento_Edit.SetFocus;
 end;
 
 procedure TFCadastro_Medicamento.Unidade_Obrigatorio;
 begin
   if Unidade_Medida_Comb.text = '' then
     ShowMessage('O Campo Unidade de Medida é Obrigatório');
-    Unidade_Medida_Comb.SetFocus;
+  Unidade_Medida_Comb.SetFocus;
 end;
 
 procedure TFCadastro_Medicamento.Validade_Obrigatorio;
 begin
   if (Validade_Time.Date <= Date) then
     ShowMessage('Data de validade inválida!');
-    Validade_Time.SetFocus;
+  Validade_Time.SetFocus;
 end;
 
 end.
