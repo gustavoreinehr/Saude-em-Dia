@@ -36,6 +36,7 @@ type
     procedure ButtonIncluirClick(Sender: TObject);
     procedure medtcpfChange(Sender: TObject);
     procedure medttelefoneChange(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -92,6 +93,17 @@ begin
   ComboBoxTipo_Pessoa.ItemIndex := 0;
   medtcpf.Text := '';
   medttelefone.Text := '';
+end;
+
+procedure TTela_Cadastrp.FormShow(Sender: TObject);
+Var
+  LTDMCadastroPessoa : TDMCadastroPessoa;
+begin
+  try
+    LTDMCadastroPessoa := TDMCadastroPessoa.Create(self);
+  finally
+
+  end;
 end;
 
 procedure TTela_Cadastrp.medtcpfChange(Sender: TObject);
