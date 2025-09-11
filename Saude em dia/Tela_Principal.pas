@@ -11,7 +11,6 @@ uses
 type
   TTelaPrincipal = class(TForm)
     Panel_Cabecalho: TPanel;
-    Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Panel_Principal: TPanel;
@@ -34,6 +33,7 @@ type
     Label11: TLabel;
     A3: TButton;
     Panel2: TPanel;
+    Image1: TImage;
     procedure A1Click(Sender: TObject);
     procedure A3Click(Sender: TObject);
     procedure A2Click(Sender: TObject);
