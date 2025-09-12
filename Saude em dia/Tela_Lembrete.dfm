@@ -21,7 +21,6 @@ object Tela_Lembretes: TTela_Lembretes
     Height = 100
     Align = alTop
     TabOrder = 0
-    ExplicitTop = -6
     object BotaoEditar: TButton
       Left = 68
       Top = 7
@@ -90,8 +89,6 @@ object Tela_Lembretes: TTela_Lembretes
     Height = 605
     Align = alClient
     TabOrder = 1
-    ExplicitWidth = 1098
-    ExplicitHeight = 597
     object DataInicio: TLabel
       Left = 352
       Top = 155
@@ -258,12 +255,10 @@ object Tela_Lembretes: TTela_Lembretes
     end
   end
   object DSLembrete: TDataSource
-    DataSet = DataModuleLembrete.QryLembretes
     Left = 992
     Top = 24
   end
   object DSPessoa: TDataSource
-    DataSet = DataModuleLembrete.QryPessoas
     Left = 888
     Top = 24
   end

@@ -2,6 +2,8 @@ object DMMedicamento: TDMMedicamento
   Height = 797
   Width = 1169
   object FDQRYBuscarMedicamntos: TFDQuery
+    Active = True
+    OnNewRecord = FDQRYBuscarMedicamntosNewRecord
     CachedUpdates = True
     Connection = DmPrincipal.FDConnection1
     SQL.Strings = (

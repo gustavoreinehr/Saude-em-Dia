@@ -11,6 +11,7 @@ object DmPrincipal: TDmPrincipal
       'Password=masterkey'
       'User_Name=SYSDBA'
       'DriverID=FB')
+    Connected = True
     Left = 314
     Top = 58
   end
