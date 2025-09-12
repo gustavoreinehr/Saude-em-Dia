@@ -17,6 +17,7 @@ type
     QueryDadosPessoaCPF: TStringField;
     QueryDadosPessoaTELEFONE: TStringField;
     QueryDadosPessoaID_FARMACIA: TIntegerField;
+    procedure BuscarDadosPessoas;
   private
     { Private declarations }
   public
@@ -29,7 +30,14 @@ var
 implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
-
 {$R *.dfm}
+
+procedure TDMCadastroPessoa.BuscarDadosPessoas;
+begin
+  QueryDadosPessoa.Close;
+  QueryDadosPessoa.SQL.Clear;
+  QueryDadosPessoa.SQL.Add('select * from pessoa');
+  QueryDadosPessoa.Open;
+end;
 
 end.
