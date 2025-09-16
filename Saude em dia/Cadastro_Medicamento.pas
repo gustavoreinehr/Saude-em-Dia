@@ -98,7 +98,7 @@ end;
 procedure TFCadastro_Medicamento.Editar_ButtonClick(Sender: TObject);
 begin
 
-  if (DMMedicamentos.FDQRYBuscarMedicamntos.State in [dsEdit, dsInsert]) and (Nome_Medicamento_Edit.Text <> '' ) and (Quantidade_Medicamento_Edit.Text <> '' ) and (Unidade_Medida_Comb.Text <> '' ) and (Validade_Time.Date <= Date) and (Classificacao_Comb.Text <> '' ) then
+  if DMMedicamentos.FDQRYBuscarMedicamntos.State in [dsEdit, dsInsert] then
     DMMedicamentos.FDQRYBuscarMedicamntos.Post;
 
   DMMedicamentos.FDQRYBuscarMedicamntos.ApplyUpdates;
@@ -172,7 +172,7 @@ end;
 procedure TFCadastro_Medicamento.Validade_Obrigatorio;
 begin
   if (Validade_Time.Date <= Date) then
-    ShowMessage('Data de validade inválida!');
+    ShowMessage('Data de validade inválida');
   Validade_Time.SetFocus;
 end;
 

@@ -17,9 +17,10 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Left = 0
     Top = 0
     Width = 1100
-    Height = 425
+    Height = 393
     Align = alTop
     TabOrder = 5
+    ExplicitTop = -6
     object Label1: TLabel
       Left = 16
       Top = 52
@@ -133,7 +134,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     end
     object Label11: TLabel
       Left = 16
-      Top = 331
+      Top = 291
       Width = 67
       Height = 21
       Caption = 'Descri'#231#227'o'
@@ -191,6 +192,8 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Top = 79
       Width = 619
       Height = 29
+      DataField = 'NOME'
+      DataSource = DataSourceBuscarMedicamentos
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -204,11 +207,39 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Top = 129
       Width = 281
       Height = 29
+      DataField = 'UNIDADE_MEDIDA'
+      DataSource = DataSourceBuscarMedicamentos
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
+      Items.Strings = (
+        'mg '#8211' miligrama'
+        'g '#8211' grama'
+        'mcg '#8211' micrograma'
+        'ng '#8211' nanograma '
+        'kg '#8211' quilograma '
+        'mL '#8211' mililitro'
+        'L '#8211' litro'
+        #181'L '#8211' microlitros'
+        'cp '#8211' comprimido'
+        'cap '#8211' c'#225'psula'
+        'fl '#8211' frasco'
+        'amp '#8211' ampola'
+        'sup '#8211' suposit'#243'riomg '#8211' miligrama'
+        'g '#8211' grama'
+        'mcg '#8211' micrograma'
+        'ng '#8211' nanograma '
+        'kg '#8211' quilograma '
+        'mL '#8211' mililitro'
+        'L '#8211' litro'
+        #181'L '#8211' microlitros'
+        'cp '#8211' comprimido'
+        'cap '#8211' c'#225'psula'
+        'fl '#8211' frasco'
+        'amp '#8211' ampola'
+        'sup '#8211' suposit'#243'rio')
       ParentFont = False
       TabOrder = 4
     end
@@ -217,11 +248,66 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Top = 185
       Width = 281
       Height = 29
+      DataField = 'FORMA_FARMACEUTICA'
+      DataSource = DataSourceBuscarMedicamentos
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
+      Items.Strings = (
+        'Comprimido'
+        'Comprimido efervescente'
+        'Comprimido mastig'#225'vel'
+        'Comprimido sublingual'
+        'Comprimido bucal'
+        'C'#225'psula dura'
+        'C'#225'psula mole (gelatinosa)'
+        'Dr'#225'gea'
+        'P'#243' para solu'#231#227'o'
+        'P'#243' para suspens'#227'o'
+        'P'#243' para inala'#231#227'o'
+        'Pastilha'
+        'Granulado'
+        'Tablete'
+        'Solu'#231#227'o oral'
+        'Solu'#231#227'o injet'#225'vel'
+        'Solu'#231#227'o oft'#225'lmica (col'#237'rio)'
+        'Solu'#231#227'o nasal'
+        'Solu'#231#227'o t'#243'pica'
+        'Solu'#231#227'o otol'#243'gica (para ouvidos)'
+        'Suspens'#227'o oral'
+        'Suspens'#227'o injet'#225'vel'
+        'Xarope'
+        'Elixir'
+        'Emuls'#227'o'
+        'Tintura'
+        'Enxaguante bucal'
+        'Spray nasal'
+        'Spray bucal'
+        'Spray t'#243'pico'
+        'Inalador pressurizado'
+        'Nebuliza'#231#227'o'
+        'G'#225's medicinal'
+        'Creme'
+        'Pomada'
+        'Gel'
+        'Pasta'
+        'Lo'#231#227'o'
+        'Unguento'
+        'B'#225'lsamo'
+        'Ampola'
+        'Frasco-ampola'
+        'Cartucho'
+        'Seringa pr'#233'-cheia'
+        'Implante subcut'#226'neo'
+        'Liofilizado para reconstitui'#231#227'o'
+        'Adesivo transd'#233'rmico (patch)'
+        'Suposit'#243'rio'
+        #211'vulo vaginal'
+        'Anel vaginal'
+        'Diafragma medicamentoso'
+        'Fita medicamentosa')
       ParentFont = False
       TabOrder = 5
     end
@@ -230,11 +316,38 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Top = 184
       Width = 281
       Height = 29
+      DataField = 'VIA_ADMINISTRACAO'
+      DataSource = DataSourceBuscarMedicamentos
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
+      Items.Strings = (
+        'Oral'
+        'Sublingual'
+        'Bucal'
+        'G'#225'strica'
+        'Enteral'
+        'Retal'
+        'Vaginal'
+        'Intravenosa'
+        'Intramuscular'
+        'Subcut'#226'nea'
+        'Intrad'#233'rmica'
+        'Intra'#243'ssea'
+        'Intracard'#237'aca'
+        'Intraperitoneal'
+        'Intratecal'
+        'Epidural'
+        'Inalat'#243'ria'
+        'Intrapulmonar'
+        'Intranasal'
+        'Oft'#225'lmica'
+        'Otol'#243'gica'
+        'T'#243'pica'
+        'Transd'#233'rmica'
+        'Intra-articular')
       ParentFont = False
       TabOrder = 6
     end
@@ -243,19 +356,36 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Top = 240
       Width = 281
       Height = 29
+      DataField = 'CLASSIFICACAO'
+      DataSource = DataSourceBuscarMedicamentos
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
+      Items.Strings = (
+        'Comum'
+        'Controlado - Tarja Preta'
+        'Controlado - Tarja Vermelha'
+        'Gen'#233'rico'
+        'Similar'
+        'Fitoter'#225'pico'
+        'Homeop'#225'tico'
+        'Manipulado'
+        'Antibi'#243'tico'
+        'Uso Hospitalar'
+        'Venda Sob Prescri'#231#227'o'
+        'Venda Livre')
       ParentFont = False
       TabOrder = 7
     end
     object Edit_Descricao: TDBEdit
       Left = 16
-      Top = 358
+      Top = 318
       Width = 619
       Height = 29
+      DataField = 'DESCRICAO'
+      DataSource = DataSourceBuscarMedicamentos
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -269,6 +399,8 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Top = 129
       Width = 281
       Height = 29
+      DataField = 'QUANTIDADE'
+      DataSource = DataSourceBuscarMedicamentos
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -370,9 +502,9 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
   end
   object Grid_Cadastrados: TDBGrid
     Left = 0
-    Top = 425
+    Top = 393
     Width = 1100
-    Height = 280
+    Height = 312
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -389,9 +521,9 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 425
+    Top = 393
     Width = 1100
-    Height = 280
+    Height = 312
     Align = alClient
     DataSource = DataSourceBuscarMedicamentos
     Font.Charset = DEFAULT_CHARSET
@@ -406,6 +538,52 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'ID_REMEDIO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOME'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'QUANTIDADE'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CLASSIFICACAO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'FORMA_FARMACEUTICA'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'VALIDADE'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'VIA_ADMINISTRACAO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'UNIDADE_MEDIDA'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DESCRICAO'
+        Visible = True
+      end>
   end
   object Button3: TButton
     Left = 448
