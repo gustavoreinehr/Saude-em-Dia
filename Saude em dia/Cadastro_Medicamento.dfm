@@ -19,7 +19,8 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Width = 1100
     Height = 393
     Align = alTop
-    TabOrder = 5
+    TabOrder = 4
+    ExplicitLeft = 24
     ExplicitTop = -6
     object Label1: TLabel
       Left = 16
@@ -424,6 +425,21 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       ParentFont = False
       TabOrder = 10
     end
+    object Validade_Time: TDBEdit
+      Left = 16
+      Top = 240
+      Width = 281
+      Height = 29
+      DataField = 'VALIDADE'
+      DataSource = DataSourceBuscarMedicamentos
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 11
+    end
   end
   object AVoltar: TButton
     Left = 0
@@ -455,21 +471,6 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     TabOrder = 1
     OnClick = Incluir_ButtonClick
   end
-  object Validade_Time: TDateTimePicker
-    Left = 16
-    Top = 240
-    Width = 281
-    Height = 29
-    Date = 45883.000000000000000000
-    Time = 0.910627071760245600
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 2
-  end
   object Editar_Button: TButton
     Left = 80
     Top = 8
@@ -482,7 +483,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 2
     OnClick = Editar_ButtonClick
   end
   object Excluir_Button: TButton
@@ -497,7 +498,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 3
     OnClick = Excluir_ButtonClick
   end
   object Grid_Cadastrados: TDBGrid
@@ -512,7 +513,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 5
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -532,7 +533,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 6
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -597,7 +598,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 7
     OnClick = Button3Click
   end
   object DataSourceBuscarMedicamentos: TDataSource
