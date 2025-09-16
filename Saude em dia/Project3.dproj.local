@@ -11,6 +11,7 @@
     <Transaction>2025/09/04 20:10:34.000.954,C:\Saude_em_dia\Sistema\Saude-em-Dia\Saude em dia\DataModuleMeticamento.dfm=C:\Saude_em_dia\Sistema\Saude-em-Dia\Saude em dia\Unit1.dfm</Transaction>
     <Transaction>2025/09/04 20:10:34.000.954,C:\Saude_em_dia\Sistema\Saude-em-Dia\Saude em dia\DataModuleMeticamento.pas=C:\Saude_em_dia\Sistema\Saude-em-Dia\Saude em dia\Unit1.pas</Transaction>
     <Transaction>2025/09/11 19:02:16.000.658,=C:\Saude_em_dia\Sistema\Saude-em-Dia\Saude em dia\DataModuleCadastroPessoas.pas</Transaction>
+    <Transaction>2025/09/15 19:02:12.268,=C:\Saude_em_dia\Sistema\Saude-em-Dia\Saude em dia\DataModuleLembretes.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Cadastro_Medicamento.pas"/>
@@ -28,5 +29,7 @@
     <File Path="DataModuleMeticamento.dfm"/>
     <File Path="DataModuleCadastroPessoas.pas"/>
     <File Path="DataModuleCadastroPessoas.dfm"/>
+    <File Path="DataModuleLembretes.pas"/>
+    <File Path="DataModuleLembretes.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

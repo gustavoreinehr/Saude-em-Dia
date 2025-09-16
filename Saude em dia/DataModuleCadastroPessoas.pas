@@ -13,19 +13,20 @@ type
     QueryDadosPessoa: TFDQuery;
     QueryDadosPessoaID_PESSOA: TIntegerField;
     QueryDadosPessoaNOME: TStringField;
-    QueryDadosPessoaTIPO: TIntegerField;
     QueryDadosPessoaCPF: TStringField;
     QueryDadosPessoaTELEFONE: TStringField;
     QueryDadosPessoaID_FARMACIA: TIntegerField;
+    QueryDadosPessoaTIPO: TStringField;
+    QryIDPessoa: TFDQuery;
     procedure BuscarDadosPessoas;
   private
-    { Private declarations }
   public
-    { Public declarations }
+    function BuscarProximoID(): integer;
   end;
 
 var
   DMCadastroPessoa: TDMCadastroPessoa;
+  GIDPessoa: Integer;
 
 implementation
 
@@ -38,6 +39,16 @@ begin
   QueryDadosPessoa.SQL.Clear;
   QueryDadosPessoa.SQL.Add('select * from pessoa');
   QueryDadosPessoa.Open;
+end;
+
+function TDMCadastroPessoa.BuscarProximoID: integer;
+
+begin
+  QryIDPessoa.Close; // Fecha a consulta, se estiver aberta
+QryIDPessoa.SQL.Clear; // Limpa a consulta anterior
+QryIDPessoa.SQL.Add('select coalesce(max(ID_PESSOA) + 1, 1) as IDPESSOA from pessoa'); // Adiciona a nova consulta
+QryIDPessoa.Open; // Abre a consulta para execução
+Result := QryIDPessoa.FieldByName('IDPESSOA').AsInteger; // Obtém o valor do campo IDPESSOA
 end;
 
 end.

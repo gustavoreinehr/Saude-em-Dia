@@ -4,6 +4,7 @@ object DMCadastroPessoa: TDMCadastroPessoa
   PixelsPerInch = 120
   object QueryDadosPessoa: TFDQuery
     Active = True
+    CachedUpdates = True
     Connection = DmPrincipal.FDConnection1
     SQL.Strings = (
       'select * from pessoa')
@@ -21,11 +22,6 @@ object DMCadastroPessoa: TDMCadastroPessoa
       Required = True
       Size = 100
     end
-    object QueryDadosPessoaTIPO: TIntegerField
-      FieldName = 'TIPO'
-      Origin = 'TIPO'
-      Required = True
-    end
     object QueryDadosPessoaCPF: TStringField
       FieldName = 'CPF'
       Origin = 'CPF'
@@ -41,5 +37,18 @@ object DMCadastroPessoa: TDMCadastroPessoa
       FieldName = 'ID_FARMACIA'
       Origin = 'ID_FARMACIA'
     end
+    object QueryDadosPessoaTIPO: TStringField
+      FieldName = 'TIPO'
+      Origin = 'TIPO'
+      Required = True
+    end
+  end
+  object QryIDPessoa: TFDQuery
+    Active = True
+    Connection = DmPrincipal.FDConnection1
+    SQL.Strings = (
+      'select coalesce(max (ID_PESSOA) + 1, 1) as IDPESSOA from pessoa')
+    Left = 448
+    Top = 232
   end
 end

@@ -8,7 +8,7 @@ uses
   Vcl.StdCtrls, Vcl.Mask, Tela_Principal, Vcl.Imaging.pngimage;
 
 type
-  TForm3 = class(TForm)
+  TTelaLogin = class(TForm)
     pnl1: TPanel;
     Panel1: TPanel;
     img1: TImage;
@@ -36,14 +36,14 @@ type
   end;
 
 var
-  Form3: TForm3;
+  TelaLogin: TTelaLogin;
 
 implementation
 
 {$R *.dfm}
 
 
-procedure TForm3.ALoginButtonClick(Sender: TObject);
+procedure TTelaLogin.ALoginButtonClick(Sender: TObject);
 begin
   Self.Hide;
   try
@@ -58,9 +58,7 @@ begin
   end;
 end;
 
-procedure TForm3.edtSenhaChange(Sender: TObject);
-var
-i: integer;
+procedure TTelaLogin.edtSenhaChange(Sender: TObject);
 begin
   if edtSenha.Text <> '' then
     SenhaPrench := true
@@ -72,20 +70,20 @@ begin
   VerificaCNPJeSenha;
 end;
 
-procedure TForm3.FormCreate(Sender: TObject);
+procedure TTelaLogin.FormCreate(Sender: TObject);
 begin
 ALoginButton.Enabled := False;
 end;
 
-procedure TForm3.FormResize(Sender: TObject);
+procedure TTelaLogin.FormResize(Sender: TObject);
 begin
 
- medtCNPJEdit.Left := (Form3.Width - medtCNPJEdit.Width) div 2;
- EdtSenha.Left := (Form3.Width - EdtSenha.Width) div 2;
-  ALoginButton.Left := (Form3.Width - ALoginButton.Width) div 2;
+ medtCNPJEdit.Left := (TelaLogin.Width - medtCNPJEdit.Width) div 2;
+ EdtSenha.Left := (TelaLogin.Width - EdtSenha.Width) div 2;
+  ALoginButton.Left := (TelaLogin.Width - ALoginButton.Width) div 2;
 end;
 
-procedure TForm3.medtCNPJEditChange(Sender: TObject);
+procedure TTelaLogin.medtCNPJEditChange(Sender: TObject);
 begin
   if Pos('_', medtCNPJEdit.Text) = 0 then
     CNPJPrench := true
@@ -95,7 +93,7 @@ begin
   VerificaCNPJeSenha;
 end;
 
-procedure TForm3.VerificaCNPJeSenha;
+procedure TTelaLogin.VerificaCNPJeSenha;
 begin
   ALoginButton.Enabled := (CNPJPrench) and (SenhaPrench);
 end;

@@ -131,7 +131,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="Saude_em_dia.pas">
-            <Form>Form3</Form>
+            <Form>TelaLogin</Form>
         </DCCReference>
         <DCCReference Include="Tela_Principal.pas">
             <ModuleName>TTela_Principal</ModuleName>
@@ -161,6 +161,11 @@
         </DCCReference>
         <DCCReference Include="DataModuleCadastroPessoas.pas">
             <Form>DMCadastroPessoa</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="DataModuleLembretes.pas">
+            <Form>DataModuleLembrete</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>

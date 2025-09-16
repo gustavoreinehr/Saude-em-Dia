@@ -10,6 +10,7 @@ object TelaPrincipal: TTelaPrincipal
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesktopCenter
   TextHeight = 15
   object Panel_Cabecalho: TPanel
     Left = 0
@@ -23,7 +24,7 @@ object TelaPrincipal: TTelaPrincipal
     ShowCaption = False
     TabOrder = 0
     StyleName = 'Windows'
-    ExplicitTop = 3
+    ExplicitWidth = 1098
     object Label2: TLabel
       Left = 88
       Top = 6
