@@ -15,27 +15,25 @@ type
     LTipo_Pessoa: TLabel;
     CPF: TLabel;
     Telefone: TLabel;
-    ButtonCadastrar: TButton;
+    ButtonSalvar: TButton;
     ButtonExcluir: TButton;
     ButtonIncluir: TButton;
-    ButtonLimpar: TButton;
     PanelBotoes: TPanel;
     PanelInferior: TPanel;
     DBGrid1: TDBGrid;
     AVoltar: TButton;
-    LblPesquisa: TLabel;
     edtNome_Completo1: TDBEdit;
     ComboBoxTipo_Pessoa: TDBComboBox;
     medtcpf: TDBEdit;
     medttelefone: TDBEdit;
     DataSourcePessoas: TDataSource;
-    DBLookupComboBox1: TDBLookupComboBox;
-    procedure ButtonLimparClick(Sender: TObject);
     procedure AVoltarClick(Sender: TObject);
     procedure ButtonIncluirClick(Sender: TObject);
     procedure medtcpfChange(Sender: TObject);
     procedure medttelefoneChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure ButtonExcluirClick(Sender: TObject);
+    procedure ButtonSalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,6 +52,23 @@ implementation
 procedure TTela_Cadastrp.AVoltarClick(Sender: TObject);
 begin
   Self.Close;
+end;
+
+procedure TTela_Cadastrp.ButtonSalvarClick(Sender: TObject);
+begin
+  if GTDMCadastroPessoa.QueryDadosPessoa.State in [dsEdit, dsInsert] then
+  begin
+    GTDMCadastroPessoa.QueryDadosPessoa.Post;
+    GTDMCadastroPessoa.QueryDadosPessoa.ApplyUpdates;
+  end;
+
+end;
+
+procedure TTela_Cadastrp.ButtonExcluirClick(Sender: TObject);
+begin
+  GTDMCadastroPessoa.QueryDadosPessoa.Delete;
+  GTDMCadastroPessoa.QueryDadosPessoa.ApplyUpdates;
+
 end;
 
 procedure TTela_Cadastrp.ButtonIncluirClick(Sender: TObject);
@@ -85,20 +100,22 @@ begin
   end;
 
   if (Length(edtNome_Completo1.Text) >= 10) and
-    (ComboBoxTipo_Pessoa.ItemIndex = 1) or (ComboBoxTipo_Pessoa.ItemIndex = 2) and (Length(LCpfFormatado) = 11) and
-    (Length(medttelefone.Text) = 14) then
+    (ComboBoxTipo_Pessoa.ItemIndex = 1) or (ComboBoxTipo_Pessoa.ItemIndex = 2)
+    and (Length(LCpfFormatado) = 11) and (Length(medttelefone.Text) = 14) then
   begin
-    GTDMCadastroPessoa.QueryDadosPessoa.Append;
+
+    if GTDMCadastroPessoa.QueryDadosPessoa.State in [dsEdit, dsInsert] then
+
+    begin
+      GTDMCadastroPessoa.QueryDadosPessoa.FieldByName('ID_PESSOA').AsInteger :=
+        GTDMCadastroPessoa.BuscarProximoID;
+      GTDMCadastroPessoa.QueryDadosPessoa.Post;
+      GTDMCadastroPessoa.QueryDadosPessoa.ApplyUpdates;
+    end
+    else
+      GTDMCadastroPessoa.QueryDadosPessoa.Append;
   end;
 
-end;
-
-procedure TTela_Cadastrp.ButtonLimparClick(Sender: TObject);
-begin
-  edtNome_Completo1.Text := '';
-  ComboBoxTipo_Pessoa.ItemIndex := 0;
-  medtcpf.Text := '';
-  medttelefone.Text := '';
 end;
 
 procedure TTela_Cadastrp.FormShow(Sender: TObject);

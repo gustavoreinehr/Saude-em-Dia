@@ -10,6 +10,7 @@ object TelaPrincipal: TTelaPrincipal
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesktopCenter
   TextHeight = 15
   object Panel_Cabecalho: TPanel
     Left = 0
@@ -23,7 +24,6 @@ object TelaPrincipal: TTelaPrincipal
     ShowCaption = False
     TabOrder = 0
     StyleName = 'Windows'
-    ExplicitTop = 3
     object Label2: TLabel
       Left = 88
       Top = 6
@@ -27527,8 +27527,6 @@ object TelaPrincipal: TTelaPrincipal
     Caption = 'Panel_Principal'
     ShowCaption = False
     TabOrder = 1
-    ExplicitWidth = 1098
-    ExplicitHeight = 616
     object Label4: TLabel
       AlignWithMargins = True
       Left = 151
@@ -27585,7 +27583,6 @@ object TelaPrincipal: TTelaPrincipal
       Caption = 'Panel_Menu'
       ShowCaption = False
       TabOrder = 0
-      ExplicitWidth = 1096
       DesignSize = (
         1098
         490)
@@ -27602,7 +27599,6 @@ object TelaPrincipal: TTelaPrincipal
         Caption = 'Panel2'
         ShowCaption = False
         TabOrder = 0
-        ExplicitLeft = 5
         object PanelCadastro_Medicamentos: TPanel
           AlignWithMargins = True
           Left = 773

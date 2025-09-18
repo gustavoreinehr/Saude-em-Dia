@@ -3,7 +3,7 @@ object Form3: TForm3
   Left = 0
   Top = 0
   Anchors = []
-  Caption = 'Form3'
+  Caption = 'TelaLogin'
   ClientHeight = 705
   ClientWidth = 1100
   Color = clBtnFace
@@ -12,6 +12,7 @@ object Form3: TForm3
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesktopCenter
   OnCreate = FormCreate
   OnResize = FormResize
   TextHeight = 15

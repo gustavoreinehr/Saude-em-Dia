@@ -13,7 +13,8 @@ uses
   Tela_Lembrete in 'Tela_Lembrete.pas' {Tela_Lembretes},
   DataModulePrincipal in 'DataModulePrincipal.pas' {DmPrincipal: TDataModule},
   DataModuleMeticamento in 'DataModuleMeticamento.pas' {DMMedicamento: TDataModule},
-  DataModuleCadastroPessoas in 'DataModuleCadastroPessoas.pas' {DMCadastroPessoa: TDataModule};
+  DataModuleCadastroPessoas in 'DataModuleCadastroPessoas.pas' {DMCadastroPessoa: TDataModule},
+  DataModuleLembretes in 'DataModuleLembretes.pas' {DataModuleLembrete: TDataModule};
 
 (*uses
   Vcl.Forms,
@@ -38,6 +39,7 @@ begin
   Application.CreateForm(TTela_Cadastrp, Tela_Cadastrp);
   Application.CreateForm(TTela_Lembretes, Tela_Lembretes);
   Application.CreateForm(TDmPrincipal, DmPrincipal);
+  Application.CreateForm(TDataModuleLembrete, DataModuleLembrete);
   TStyleManager.TrySetStyle('Iceberg Classico');
   Application.Run;
 end.

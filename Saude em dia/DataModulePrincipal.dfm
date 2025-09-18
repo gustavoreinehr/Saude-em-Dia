@@ -1,9 +1,10 @@
 object DmPrincipal: TDmPrincipal
-  Height = 600
-  Width = 800
+  Height = 750
+  Width = 1000
+  PixelsPerInch = 120
   object FDPhysFBDriverLink1: TFDPhysFBDriverLink
-    Left = 205
-    Top = 58
+    Left = 256
+    Top = 73
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
@@ -12,7 +13,7 @@ object DmPrincipal: TDmPrincipal
       'User_Name=SYSDBA'
       'DriverID=FB')
     Connected = True
-    Left = 314
-    Top = 58
+    Left = 393
+    Top = 73
   end
 end

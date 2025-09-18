@@ -10,9 +10,9 @@ object Tela_Lembretes: TTela_Lembretes
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesktopCenter
   OnClick = BotaoExcluirClick
-  OnCreate = FormCreate
-  OnDestroy = FormDestroy
+  OnShow = FormShow
   TextHeight = 15
   object BarraInferior: TPanel
     Left = 0
@@ -20,8 +20,10 @@ object Tela_Lembretes: TTela_Lembretes
     Width = 1100
     Height = 100
     Align = alTop
+    BevelOuter = bvNone
     TabOrder = 0
-    object BotaoEditar: TButton
+    ExplicitWidth = 1098
+    object BotaoSalvar: TButton
       Left = 68
       Top = 7
       Width = 118
@@ -34,7 +36,7 @@ object Tela_Lembretes: TTela_Lembretes
       Font.Style = []
       ParentFont = False
       TabOrder = 0
-      OnClick = BotaoEditarClick
+      OnClick = BotaoSalvarClick
     end
     object BotaoExcluir: TButton
       Left = 192
@@ -88,7 +90,13 @@ object Tela_Lembretes: TTela_Lembretes
     Width = 1100
     Height = 605
     Align = alClient
+    BevelOuter = bvNone
     TabOrder = 1
+    ExplicitWidth = 1098
+    ExplicitHeight = 597
+    DesignSize = (
+      1100
+      605)
     object DataInicio: TLabel
       Left = 352
       Top = 155
@@ -104,7 +112,7 @@ object Tela_Lembretes: TTela_Lembretes
     end
     object Label1: TLabel
       Left = 352
-      Top = 42
+      Top = 40
       Width = 185
       Height = 21
       Caption = 'Periodicidade da dosagem:'
@@ -129,8 +137,8 @@ object Tela_Lembretes: TTela_Lembretes
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 728
-      Top = 41
+      Left = 841
+      Top = 43
       Width = 69
       Height = 21
       Caption = 'Lembrete:'
@@ -154,71 +162,56 @@ object Tela_Lembretes: TTela_Lembretes
       Font.Style = []
       ParentFont = False
     end
-    object Calendario: TCalendarPicker
-      Left = 352
-      Top = 177
-      Width = 189
-      Height = 32
-      CalendarHeaderInfo.DaysOfWeekFont.Charset = DEFAULT_CHARSET
-      CalendarHeaderInfo.DaysOfWeekFont.Color = clWindowText
-      CalendarHeaderInfo.DaysOfWeekFont.Height = -17
-      CalendarHeaderInfo.DaysOfWeekFont.Name = 'Segoe UI'
-      CalendarHeaderInfo.DaysOfWeekFont.Style = []
-      CalendarHeaderInfo.Font.Charset = DEFAULT_CHARSET
-      CalendarHeaderInfo.Font.Color = clWindowText
-      CalendarHeaderInfo.Font.Height = -25
-      CalendarHeaderInfo.Font.Name = 'Segoe UI'
-      CalendarHeaderInfo.Font.Style = []
-      Color = clWindow
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clGray
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 0
-      TextHint = 'Selecione a Data'
-    end
-    object Horario: TTimePicker
-      Left = 100
-      Top = 182
-      Width = 189
+    object Label4: TLabel
+      Left = 604
+      Top = 40
+      Width = 65
+      Height = 21
+      Caption = 'Rem'#233'dio:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
-      TabOrder = 1
-      Time = 45890.799382546300000000
-      TimeFormat = 'hh:nn'
+      ParentFont = False
     end
     object Dosagem: TDBComboBox
       Left = 352
-      Top = 69
+      Top = 67
       Width = 185
       Height = 29
+      DataField = 'DOSAGEM'
+      DataSource = DSLembrete
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
+      Items.Strings = (
+        '6h em 6h'
+        '8h em 8h'
+        '12h em 12h'
+        '24h em 24h')
       ParentFont = False
-      TabOrder = 2
+      TabOrder = 0
     end
     object Lembrete: TDBMemo
-      Left = 728
-      Top = 70
-      Width = 249
+      Left = 841
+      Top = 68
+      Width = 252
       Height = 146
-      TabOrder = 3
+      DataField = 'MENSAGEM_LEMBRETE'
+      DataSource = DSLembrete
+      TabOrder = 1
     end
     object Tabela: TDBGrid
       Left = 1
       Top = 272
-      Width = 1099
+      Width = 1089
       Height = 329
+      Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSLembrete
-      TabOrder = 4
+      TabOrder = 2
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -12
@@ -227,39 +220,114 @@ object Tela_Lembretes: TTela_Lembretes
       Columns = <
         item
           Expanded = False
-          FieldName = 'DATA_E_HORA'
+          FieldName = 'Pessoa'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DATA'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'HORA'
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'DOSAGEM'
-          Width = 202
+          Width = 64
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'MENSAGEM_LEMBRETE'
+          Width = 64
           Visible = True
         end>
     end
-    object Nome_Paciente: TDBLookupComboBox
+    object DBEdit1: TDBEdit
       Left = 100
-      Top = 70
+      Top = 182
       Width = 185
       Height = 29
-      DataField = 'NOME'
-      DataSource = DSPessoa
+      DataField = 'HORA'
+      DataSource = DSLembrete
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      OnChange = DBEdit1Change
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 100
+      Top = 68
+      Width = 185
+      Height = 29
+      DataField = 'ID_PESSOA'
+      DataSource = DSLembrete
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      KeyField = 'ID_PESSOA'
+      ListField = 'NOME'
       ListSource = DSPessoa
+      ParentFont = False
+      TabOrder = 4
+    end
+    object DBLookupComboBox2: TDBLookupComboBox
+      Left = 604
+      Top = 67
+      Width = 185
+      Height = 29
+      DataField = 'ID_REMEDIO'
+      DataSource = DSLembrete
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      KeyField = 'ID_REMEDIO'
+      ListField = 'NOME'
+      ListSource = DSRemedios
       ParentFont = False
       TabOrder = 5
     end
+    object DBEdtData: TDBEdit
+      Left = 352
+      Top = 182
+      Width = 185
+      Height = 29
+      DataField = 'DATA'
+      DataSource = DSLembrete
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 6
+      OnChange = DBEdtDataChange
+    end
   end
   object DSLembrete: TDataSource
+    DataSet = DataModuleLembrete.QryLembretes
     Left = 992
     Top = 24
   end
   object DSPessoa: TDataSource
+    DataSet = DataModuleLembrete.QryPessoas
     Left = 888
+    Top = 24
+  end
+  object DSRemedios: TDataSource
+    DataSet = DataModuleLembrete.QryRemedios
+    Left = 832
     Top = 24
   end
 end

@@ -11,21 +11,23 @@ uses
 type
   TDMCadastroPessoa = class(TDataModule)
     QueryDadosPessoa: TFDQuery;
+    QryIDPessoa: TFDQuery;
     QueryDadosPessoaID_PESSOA: TIntegerField;
     QueryDadosPessoaNOME: TStringField;
-    QueryDadosPessoaTIPO: TIntegerField;
+    QueryDadosPessoaTIPO: TStringField;
     QueryDadosPessoaCPF: TStringField;
     QueryDadosPessoaTELEFONE: TStringField;
     QueryDadosPessoaID_FARMACIA: TIntegerField;
+    QryIDPessoaIDPESSOA: TLargeintField;
     procedure BuscarDadosPessoas;
   private
-    { Private declarations }
   public
-    { Public declarations }
+    function BuscarProximoID(): integer;
   end;
 
 var
   DMCadastroPessoa: TDMCadastroPessoa;
+  GIDPessoa: Integer;
 
 implementation
 
@@ -38,6 +40,16 @@ begin
   QueryDadosPessoa.SQL.Clear;
   QueryDadosPessoa.SQL.Add('select * from pessoa');
   QueryDadosPessoa.Open;
+end;
+
+function TDMCadastroPessoa.BuscarProximoID: integer;
+
+begin
+  QryIDPessoa.Close;
+  QryIDPessoa.SQL.Clear;
+  QryIDPessoa.SQL.Add('select coalesce(max (ID_PESSOA) + 1, 1) as IDPESSOA from pessoa');
+  QryIDPessoa.Open;
+  Result := QryIDPessoa.FieldByName('IDPESSOA').AsInteger;
 end;
 
 end.

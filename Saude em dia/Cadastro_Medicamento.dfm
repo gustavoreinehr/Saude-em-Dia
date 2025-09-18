@@ -10,6 +10,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesktopCenter
   OnCreate = FormCreate
   OnShow = FormShow
   TextHeight = 15
@@ -20,8 +21,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Height = 393
     Align = alTop
     TabOrder = 4
-    ExplicitLeft = 24
-    ExplicitTop = -6
+    ExplicitWidth = 1098
     object Label1: TLabel
       Left = 16
       Top = 52
