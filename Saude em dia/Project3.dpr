@@ -14,7 +14,8 @@ uses
   DataModulePrincipal in 'DataModulePrincipal.pas' {DmPrincipal: TDataModule},
   DataModuleMeticamento in 'DataModuleMeticamento.pas' {DMMedicamento: TDataModule},
   DataModuleCadastroPessoas in 'DataModuleCadastroPessoas.pas' {DMCadastroPessoa: TDataModule},
-  DataModuleLembretes in 'DataModuleLembretes.pas' {DataModuleLembrete: TDataModule};
+  DataModuleLembretes in 'DataModuleLembretes.pas' {DataModuleLembrete: TDataModule},
+  DataModuleTelaLogin in 'DataModuleTelaLogin.pas' {DataModuleLogin: TDataModule};
 
 (*uses
   Vcl.Forms,
@@ -31,10 +32,10 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm3, Form3);
   Application.CreateForm(TTelaPrincipal, TelaPrincipal);
   Application.CreateForm(TTela_Cadastrp, Tela_Cadastrp);
   Application.CreateForm(TTela_Lembretes, Tela_Lembretes);
-  Application.CreateForm(TForm3, Form3);
   Application.CreateForm(TFCadastro_Medicamento, FCadastro_Medicamento);
   Application.CreateForm(TTela_Cadastrp, Tela_Cadastrp);
   Application.CreateForm(TTela_Lembretes, Tela_Lembretes);

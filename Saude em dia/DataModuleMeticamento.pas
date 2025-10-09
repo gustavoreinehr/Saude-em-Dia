@@ -11,6 +11,14 @@ uses
 type
   TDMMedicamento = class(TDataModule)
     FDQRYBuscarMedicamntos: TFDQuery;
+    FDQRYBuscarMedicamntosID_REMEDIO: TIntegerField;
+    FDQRYBuscarMedicamntosNOME: TStringField;
+    FDQRYBuscarMedicamntosCLASSIFICACAO: TStringField;
+    FDQRYBuscarMedicamntosFORMA_FARMACEUTICA: TStringField;
+    FDQRYBuscarMedicamntosVALIDADE: TDateField;
+    FDQRYBuscarMedicamntosVIA_ADMINISTRACAO: TStringField;
+    FDQRYBuscarMedicamntosUNIDADE_MEDIDA: TStringField;
+    FDQRYBuscarMedicamntosDESCRICAO: TStringField;
     procedure FDQRYBuscarMedicamntosNewRecord(DataSet: TDataSet);
   private
 

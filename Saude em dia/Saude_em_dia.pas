@@ -3,9 +3,11 @@ unit Saude_em_dia;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Imaging.jpeg,
-  Vcl.StdCtrls, Vcl.Mask, Tela_Principal, Vcl.Imaging.pngimage;
+  Vcl.StdCtrls, Vcl.Mask, Tela_Principal, Vcl.Imaging.pngimage, Vcl.DBCtrls,
+  DataModuleTelaLogin, Data.DB;
 
 type
   TForm3 = class(TForm)
@@ -15,89 +17,62 @@ type
     PanelCNPJ: TPanel;
     LabelCNPJ: TLabel;
     PanelEditCNPJ: TPanel;
-    medtCNPJEdit: TMaskEdit;
     PanelEditSenha: TPanel;
     Label1: TLabel;
     Panel3: TPanel;
-    EdtSenha: TEdit;
     Panel2: TPanel;
     ALoginButton: TButton;
-    procedure medtCNPJEditChange(Sender: TObject);
+    DSLogin: TDataSource;
+    MaskEdit1: TMaskEdit;
+    Edit1: TEdit;
     procedure FormCreate(Sender: TObject);
-    procedure edtSenhaChange(Sender: TObject);
     procedure ALoginButtonClick(Sender: TObject);
-    procedure FormResize(Sender: TObject);
-
+    procedure Edit1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
-     CNPJPrench: Boolean;
-    SenhaPrench: Boolean;
   public
-   procedure VerificaCNPJeSenha;
   end;
 
 var
   Form3: TForm3;
+  GDMLogin: TDataModuleLogin;
 
 implementation
 
 {$R *.dfm}
 
-
 procedure TForm3.ALoginButtonClick(Sender: TObject);
+var
+  LoginValidado: Boolean;
 begin
   Self.Hide;
-  try
+  if GDMLogin.ValidarLogin(MaskEdit1.Text, Edit1.Text) then
+  begin
     TelaPrincipal := TTelaPrincipal.Create(nil);
     try
       TelaPrincipal.ShowModal;
     finally
       FreeAndNil(TelaPrincipal);
     end;
-  finally
-    Close;
-  end;
+  end
+  else
+    ShowMessage('Senha ou usuário inválido');
+  Form3.ShowModal;
 end;
 
-procedure TForm3.edtSenhaChange(Sender: TObject);
-var
-i: integer;
+procedure TForm3.Edit1KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 begin
-  if edtSenha.Text <> '' then
-    SenhaPrench := true
-  else
-    SenhaPrench := false;
+ if Key = VK_RETURN then
+  begin
+    ALoginButton.Click;
+  end;
 
- edtSenha.PasswordChar := '*';
-
-  VerificaCNPJeSenha;
 end;
 
 procedure TForm3.FormCreate(Sender: TObject);
 begin
-ALoginButton.Enabled := False;
-end;
+  GDMLogin := TDataModuleLogin.Create(Self);
 
-procedure TForm3.FormResize(Sender: TObject);
-begin
-
- medtCNPJEdit.Left := (Form3.Width - medtCNPJEdit.Width) div 2;
- EdtSenha.Left := (Form3.Width - EdtSenha.Width) div 2;
-  ALoginButton.Left := (Form3.Width - ALoginButton.Width) div 2;
-end;
-
-procedure TForm3.medtCNPJEditChange(Sender: TObject);
-begin
-  if Pos('_', medtCNPJEdit.Text) = 0 then
-    CNPJPrench := true
-  else
-    CNPJPrench := false;
-
-  VerificaCNPJeSenha;
-end;
-
-procedure TForm3.VerificaCNPJeSenha;
-begin
-  ALoginButton.Enabled := (CNPJPrench) and (SenhaPrench);
 end;
 
 end.

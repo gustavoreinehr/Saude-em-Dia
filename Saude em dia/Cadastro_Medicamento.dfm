@@ -35,22 +35,9 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Font.Style = []
       ParentFont = False
     end
-    object Label2: TLabel
-      Left = 16
-      Top = 108
-      Width = 81
-      Height = 21
-      Caption = 'Quantidade'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
     object Label3: TLabel
       Left = 16
-      Top = 164
+      Top = 108
       Width = 140
       Height = 21
       Caption = 'Forma Farmaceutica'
@@ -63,7 +50,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     end
     object Label4: TLabel
       Left = 16
-      Top = 220
+      Top = 164
       Width = 59
       Height = 21
       Caption = 'Validade'
@@ -74,21 +61,8 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Font.Style = []
       ParentFont = False
     end
-    object Label6: TLabel
-      Left = 590
-      Top = 11
-      Width = 46
-      Height = 21
-      Caption = 'Buscar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
     object Label7: TLabel
-      Left = 354
+      Left = 16
       Top = 219
       Width = 88
       Height = 21
@@ -174,20 +148,6 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       ParentFont = False
       TabOrder = 1
     end
-    object Buscar_Button: TButton
-      Left = 1007
-      Top = 10
-      Width = 75
-      Height = 25
-      Caption = 'Buscar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 2
-    end
     object Nome_Medicamento_Edit: TDBEdit
       Left = 16
       Top = 79
@@ -201,7 +161,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 3
+      TabOrder = 2
     end
     object Unidade_Medida_Comb: TDBComboBox
       Left = 354
@@ -242,11 +202,11 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
         'amp '#8211' ampola'
         'sup '#8211' suposit'#243'rio')
       ParentFont = False
-      TabOrder = 4
+      TabOrder = 3
     end
     object Forma_Farmaceutica_Comb: TDBComboBox
       Left = 16
-      Top = 185
+      Top = 129
       Width = 281
       Height = 29
       DataField = 'FORMA_FARMACEUTICA'
@@ -310,7 +270,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
         'Diafragma medicamentoso'
         'Fita medicamentosa')
       ParentFont = False
-      TabOrder = 5
+      TabOrder = 4
     end
     object Via_Adm_Comb: TDBComboBox
       Left = 354
@@ -350,10 +310,10 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
         'Transd'#233'rmica'
         'Intra-articular')
       ParentFont = False
-      TabOrder = 6
+      TabOrder = 5
     end
     object Classificacao_Comb: TDBComboBox
-      Left = 354
+      Left = 16
       Top = 240
       Width = 281
       Height = 29
@@ -378,7 +338,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
         'Venda Sob Prescri'#231#227'o'
         'Venda Livre')
       ParentFont = False
-      TabOrder = 7
+      TabOrder = 6
     end
     object Edit_Descricao: TDBEdit
       Left = 16
@@ -393,41 +353,11 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 8
-    end
-    object Quantidade_Medicamento_Edit: TDBEdit
-      Left = 16
-      Top = 129
-      Width = 281
-      Height = 29
-      DataField = 'QUANTIDADE'
-      DataSource = DataSourceBuscarMedicamentos
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 9
-    end
-    object Edit_Buscar: TDBLookupListBox
-      Left = 651
-      Top = 11
-      Width = 350
-      Height = 25
-      DataField = 'NOME'
-      DataSource = DataSourceBuscarMedicamentos
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 10
+      TabOrder = 7
     end
     object Validade_Time: TDBEdit
       Left = 16
-      Top = 240
+      Top = 184
       Width = 281
       Height = 29
       DataField = 'VALIDADE'
@@ -438,7 +368,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 11
+      TabOrder = 8
     end
   end
   object AVoltar: TButton
@@ -543,46 +473,49 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       item
         Expanded = False
         FieldName = 'ID_REMEDIO'
+        Width = 92
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'NOME'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'QUANTIDADE'
+        Width = 168
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'CLASSIFICACAO'
+        Width = 150
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'FORMA_FARMACEUTICA'
+        Width = 115
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'VALIDADE'
+        Width = 103
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'VIA_ADMINISTRACAO'
+        Width = 137
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'UNIDADE_MEDIDA'
+        Width = 112
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'DESCRICAO'
+        Width = 213
         Visible = True
       end>
   end

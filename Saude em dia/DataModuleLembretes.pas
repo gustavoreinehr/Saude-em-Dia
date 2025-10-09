@@ -14,25 +14,29 @@ type
     QryLembretes: TFDQuery;
     QryIDLembrete: TFDQuery;
     QryIDLembreteIDCONTROLA: TLargeintField;
-    QryLembretesID_CONTROLA: TIntegerField;
-    QryLembretesDATA: TDateField;
-    QryLembretesHORA: TTimeField;
-    QryLembretesID_RECEITA: TIntegerField;
-    QryLembretesID_REMEDIO: TIntegerField;
-    QryLembretesDOSAGEM: TStringField;
-    QryLembretesMENSAGEM_LEMBRETE: TStringField;
     QryPessoas: TFDQuery;
     QryLembretesPessoa: TStringField;
     QryRemedios: TFDQuery;
     QryRemediosID_REMEDIO: TIntegerField;
     QryRemediosNOME: TStringField;
-    QryRemediosQUANTIDADE: TIntegerField;
     QryRemediosCLASSIFICACAO: TStringField;
     QryRemediosFORMA_FARMACEUTICA: TStringField;
     QryRemediosVALIDADE: TDateField;
     QryRemediosVIA_ADMINISTRACAO: TStringField;
     QryRemediosUNIDADE_MEDIDA: TStringField;
     QryRemediosDESCRICAO: TStringField;
+    QryLembretesID_CONTROLA: TIntegerField;
+    QryLembretesID_REMEDIO: TIntegerField;
+    QryLembretesDOSAGEM: TStringField;
+    QryLembretesMENSAGEM_LEMBRETE: TStringField;
+    QryLembretesID_PESSOA: TIntegerField;
+    QryLembretesDATA: TDateField;
+    QryLembretesHORA: TTimeField;
+    QryLembretesPERIODICIDADE: TIntegerField;
+    QryPessoasID_PESSOA: TIntegerField;
+    QryPessoasNOME: TStringField;
+    QryPessoasCPF: TStringField;
+    QryPessoasTELEFONE: TStringField;
     procedure QryLembretesNewRecord(DataSet: TDataSet);
   private
     { Private declarations }

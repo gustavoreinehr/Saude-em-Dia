@@ -175,6 +175,19 @@ object Tela_Lembretes: TTela_Lembretes
       Font.Style = []
       ParentFont = False
     end
+    object LblPeriodicidadeEmDias: TLabel
+      Left = 604
+      Top = 155
+      Width = 154
+      Height = 21
+      Caption = 'Periodicidade em dias:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
     object Dosagem: TDBComboBox
       Left = 352
       Top = 67
@@ -188,10 +201,10 @@ object Tela_Lembretes: TTela_Lembretes
       Font.Name = 'Segoe UI'
       Font.Style = []
       Items.Strings = (
-        '6h em 6h'
-        '8h em 8h'
-        '12h em 12h'
-        '24h em 24h')
+        '6'
+        '8'
+        '12'
+        '24')
       ParentFont = False
       TabOrder = 0
     end
@@ -207,7 +220,7 @@ object Tela_Lembretes: TTela_Lembretes
     object Tabela: TDBGrid
       Left = 1
       Top = 272
-      Width = 1089
+      Width = 1087
       Height = 329
       Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSLembrete
@@ -236,13 +249,11 @@ object Tela_Lembretes: TTela_Lembretes
         item
           Expanded = False
           FieldName = 'DOSAGEM'
-          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'MENSAGEM_LEMBRETE'
-          Width = 64
           Visible = True
         end>
     end
@@ -314,6 +325,21 @@ object Tela_Lembretes: TTela_Lembretes
       TabOrder = 6
       OnChange = DBEdtDataChange
     end
+    object DBEdit2: TDBEdit
+      Left = 604
+      Top = 182
+      Width = 185
+      Height = 29
+      DataField = 'PERIODICIDADE'
+      DataSource = DSLembrete
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 7
+    end
   end
   object DSLembrete: TDataSource
     DataSet = DataModuleLembrete.QryLembretes
@@ -327,7 +353,7 @@ object Tela_Lembretes: TTela_Lembretes
   end
   object DSRemedios: TDataSource
     DataSet = DataModuleLembrete.QryRemedios
-    Left = 832
+    Left = 792
     Top = 24
   end
 end

@@ -12,7 +12,6 @@ type
   TTela_Cadastrp = class(TForm)
     Panel_Dados_Cadastro: TPanel;
     LNome_Completo: TLabel;
-    LTipo_Pessoa: TLabel;
     CPF: TLabel;
     Telefone: TLabel;
     ButtonSalvar: TButton;
@@ -23,7 +22,6 @@ type
     DBGrid1: TDBGrid;
     AVoltar: TButton;
     edtNome_Completo1: TDBEdit;
-    ComboBoxTipo_Pessoa: TDBComboBox;
     medtcpf: TDBEdit;
     medttelefone: TDBEdit;
     DataSourcePessoas: TDataSource;
@@ -83,11 +81,6 @@ begin
     ShowMessage('O nome precisa conter no mínimo 10 caracteres');
     edtNome_Completo1.SetFocus
   end
-  else if ComboBoxTipo_Pessoa.ItemIndex = 0 then
-  begin
-    ShowMessage('Selecione um tipo de pessoa');
-    ComboBoxTipo_Pessoa.SetFocus;
-  end
   else if Length(LCpfFormatado) <> 11 then
   begin
     ShowMessage('O CPF precisa ter 11 digitos');
@@ -99,8 +92,7 @@ begin
     medttelefone.SetFocus;
   end;
 
-  if (Length(edtNome_Completo1.Text) >= 10) and
-    (ComboBoxTipo_Pessoa.ItemIndex = 1) or (ComboBoxTipo_Pessoa.ItemIndex = 2)
+  if (Length(edtNome_Completo1.Text) >= 10)
     and (Length(LCpfFormatado) = 11) and (Length(medttelefone.Text) = 14) then
   begin
 

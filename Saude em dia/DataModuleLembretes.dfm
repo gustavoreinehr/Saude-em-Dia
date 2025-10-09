@@ -9,20 +9,26 @@ object DataModuleLembrete: TDataModuleLembrete
     SQL.Strings = (
       'SELECT * FROM CONTROLA')
     Left = 120
-    Top = 72
+    Top = 73
+    object QryLembretesPessoa: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Pessoa'
+      LookupDataSet = QryPessoas
+      LookupKeyFields = 'ID_PESSOA'
+      LookupResultField = 'NOME'
+      KeyFields = 'ID_PESSOA'
+      Lookup = True
+    end
     object QryLembretesID_CONTROLA: TIntegerField
       FieldName = 'ID_CONTROLA'
       Origin = 'ID_CONTROLA'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
-    object QryLembretesID_RECEITA: TIntegerField
-      FieldName = 'ID_RECEITA'
-      Origin = 'ID_RECEITA'
-    end
     object QryLembretesID_REMEDIO: TIntegerField
       FieldName = 'ID_REMEDIO'
       Origin = 'ID_REMEDIO'
+      Required = True
     end
     object QryLembretesDOSAGEM: TStringField
       FieldName = 'DOSAGEM'
@@ -51,14 +57,10 @@ object DataModuleLembrete: TDataModuleLembrete
       Origin = 'HORA'
       Required = True
     end
-    object QryLembretesPessoa: TStringField
-      FieldKind = fkLookup
-      FieldName = 'Pessoa'
-      LookupDataSet = QryPessoas
-      LookupKeyFields = 'ID_PESSOA'
-      LookupResultField = 'NOME'
-      KeyFields = 'ID_PESSOA'
-      Lookup = True
+    object QryLembretesPERIODICIDADE: TIntegerField
+      FieldName = 'PERIODICIDADE'
+      Origin = 'PERIODICIDADE'
+      Required = True
     end
   end
   object QryPessoas: TFDQuery
@@ -80,11 +82,6 @@ object DataModuleLembrete: TDataModuleLembrete
       Required = True
       Size = 100
     end
-    object QryPessoasTIPO: TStringField
-      FieldName = 'TIPO'
-      Origin = 'TIPO'
-      Required = True
-    end
     object QryPessoasCPF: TStringField
       FieldName = 'CPF'
       Origin = 'CPF'
@@ -96,10 +93,6 @@ object DataModuleLembrete: TDataModuleLembrete
       Origin = 'TELEFONE'
       Required = True
     end
-    object QryPessoasID_FARMACIA: TIntegerField
-      FieldName = 'ID_FARMACIA'
-      Origin = 'ID_FARMACIA'
-    end
   end
   object QryIDLembrete: TFDQuery
     CachedUpdates = True
@@ -109,7 +102,7 @@ object DataModuleLembrete: TDataModuleLembrete
         'select coalesce(max (ID_CONTROLA) + 1, 1) as IDCONTROLA from CON' +
         'TROLA')
     Left = 304
-    Top = 232
+    Top = 233
     object QryIDLembreteIDCONTROLA: TLargeintField
       AutoGenerateValue = arDefault
       FieldName = 'IDCONTROLA'
@@ -135,11 +128,6 @@ object DataModuleLembrete: TDataModuleLembrete
       Origin = 'NOME'
       Required = True
       Size = 100
-    end
-    object QryRemediosQUANTIDADE: TIntegerField
-      FieldName = 'QUANTIDADE'
-      Origin = 'QUANTIDADE'
-      Required = True
     end
     object QryRemediosCLASSIFICACAO: TStringField
       FieldName = 'CLASSIFICACAO'

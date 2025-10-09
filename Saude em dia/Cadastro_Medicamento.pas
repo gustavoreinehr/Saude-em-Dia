@@ -22,15 +22,12 @@ type
     DBGrid1: TDBGrid;
     Button3: TButton;
     Label1: TLabel;
-    Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    Label6: TLabel;
     Label7: TLabel;
     Label9: TLabel;
     Label8: TLabel;
     Label10: TLabel;
-    Buscar_Button: TButton;
     Label11: TLabel;
     Nome_Medicamento_Edit: TDBEdit;
     Unidade_Medida_Comb: TDBComboBox;
@@ -38,9 +35,7 @@ type
     Via_Adm_Comb: TDBComboBox;
     Classificacao_Comb: TDBComboBox;
     Edit_Descricao: TDBEdit;
-    Quantidade_Medicamento_Edit: TDBEdit;
     DataSourceBuscarMedicamentos: TDataSource;
-    Edit_Buscar: TDBLookupListBox;
     Validade_Time: TDBEdit;
     procedure AVoltarClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -52,7 +47,6 @@ type
   private
     function ParseDateBR(const S: string; out D: TDateTime): Boolean;
     procedure Nome_Obrigatorio;
-    procedure Quantidade_Obrigatorio;
     procedure Unidade_Obrigatorio;
     procedure Validade_Obrigatorio;
     procedure Class_Obrigatorio;
@@ -76,7 +70,6 @@ procedure TFCadastro_Medicamento.Button3Click(Sender: TObject);
 begin
 
   Nome_Medicamento_Edit.Text := '';
-  Quantidade_Medicamento_Edit.Text := '';
   Unidade_Medida_Comb.Text := '';
   Via_Adm_Comb.Text := '';
   Forma_Farmaceutica_Comb.Text := '';
@@ -104,10 +97,6 @@ begin
     Nome_Obrigatorio; Exit;
   end;
 
-  if Trim(Quantidade_Medicamento_Edit.Text) = '' then
-  begin
-    Quantidade_Obrigatorio; Exit;
-  end;
 
   if Trim(Unidade_Medida_Comb.Text) = '' then
   begin
@@ -212,30 +201,7 @@ begin
   Nome_Medicamento_Edit.SetFocus;
 end;
 
-procedure TFCadastro_Medicamento.Quantidade_Obrigatorio;
-var
-  DummyInt: Integer;
-begin
-  if Trim(Quantidade_Medicamento_Edit.Text) = '' then
-  begin
-    ShowMessage('O Campo Quantidade é Obrigatório');
-    Quantidade_Medicamento_Edit.SetFocus;
-    Exit;
-  end;
 
-  if not TryStrToInt(Quantidade_Medicamento_Edit.Text, DummyInt) then
-  begin
-    ShowMessage('O Campo Quantidade Deve Ser Numérico');
-    Quantidade_Medicamento_Edit.SetFocus;
-    Exit;
-  end;
-
-  if DummyInt < 0 then
-  begin
-    ShowMessage('Quantidade não pode ser negativa');
-    Quantidade_Medicamento_Edit.SetFocus;
-  end;
-end;
 
 procedure TFCadastro_Medicamento.Unidade_Obrigatorio;
 begin

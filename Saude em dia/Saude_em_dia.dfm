@@ -5,7 +5,7 @@ object Form3: TForm3
   Anchors = []
   Caption = 'TelaLogin'
   ClientHeight = 705
-  ClientWidth = 1100
+  ClientWidth = 1030
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,13 +14,12 @@ object Form3: TForm3
   Font.Style = []
   Position = poDesktopCenter
   OnCreate = FormCreate
-  OnResize = FormResize
   TextHeight = 15
   object pnl1: TPanel
     AlignWithMargins = True
     Left = 0
     Top = 0
-    Width = 1100
+    Width = 1030
     Height = 705
     Margins.Left = 0
     Margins.Top = 0
@@ -35,10 +34,11 @@ object Form3: TForm3
       AlignWithMargins = True
       Left = 4
       Top = 61
-      Width = 1092
+      Width = 1022
       Height = 209
       Margins.Top = 60
       Align = alTop
+      Anchors = [akTop]
       BevelOuter = bvNone
       Caption = 'Panel1'
       ParentShowHint = False
@@ -50,7 +50,7 @@ object Form3: TForm3
         AlignWithMargins = True
         Left = 0
         Top = 40
-        Width = 1092
+        Width = 1022
         Height = 169
         Margins.Left = 0
         Margins.Top = 40
@@ -8230,13 +8230,14 @@ object Form3: TForm3
       AlignWithMargins = True
       Left = 1
       Top = 273
-      Width = 1098
+      Width = 1028
       Height = 47
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 0
       Margins.Bottom = 0
       Align = alTop
+      Anchors = [akTop]
       BevelOuter = bvNone
       Caption = 'Painel_CNPJ'
       ShowCaption = False
@@ -8246,7 +8247,7 @@ object Form3: TForm3
         AlignWithMargins = True
         Left = 0
         Top = 0
-        Width = 1098
+        Width = 1028
         Height = 47
         Margins.Left = 0
         Margins.Top = 0
@@ -8254,6 +8255,7 @@ object Form3: TForm3
         Margins.Bottom = 0
         Align = alClient
         Alignment = taCenter
+        Anchors = []
         Caption = 'CNPJ'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -8268,44 +8270,47 @@ object Form3: TForm3
     object PanelEditCNPJ: TPanel
       Left = 1
       Top = 320
-      Width = 1098
+      Width = 1028
       Height = 56
       Align = alTop
+      Anchors = []
       BevelOuter = bvNone
       Caption = '0'
       ShowCaption = False
       TabOrder = 2
       ExplicitWidth = 1096
-      object medtCNPJEdit: TMaskEdit
-        AlignWithMargins = True
-        Left = 270
-        Top = 5
-        Width = 442
-        Height = 48
-        Margins.Left = 270
-        Margins.Top = 5
-        Margins.Right = 270
-        Margins.Bottom = 0
+      DesignSize = (
+        1028
+        56)
+      object MaskEdit1: TMaskEdit
+        Left = 285
+        Top = 3
+        Width = 458
+        Height = 45
+        Margins.Left = 320
+        Margins.Right = 320
         Alignment = taCenter
-        EditMask = '00.000.000/0000'#8722'00;1;_'
+        Anchors = []
+        EditMask = '00.000.000/0000-00;1;_'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = 40
+        Font.Height = -27
         Font.Name = 'Segoe UI'
         Font.Style = []
         MaxLength = 18
         ParentFont = False
         TabOrder = 0
-        Text = '  .   .   /    '#8722'  '
-        OnChange = medtCNPJEditChange
+        Text = '  .   .   /    -  '
+        ExplicitLeft = 319
       end
     end
     object PanelEditSenha: TPanel
       Left = 1
       Top = 376
-      Width = 1098
+      Width = 1028
       Height = 40
       Align = alTop
+      Anchors = [akTop]
       BevelOuter = bvNone
       Caption = 'PanelSenha'
       ShowCaption = False
@@ -8315,7 +8320,7 @@ object Form3: TForm3
         AlignWithMargins = True
         Left = 0
         Top = 0
-        Width = 1098
+        Width = 1028
         Height = 45
         Margins.Left = 0
         Margins.Top = 0
@@ -8323,6 +8328,7 @@ object Form3: TForm3
         Margins.Bottom = 0
         Align = alTop
         Alignment = taCenter
+        Anchors = []
         Caption = 'Senha'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -8337,62 +8343,73 @@ object Form3: TForm3
       AlignWithMargins = True
       Left = 4
       Top = 419
-      Width = 1092
+      Width = 1022
       Height = 56
       Margins.Bottom = 50
       Align = alTop
+      Anchors = []
       BevelOuter = bvNone
       Caption = 'PanelSenha'
       ShowCaption = False
       TabOrder = 4
       ExplicitWidth = 1090
-      object EdtSenha: TEdit
+      DesignSize = (
+        1022
+        56)
+      object Edit1: TEdit
         AlignWithMargins = True
-        Left = 267
-        Top = 2
-        Width = 442
-        Height = 48
-        Margins.Left = 270
-        Margins.Top = 5
-        Margins.Right = 270
+        Left = 285
+        Top = 3
+        Width = 452
+        Height = 45
+        Hint = 'Senha'
+        Margins.Left = 320
+        Margins.Right = 320
         Alignment = taCenter
+        Anchors = []
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = 40
+        Font.Height = -27
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
         PasswordChar = '*'
         TabOrder = 0
         TextHint = 'Senha'
-        OnChange = edtSenhaChange
+        OnKeyDown = Edit1KeyDown
+        ExplicitLeft = 319
       end
     end
     object Panel2: TPanel
       AlignWithMargins = True
       Left = 1
       Top = 525
-      Width = 1098
+      Width = 1028
       Height = 41
       Margins.Left = 0
       Margins.Top = 0
       Margins.Right = 0
       Margins.Bottom = 150
       Align = alTop
+      Anchors = [akTop]
       BevelOuter = bvNone
       Caption = 'Panel2'
+      ShowCaption = False
       TabOrder = 5
       ExplicitWidth = 1096
+      DesignSize = (
+        1028
+        41)
       object ALoginButton: TButton
-        AlignWithMargins = True
-        Left = 454
-        Top = 7
+        Left = 478
+        Top = 0
         Width = 72
         Height = 32
-        Margins.Left = 450
+        Margins.Left = 470
         Margins.Top = 0
-        Margins.Right = 450
+        Margins.Right = 470
         Margins.Bottom = 0
+        Anchors = []
         Caption = 'Log-in'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -8403,7 +8420,12 @@ object Form3: TForm3
         ParentFont = False
         TabOrder = 0
         OnClick = ALoginButtonClick
+        ExplicitLeft = 512
       end
     end
+  end
+  object DSLogin: TDataSource
+    Left = 977
+    Top = 32
   end
 end

@@ -31,6 +31,8 @@ type
     DBLookupComboBox2: TDBLookupComboBox;
     Label4: TLabel;
     DBEdtData: TDBEdit;
+    DBEdit2: TDBEdit;
+    LblPeriodicidadeEmDias: TLabel;
     procedure FormShow(Sender: TObject);
     procedure BotaoIncluirClick(Sender: TObject);
     procedure BotaoExcluirClick(Sender: TObject);
