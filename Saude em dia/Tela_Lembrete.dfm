@@ -220,7 +220,7 @@ object Tela_Lembretes: TTela_Lembretes
     object Tabela: TDBGrid
       Left = 1
       Top = 272
-      Width = 1087
+      Width = 1085
       Height = 329
       Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSLembrete
@@ -249,11 +249,13 @@ object Tela_Lembretes: TTela_Lembretes
         item
           Expanded = False
           FieldName = 'DOSAGEM'
+          Width = 64
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'MENSAGEM_LEMBRETE'
+          Width = 64
           Visible = True
         end>
     end

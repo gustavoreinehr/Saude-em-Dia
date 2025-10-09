@@ -40,7 +40,6 @@ begin
   Application.CreateForm(TTela_Cadastrp, Tela_Cadastrp);
   Application.CreateForm(TTela_Lembretes, Tela_Lembretes);
   Application.CreateForm(TDmPrincipal, DmPrincipal);
-  Application.CreateForm(TDataModuleLembrete, DataModuleLembrete);
   TStyleManager.TrySetStyle('Iceberg Classico');
   Application.Run;
 end.

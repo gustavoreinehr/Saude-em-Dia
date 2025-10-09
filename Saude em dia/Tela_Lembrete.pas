@@ -47,6 +47,7 @@ type
 
 var
   Tela_Lembretes: TTela_Lembretes;
+  GDmTelaLembrete: TDataModuleLembrete;
 
 implementation
 
@@ -54,10 +55,10 @@ implementation
 
 procedure TTela_Lembretes.BotaoSalvarClick(Sender: TObject);
 begin
-  if DataModuleLembrete.QryLembretes.State in [dsEdit, dsInsert] then
+  if GDmTelaLembrete.QryLembretes.State in [dsEdit, dsInsert] then
   begin
-    DataModuleLembrete.QryLembretes.Post;
-    DataModuleLembrete.QryLembretes.ApplyUpdates;
+    GDmTelaLembrete.QryLembretes.Post;
+    GDmTelaLembrete.QryLembretes.ApplyUpdates;
 
     // Lembre-se de adicionar a lógica para controlar
     // a aparência dos botões (habilitar/desabilitar)
@@ -80,10 +81,14 @@ begin
 
   // Reaplica a máscara hh:mm:ss
   case Length(S) of
-    3: S := Copy(S, 1, 2) + ':' + Copy(S, 3, 1);
-    4: S := Copy(S, 1, 2) + ':' + Copy(S, 3, 2);
-    5: S := Copy(S, 1, 2) + ':' + Copy(S, 3, 2) + ':' + Copy(S, 5, 1);
-    6: S := Copy(S, 1, 2) + ':' + Copy(S, 3, 2) + ':' + Copy(S, 5, 2);
+    3:
+      S := Copy(S, 1, 2) + ':' + Copy(S, 3, 1);
+    4:
+      S := Copy(S, 1, 2) + ':' + Copy(S, 3, 2);
+    5:
+      S := Copy(S, 1, 2) + ':' + Copy(S, 3, 2) + ':' + Copy(S, 5, 1);
+    6:
+      S := Copy(S, 1, 2) + ':' + Copy(S, 3, 2) + ':' + Copy(S, 5, 2);
   end;
 
   // === Validação da hora ===
@@ -109,7 +114,7 @@ begin
   end;
 
   // Atualiza o texto
-  DBEdit1.OnChange := nil;  // evita loop recursivo
+  DBEdit1.OnChange := nil; // evita loop recursivo
   DBEdit1.Text := S;
   DBEdit1.SelStart := Length(DBEdit1.Text); // cursor no fim
   DBEdit1.OnChange := DBEdit1Change;
@@ -121,7 +126,7 @@ var
   Dia, Mes, Ano: Integer;
 begin
   // Remove caracteres que não são números
-  S := StringReplace(dbedtData.Text, '/', '', [rfReplaceAll]);
+  S := StringReplace(DBEdtData.Text, '/', '', [rfReplaceAll]);
   S := StringReplace(S, ' ', '', [rfReplaceAll]);
 
   // Limita a 8 dígitos (ddmmyyyy)
@@ -130,12 +135,18 @@ begin
 
   // Reaplica a máscara dd/mm/yyyy
   case Length(S) of
-    3: S := Copy(S, 1, 2) + '/' + Copy(S, 3, 1);
-    4: S := Copy(S, 1, 2) + '/' + Copy(S, 3, 2);
-    5: S := Copy(S, 1, 2) + '/' + Copy(S, 3, 2) + '/' + Copy(S, 5, 1);
-    6: S := Copy(S, 1, 2) + '/' + Copy(S, 3, 2) + '/' + Copy(S, 5, 2);
-    7: S := Copy(S, 1, 2) + '/' + Copy(S, 3, 2) + '/' + Copy(S, 5, 3);
-    8: S := Copy(S, 1, 2) + '/' + Copy(S, 3, 2) + '/' + Copy(S, 5, 4);
+    3:
+      S := Copy(S, 1, 2) + '/' + Copy(S, 3, 1);
+    4:
+      S := Copy(S, 1, 2) + '/' + Copy(S, 3, 2);
+    5:
+      S := Copy(S, 1, 2) + '/' + Copy(S, 3, 2) + '/' + Copy(S, 5, 1);
+    6:
+      S := Copy(S, 1, 2) + '/' + Copy(S, 3, 2) + '/' + Copy(S, 5, 2);
+    7:
+      S := Copy(S, 1, 2) + '/' + Copy(S, 3, 2) + '/' + Copy(S, 5, 3);
+    8:
+      S := Copy(S, 1, 2) + '/' + Copy(S, 3, 2) + '/' + Copy(S, 5, 4);
   end;
 
   // === Validação básica ===
@@ -161,12 +172,11 @@ begin
   end;
 
   // Atualiza o texto
-  dbedtData.OnChange := nil;  // evita loop recursivo
-  dbedtData.Text := S;
-  dbedtData.SelStart := Length(dbedtData.Text); // cursor no fim
-  dbedtData.OnChange := dbedtDataChange;
+  DBEdtData.OnChange := nil; // evita loop recursivo
+  DBEdtData.Text := S;
+  DBEdtData.SelStart := Length(DBEdtData.Text); // cursor no fim
+  DBEdtData.OnChange := DBEdtDataChange;
 end;
-
 
 procedure TTela_Lembretes.AVoltarClick(Sender: TObject);
 begin
@@ -175,13 +185,13 @@ end;
 
 procedure TTela_Lembretes.BotaoExcluirClick(Sender: TObject);
 begin
-  DataModuleLembrete.QryLembretes.Delete;
-  DataModuleLembrete.QryLembretes.ApplyUpdates;
+  GDmTelaLembrete.QryLembretes.Delete;
+  GDmTelaLembrete.QryLembretes.ApplyUpdates;
 end;
 
 procedure TTela_Lembretes.BotaoIncluirClick(Sender: TObject);
 begin
-  DataModuleLembrete.QryLembretes.Append;
+  GDmTelaLembrete.QryLembretes.Append;
 end;
 
 { ========================== FORM SHOW ========================== }
@@ -189,11 +199,12 @@ end;
 procedure TTela_Lembretes.FormShow(Sender: TObject);
 begin
   try
-    DataModuleLembrete.BuscarDadosPessoas;
-    DataModuleLembrete.AbrirDataSetPessoas;
-    DataModuleLembrete.AbrirDataSetRemedios;
+    GDmTelaLembrete := TDataModuleLembrete.Create(nil);
+    GDmTelaLembrete.BuscarDadosPessoas;
+    GDmTelaLembrete.AbrirDataSetPessoas;
+    GDmTelaLembrete.AbrirDataSetRemedios;
   finally
-
+    FreeAndNil(GDmTelaLembrete);
   end;
 
 end;

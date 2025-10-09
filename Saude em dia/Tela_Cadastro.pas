@@ -10,25 +10,25 @@ uses
 
 type
   TTela_Cadastrp = class(TForm)
-    Panel_Dados_Cadastro: TPanel;
-    LNome_Completo: TLabel;
-    CPF: TLabel;
-    Telefone: TLabel;
-    ButtonSalvar: TButton;
-    ButtonExcluir: TButton;
-    ButtonIncluir: TButton;
-    PanelBotoes: TPanel;
-    PanelInferior: TPanel;
-    DBGrid1: TDBGrid;
-    AVoltar: TButton;
-    edtNome_Completo1: TDBEdit;
-    medtcpf: TDBEdit;
-    medttelefone: TDBEdit;
+    PnlDadosCadastro: TPanel;
+    LblNomeCompleto: TLabel;
+    LblCPF: TLabel;
+    LblTelefone: TLabel;
+    BtnSalvar: TButton;
+    BtnExcluir: TButton;
+    BtnIncluir: TButton;
+    PnlBotoes: TPanel;
+    PnlGrid: TPanel;
+    GridDadosPessoa: TDBGrid;
+    BtnVoltar: TButton;
+    edtNomeCompleto: TDBEdit;
+    edtCPF: TDBEdit;
+    edttelefone: TDBEdit;
     DataSourcePessoas: TDataSource;
-    procedure AVoltarClick(Sender: TObject);
-    procedure ButtonIncluirClick(Sender: TObject);
-    procedure medtcpfChange(Sender: TObject);
-    procedure medttelefoneChange(Sender: TObject);
+    procedure BtnVoltarClick(Sender: TObject);
+    procedure BtnIncluirClick(Sender: TObject);
+    procedure edtCPFChange(Sender: TObject);
+    procedure edttelefoneChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ButtonExcluirClick(Sender: TObject);
     procedure ButtonSalvarClick(Sender: TObject);
@@ -47,7 +47,7 @@ implementation
 
 {$R *.dfm}
 
-procedure TTela_Cadastrp.AVoltarClick(Sender: TObject);
+procedure TTela_Cadastrp.BtnVoltarClick(Sender: TObject);
 begin
   Self.Close;
 end;
@@ -69,31 +69,31 @@ begin
 
 end;
 
-procedure TTela_Cadastrp.ButtonIncluirClick(Sender: TObject);
+procedure TTela_Cadastrp.BtnIncluirClick(Sender: TObject);
 var
   LCpfFormatado: string;
 begin
-  LCpfFormatado := StringReplace(medtcpf.Text, '.', '', [rfReplaceAll]);
+  LCpfFormatado := StringReplace(edtCPF.Text, '.', '', [rfReplaceAll]);
   LCpfFormatado := StringReplace(LCpfFormatado, '-', '', [rfReplaceAll]);
 
-  if Length(edtNome_Completo1.Text) < 10 then
+  if Length(edtNomeCompleto.Text) < 10 then
   begin
     ShowMessage('O nome precisa conter no mínimo 10 caracteres');
-    edtNome_Completo1.SetFocus
+    edtNomeCompleto.SetFocus
   end
   else if Length(LCpfFormatado) <> 11 then
   begin
     ShowMessage('O CPF precisa ter 11 digitos');
-    medtcpf.SetFocus
+    edtcpf.SetFocus
   end
-  else if Length(medttelefone.Text) <> 14 then
+  else if Length(edttelefone.Text) <> 14 then
   begin
     ShowMessage('O telefone precisa conter 11 digitos');
-    medttelefone.SetFocus;
+    edttelefone.SetFocus;
   end;
 
-  if (Length(edtNome_Completo1.Text) >= 10)
-    and (Length(LCpfFormatado) = 11) and (Length(medttelefone.Text) = 14) then
+  if (Length(edtNomeCompleto.Text) >= 10)
+    and (Length(LCpfFormatado) = 11) and (Length(edttelefone.Text) = 14) then
   begin
 
     if GTDMCadastroPessoa.QueryDadosPessoa.State in [dsEdit, dsInsert] then
@@ -120,14 +120,14 @@ begin
   end;
 end;
 
-procedure TTela_Cadastrp.medtcpfChange(Sender: TObject);
+procedure TTela_Cadastrp.edtCPFChange(Sender: TObject);
 var
   s, numbersOnly, formatted: string;
   i, posCursor: Integer;
 begin
-  s := medtcpf.Text;
+  s := edtcpf.Text;
 
-  posCursor := medtcpf.SelStart;
+  posCursor := edtcpf.SelStart;
 
   numbersOnly := '';
   for i := 1 to Length(s) do
@@ -142,30 +142,30 @@ begin
     formatted := Format('%s.%s.%s-%s', [Copy(numbersOnly, 1, 3),
       Copy(numbersOnly, 4, 3), Copy(numbersOnly, 7, 3),
       Copy(numbersOnly, 10, 2)]);
-    medtcpf.Text := formatted;
+    edtcpf.Text := formatted;
 
-    medtcpf.SelStart := Length(formatted);
+    edtcpf.SelStart := Length(formatted);
   end
   else
   begin
-    medtcpf.Text := numbersOnly;
+    edtcpf.Text := numbersOnly;
 
     if posCursor > Length(numbersOnly) then
-      medtcpf.SelStart := Length(numbersOnly)
+      edtcpf.SelStart := Length(numbersOnly)
     else
-      medtcpf.SelStart := posCursor;
+      edtcpf.SelStart := posCursor;
   end;
 end;
 
-procedure TTela_Cadastrp.medttelefoneChange(Sender: TObject);
+procedure TTela_Cadastrp.edttelefoneChange(Sender: TObject);
 var
   s, numbersOnly, formatted: string;
   i, posCursor: Integer;
 begin
-  s := medttelefone.Text;
+  s := edttelefone.Text;
 
   // Salvar posição atual do cursor
-  posCursor := medttelefone.SelStart;
+  posCursor := edttelefone.SelStart;
 
   // Remove todos os caracteres que não sejam números
   numbersOnly := '';
@@ -191,18 +191,18 @@ begin
         Copy(numbersOnly, 3, 4), // 4 primeiros dígitos do número
         Copy(numbersOnly, 7, 4)]); // últimos 4 dígitos
 
-    medttelefone.Text := formatted;
-    medttelefone.SelStart := Length(formatted);
+    edttelefone.Text := formatted;
+    edttelefone.SelStart := Length(formatted);
   end
   else
   begin
     // Se tiver menos que 10 dígitos, mostra só números
-    medttelefone.Text := numbersOnly;
+    edttelefone.Text := numbersOnly;
 
     if posCursor > Length(numbersOnly) then
-      medttelefone.SelStart := Length(numbersOnly)
+      edttelefone.SelStart := Length(numbersOnly)
     else
-      medttelefone.SelStart := posCursor;
+      edttelefone.SelStart := posCursor;
   end;
 end;
 
