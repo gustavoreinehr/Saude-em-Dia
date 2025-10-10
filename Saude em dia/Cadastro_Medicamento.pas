@@ -7,7 +7,7 @@ uses
   System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
   Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls, Data.DB, Vcl.Grids,
   System.IniFiles, Vcl.DBGrids, Vcl.Mask, Vcl.DBCtrls,
-  DataModuleMeticamento;
+  DataModuleMeticamento, Vcl.Imaging.pngimage;
 
 type
   TFCadastro_Medicamento = class(TForm)
@@ -37,6 +37,8 @@ type
     Edit_Descricao: TDBEdit;
     DataSourceBuscarMedicamentos: TDataSource;
     Validade_Time: TDBEdit;
+    Panel1: TPanel;
+    Image1: TImage;
     procedure AVoltarClick(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
