@@ -2,72 +2,11 @@ object DataModuleLembrete: TDataModuleLembrete
   Height = 750
   Width = 1000
   PixelsPerInch = 120
-  object QryLembretes: TFDQuery
-    OnNewRecord = QryLembretesNewRecord
-    CachedUpdates = True
-    Connection = DmPrincipal.FDConnection1
-    SQL.Strings = (
-      'SELECT * FROM CONTROLA')
-    Left = 120
-    Top = 73
-    object QryLembretesPessoa: TStringField
-      FieldKind = fkLookup
-      FieldName = 'Pessoa'
-      LookupDataSet = QryPessoas
-      LookupKeyFields = 'ID_PESSOA'
-      LookupResultField = 'NOME'
-      KeyFields = 'ID_PESSOA'
-      Lookup = True
-    end
-    object QryLembretesID_CONTROLA: TIntegerField
-      FieldName = 'ID_CONTROLA'
-      Origin = 'ID_CONTROLA'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-      Required = True
-    end
-    object QryLembretesID_REMEDIO: TIntegerField
-      FieldName = 'ID_REMEDIO'
-      Origin = 'ID_REMEDIO'
-      Required = True
-    end
-    object QryLembretesDOSAGEM: TStringField
-      FieldName = 'DOSAGEM'
-      Origin = 'DOSAGEM'
-      Required = True
-      Size = 11
-    end
-    object QryLembretesMENSAGEM_LEMBRETE: TStringField
-      FieldName = 'MENSAGEM_LEMBRETE'
-      Origin = 'MENSAGEM_LEMBRETE'
-      Required = True
-      Size = 400
-    end
-    object QryLembretesID_PESSOA: TIntegerField
-      FieldName = 'ID_PESSOA'
-      Origin = 'ID_PESSOA'
-      Required = True
-    end
-    object QryLembretesDATA: TDateField
-      FieldName = 'DATA'
-      Origin = '"DATA"'
-      Required = True
-    end
-    object QryLembretesHORA: TTimeField
-      FieldName = 'HORA'
-      Origin = 'HORA'
-      Required = True
-    end
-    object QryLembretesPERIODICIDADE: TIntegerField
-      FieldName = 'PERIODICIDADE'
-      Origin = 'PERIODICIDADE'
-      Required = True
-    end
-  end
   object QryPessoas: TFDQuery
     CachedUpdates = True
     Connection = DmPrincipal.FDConnection1
     SQL.Strings = (
-      'SELECT * FROM PESSOA')
+      'select * from PESSOA')
     Left = 280
     Top = 80
     object QryPessoasID_PESSOA: TIntegerField
@@ -98,9 +37,7 @@ object DataModuleLembrete: TDataModuleLembrete
     CachedUpdates = True
     Connection = DmPrincipal.FDConnection1
     SQL.Strings = (
-      
-        'select coalesce(max (ID_CONTROLA) + 1, 1) as IDCONTROLA from CON' +
-        'TROLA')
+      'select gen_id(GN_CONTROLA, 1) AS IDCONTROLA FROM RDB$DATABASE')
     Left = 304
     Top = 233
     object QryIDLembreteIDCONTROLA: TLargeintField
@@ -112,9 +49,10 @@ object DataModuleLembrete: TDataModuleLembrete
     end
   end
   object QryRemedios: TFDQuery
+    CachedUpdates = True
     Connection = DmPrincipal.FDConnection1
     SQL.Strings = (
-      'select * from remedio')
+      'select * from REMEDIO')
     Left = 160
     Top = 288
     object QryRemediosID_REMEDIO: TIntegerField
@@ -156,6 +94,69 @@ object DataModuleLembrete: TDataModuleLembrete
       FieldName = 'DESCRICAO'
       Origin = 'DESCRICAO'
       Size = 200
+    end
+  end
+  object QryLembretes: TFDQuery
+    OnNewRecord = QryLembretesNewRecord
+    CachedUpdates = True
+    Connection = DmPrincipal.FDConnection1
+    SQL.Strings = (
+      
+        'SELECT C.* FROM CONTROLA C INNER JOIN PESSOA P ON (C.ID_PESSOA =' +
+        ' P.ID_PESSOA)')
+    Left = 112
+    Top = 104
+    object QryLembretesID_CONTROLA: TIntegerField
+      FieldName = 'ID_CONTROLA'
+      Origin = 'ID_CONTROLA'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryLembretesID_REMEDIO: TIntegerField
+      FieldName = 'ID_REMEDIO'
+      Origin = 'ID_REMEDIO'
+      Required = True
+    end
+    object QryLembretesDOSAGEM: TStringField
+      FieldName = 'DOSAGEM'
+      Origin = 'DOSAGEM'
+      Required = True
+      Size = 50
+    end
+    object QryLembretesMENSAGEM_LEMBRETE: TStringField
+      FieldName = 'MENSAGEM_LEMBRETE'
+      Origin = 'MENSAGEM_LEMBRETE'
+      Required = True
+      Size = 400
+    end
+    object QryLembretesID_PESSOA: TIntegerField
+      FieldName = 'ID_PESSOA'
+      Origin = 'ID_PESSOA'
+      Required = True
+    end
+    object QryLembretesDATA: TDateField
+      FieldName = 'DATA'
+      Origin = '"DATA"'
+      Required = True
+    end
+    object QryLembretesHORA: TTimeField
+      FieldName = 'HORA'
+      Origin = 'HORA'
+      Required = True
+    end
+    object QryLembretesPERIODICIDADE: TIntegerField
+      FieldName = 'PERIODICIDADE'
+      Origin = 'PERIODICIDADE'
+      Required = True
+    end
+    object QryLembretesNOMEPESSOA: TStringField
+      FieldKind = fkLookup
+      FieldName = 'NOMEPESSOA'
+      LookupDataSet = QryPessoas
+      LookupKeyFields = 'ID_PESSOA'
+      LookupResultField = 'NOME'
+      KeyFields = 'ID_PESSOA'
+      Lookup = True
     end
   end
 end

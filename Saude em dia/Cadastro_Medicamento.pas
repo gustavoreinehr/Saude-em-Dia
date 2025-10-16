@@ -93,57 +93,107 @@ procedure TFCadastro_Medicamento.Editar_ButtonClick(Sender: TObject);
 var
   D: TDateTime;
 begin
-
-  if Trim(Nome_Medicamento_Edit.Text) = '' then
+  // A. VERIFICA SE HÁ UMA OPERAÇÃO EM ANDAMENTO
+  //    Só continua se o dataset estiver em modo de inserção (novo) ou edição.
+  if not (DMMedicamentos.FDQRYBuscarMedicamntos.State in [dsEdit, dsInsert]) then
   begin
-    Nome_Obrigatorio; Exit;
+    // Se o usuário clicar em salvar sem ter iniciado uma inclusão ou edição,
+    // o sistema coloca o registro atual em modo de edição automaticamente.
+    if DMMedicamentos.FDQRYBuscarMedicamntos.IsEmpty then
+    begin
+      ShowMessage('Não há registros para salvar. Clique em "Incluir" para adicionar um novo.');
+      Exit;
+    end;
+    DMMedicamentos.FDQRYBuscarMedicamntos.Edit;
   end;
 
+  // B. VALIDAÇÕES DOS CAMPOS OBRIGATÓRIOS
+  if Trim(Nome_Medicamento_Edit.Text) = '' then
+  begin
+    Nome_Obrigatorio;
+    Exit;
+  end;
 
   if Trim(Unidade_Medida_Comb.Text) = '' then
   begin
-    Unidade_Obrigatorio; Exit ;
+    Unidade_Obrigatorio;
+    Exit;
   end;
 
   if not ParseDateBR(Validade_Time.Text, D) then
   begin
-    ShowMessage('Informe uma data válida no formato dd/mm/aaaa.');
-    Validade_Time.SetFocus; Exit;
+    ShowMessage('Informe uma data de validade válida no formato dd/mm/aaaa.');
+    Validade_Time.SetFocus;
+    Exit;
   end;
 
   if D < Date then
   begin
-    ShowMessage('A validade não pode ser anterior a hoje.');
-    Validade_Time.SetFocus; Exit;
+    ShowMessage('A data de validade não pode ser anterior a hoje.');
+    Validade_Time.SetFocus;
+    Exit;
   end;
 
   if Trim(Classificacao_Comb.Text) = '' then
   begin
-    Class_Obrigatorio; Exit;
+    Class_Obrigatorio;
+    Exit;
   end;
 
-  with DMMedicamentos.FDQRYBuscarMedicamntos do
-  begin
-    if not (State in [dsEdit, dsInsert]) then
-      Edit;
+  // C. SALVAR OS DADOS COM TRATAMENTO DE ERROS
+  try
+    // Atribui a data validada ao campo do dataset
+    if DMMedicamentos.FDQRYBuscarMedicamntos.FindField('Validade') <> nil then
+      DMMedicamentos.FDQRYBuscarMedicamntos.FieldByName('Validade').AsDateTime := D;
 
-    if FindField('Validade') <> nil then
-      FieldByName('Validade').AsDateTime := D;
+    // Salva os dados no banco
+    DMMedicamentos.FDQRYBuscarMedicamntos.Post;
+    DMMedicamentos.FDQRYBuscarMedicamntos.ApplyUpdates;
 
-    Post;
-    ApplyUpdates;
+    ShowMessage('Medicamento salvo com sucesso!'); // <-- MENSAGEM DE SUCESSO
+
+  except
+    on E: Exception do
+    begin
+      // Exibe qualquer erro que o banco de dados retornar
+      ShowMessage('Ocorreu um erro ao salvar o medicamento.' + #13#10 +
+                  'Erro: ' + E.Message);
+      DMMedicamentos.FDQRYBuscarMedicamntos.CancelUpdates; // Desfaz a tentativa de salvar
+    end;
   end;
 end;
 
 procedure TFCadastro_Medicamento.Excluir_ButtonClick(Sender: TObject);
 begin
-  if DMMedicamentos.FDQRYBuscarMedicamntos.Active
-     and not DMMedicamentos.FDQRYBuscarMedicamntos.IsEmpty then
-    DMMedicamentos.FDQRYBuscarMedicamntos.Delete;
-    
-    if DMMedicamentos.FDQRYBuscarMedicamntos.State in [dsEdit, dsInsert] then
-     DMMedicamentos.FDQRYBuscarMedicamntos.Post; 
-    DMMedicamentos.FDQRYBuscarMedicamntos.ApplyUpdates;
+  // 1. VERIFICA SE HÁ UM REGISTRO SELECIONADO
+  if DMMedicamentos.FDQRYBuscarMedicamntos.IsEmpty then
+  begin
+    ShowMessage('Não há nenhum medicamento para excluir.');
+    Exit;
+  end;
+
+  // 2. MENSAGEM DE CONFIRMAÇÃO (ESSENCIAL!)
+  if MessageDlg('Tem certeza que deseja excluir este medicamento?',
+               mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  begin
+    // 3. TRATAMENTO DE ERROS NA EXCLUSÃO
+    try
+      DMMedicamentos.FDQRYBuscarMedicamntos.Delete;
+      DMMedicamentos.FDQRYBuscarMedicamntos.ApplyUpdates;
+
+      ShowMessage('Medicamento excluído com sucesso!'); // <-- MENSAGEM DE SUCESSO
+
+    except
+      on E: Exception do
+      begin
+        // Avisa sobre o erro (geralmente por chave estrangeira)
+        ShowMessage('Não foi possível excluir o registro.' + #13#10 +
+                    'Pode estar em uso em outra parte do sistema.' + #13#10 +
+                    'Erro: ' + E.Message);
+        DMMedicamentos.FDQRYBuscarMedicamntos.CancelUpdates; // Desfaz a exclusão local
+      end;
+    end;
+  end;
 end;
 
 procedure TFCadastro_Medicamento.FormCreate(Sender: TObject);
@@ -174,16 +224,9 @@ begin
 end;
 
 procedure TFCadastro_Medicamento.Incluir_ButtonClick(Sender: TObject);
-var
-  D: TDateTime;
 begin
-
+  // Apenas coloca o dataset em modo de inserção e posiciona o cursor.
   DMMedicamentos.FDQRYBuscarMedicamntos.Append;
-
-  if ParseDateBR(Validade_Time.Text, D) then
-    if DMMedicamentos.FDQRYBuscarMedicamntos.FindField('Validade') <> nil then
-      DMMedicamentos.FDQRYBuscarMedicamntos.FieldByName('Validade').AsDateTime := D;
-
   Nome_Medicamento_Edit.SetFocus;
 end;
 

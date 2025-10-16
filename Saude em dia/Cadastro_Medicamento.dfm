@@ -21,6 +21,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Height = 393
     Align = alTop
     TabOrder = 4
+    ExplicitWidth = 1098
     object Label1: TLabel
       Left = 24
       Top = 68

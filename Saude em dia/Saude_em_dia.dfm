@@ -28,7 +28,7 @@ object Form3: TForm3
     Align = alClient
     ShowCaption = False
     TabOrder = 0
-    ExplicitWidth = 1098
+    ExplicitWidth = 1028
     ExplicitHeight = 697
     object Panel1: TPanel
       AlignWithMargins = True
@@ -45,7 +45,7 @@ object Form3: TForm3
       ShowCaption = False
       ShowHint = False
       TabOrder = 1
-      ExplicitWidth = 1090
+      ExplicitWidth = 1020
       object img1: TImage
         AlignWithMargins = True
         Left = 0
@@ -8242,7 +8242,7 @@ object Form3: TForm3
       Caption = 'Painel_CNPJ'
       ShowCaption = False
       TabOrder = 0
-      ExplicitWidth = 1096
+      ExplicitWidth = 1026
       object LabelCNPJ: TLabel
         AlignWithMargins = True
         Left = 0
@@ -8278,7 +8278,7 @@ object Form3: TForm3
       Caption = '0'
       ShowCaption = False
       TabOrder = 2
-      ExplicitWidth = 1096
+      ExplicitWidth = 1026
       DesignSize = (
         1028
         56)
@@ -8301,7 +8301,7 @@ object Form3: TForm3
         ParentFont = False
         TabOrder = 0
         Text = '  .   .   /    -  '
-        ExplicitLeft = 319
+        ExplicitLeft = 284
       end
     end
     object PanelEditSenha: TPanel
@@ -8315,7 +8315,7 @@ object Form3: TForm3
       Caption = 'PanelSenha'
       ShowCaption = False
       TabOrder = 3
-      ExplicitWidth = 1096
+      ExplicitWidth = 1026
       object Label1: TLabel
         AlignWithMargins = True
         Left = 0
@@ -8352,7 +8352,7 @@ object Form3: TForm3
       Caption = 'PanelSenha'
       ShowCaption = False
       TabOrder = 4
-      ExplicitWidth = 1090
+      ExplicitWidth = 1020
       DesignSize = (
         1022
         56)
@@ -8377,7 +8377,7 @@ object Form3: TForm3
         TabOrder = 0
         TextHint = 'Senha'
         OnKeyDown = Edit1KeyDown
-        ExplicitLeft = 319
+        ExplicitLeft = 284
       end
     end
     object Panel2: TPanel
@@ -8396,7 +8396,7 @@ object Form3: TForm3
       Caption = 'Panel2'
       ShowCaption = False
       TabOrder = 5
-      ExplicitWidth = 1096
+      ExplicitWidth = 1026
       DesignSize = (
         1028
         41)
@@ -8420,7 +8420,7 @@ object Form3: TForm3
         ParentFont = False
         TabOrder = 0
         OnClick = ALoginButtonClick
-        ExplicitLeft = 512
+        ExplicitLeft = 477
       end
     end
   end

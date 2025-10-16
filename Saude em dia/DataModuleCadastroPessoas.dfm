@@ -22,11 +22,6 @@ object DMCadastroPessoa: TDMCadastroPessoa
       Required = True
       Size = 100
     end
-    object QueryDadosPessoaTIPO: TStringField
-      FieldName = 'TIPO'
-      Origin = 'TIPO'
-      Required = True
-    end
     object QueryDadosPessoaCPF: TStringField
       FieldName = 'CPF'
       Origin = 'CPF'
@@ -38,13 +33,8 @@ object DMCadastroPessoa: TDMCadastroPessoa
       Origin = 'TELEFONE'
       Required = True
     end
-    object QueryDadosPessoaID_FARMACIA: TIntegerField
-      FieldName = 'ID_FARMACIA'
-      Origin = 'ID_FARMACIA'
-    end
   end
   object QryIDPessoa: TFDQuery
-    Active = True
     Connection = DmPrincipal.FDConnection1
     SQL.Strings = (
       'select coalesce(max (ID_PESSOA) + 1, 1) as IDPESSOA from pessoa')

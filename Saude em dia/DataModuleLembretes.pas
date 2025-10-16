@@ -11,11 +11,9 @@ uses
 
 type
   TDataModuleLembrete = class(TDataModule)
-    QryLembretes: TFDQuery;
     QryIDLembrete: TFDQuery;
     QryIDLembreteIDCONTROLA: TLargeintField;
     QryPessoas: TFDQuery;
-    QryLembretesPessoa: TStringField;
     QryRemedios: TFDQuery;
     QryRemediosID_REMEDIO: TIntegerField;
     QryRemediosNOME: TStringField;
@@ -25,6 +23,11 @@ type
     QryRemediosVIA_ADMINISTRACAO: TStringField;
     QryRemediosUNIDADE_MEDIDA: TStringField;
     QryRemediosDESCRICAO: TStringField;
+    QryPessoasID_PESSOA: TIntegerField;
+    QryPessoasNOME: TStringField;
+    QryPessoasCPF: TStringField;
+    QryPessoasTELEFONE: TStringField;
+    QryLembretes: TFDQuery;
     QryLembretesID_CONTROLA: TIntegerField;
     QryLembretesID_REMEDIO: TIntegerField;
     QryLembretesDOSAGEM: TStringField;
@@ -33,10 +36,7 @@ type
     QryLembretesDATA: TDateField;
     QryLembretesHORA: TTimeField;
     QryLembretesPERIODICIDADE: TIntegerField;
-    QryPessoasID_PESSOA: TIntegerField;
-    QryPessoasNOME: TStringField;
-    QryPessoasCPF: TStringField;
-    QryPessoasTELEFONE: TStringField;
+    QryLembretesNOMEPESSOA: TStringField;
     procedure QryLembretesNewRecord(DataSet: TDataSet);
   private
     { Private declarations }
@@ -63,6 +63,7 @@ begin
   QryPessoas.SQL.Clear;
   QryPessoas.SQL.Add('select * from PESSOA');
   QryPessoas.Open;
+  QryPessoas.Active := True; // Garante que a query está ativa
 end;
 
 procedure TDataModuleLembrete.AbrirDataSetRemedios;
@@ -72,6 +73,7 @@ begin
   QryRemedios.SQL.Clear;
   QryRemedios.SQL.Add('select * from REMEDIO');
   QryRemedios.Open;
+  QryRemedios.Active := True; // Garante que a query está ativa
 end;
 
 procedure TDataModuleLembrete.BuscarDadosPessoas;
@@ -79,26 +81,29 @@ begin
   QryLembretes.Connection := DmPrincipal.FDConnection1;
   QryLembretes.Close;
   QryLembretes.SQL.Clear;
-  QryLembretes.SQL.Add('select * from CONTROLA');
+  QryLembretes.SQL.Add
+    ('SELECT C.* FROM CONTROLA C INNER JOIN PESSOA P ON (C.ID_PESSOA = P.ID_PESSOA)');
   QryLembretes.Open;
+  QryLembretes.Active := True; // Garante que a query está ativa
 end;
 
 function TDataModuleLembrete.BuscarProximoID: integer;
 begin
-  QryIDLembrete.Close; // Fecha a consulta, se estiver aberta
-  QryIDLembrete.SQL.Clear; // Limpa a consulta anterior
+  // Garante que a conexão está atribuída
+  QryIDLembrete.Connection := DmPrincipal.FDConnection1;
+  QryIDLembrete.Close;
+  QryIDLembrete.SQL.Clear;
+  // Pede o próximo valor para o generator de forma segura
   QryIDLembrete.SQL.Add
-    ('select coalesce(max (ID_CONTROLA) + 1, 1) as IDCONTROLA from CONTROLA');
-  // Adiciona a nova consulta
-  QryIDLembrete.Open; // Abre a consulta para execução
+    ('select gen_id(GN_CONTROLA, 1) AS IDCONTROLA FROM RDB$DATABASE');
+  QryIDLembrete.Open;
+  // O resultado é obtido e a query pode ser fechada, não precisa ficar ativa
   Result := QryIDLembrete.FieldByName('IDCONTROLA').AsInteger;
-  // Obtém o valor do campo IDPESSOA
 end;
 
 procedure TDataModuleLembrete.QryLembretesNewRecord(DataSet: TDataSet);
 begin
-  DataModuleLembrete.QryLembretes.FieldByName('ID_CONTROLA').AsInteger :=
-    DataModuleLembrete.BuscarProximoID;
+  DataSet.FieldByName('ID_CONTROLA').AsInteger := BuscarProximoID;
 end;
 
 end.

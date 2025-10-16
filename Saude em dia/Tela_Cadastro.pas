@@ -32,6 +32,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure ButtonExcluirClick(Sender: TObject);
     procedure ButtonSalvarClick(Sender: TObject);
+    procedure BtnSalvarClick(Sender: TObject);
+    procedure BtnExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,6 +48,61 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TTela_Cadastrp.BtnSalvarClick(Sender: TObject);
+var
+  LCpfFormatado: string;
+begin
+  // A. VERIFICA SE HÁ UMA OPERAÇÃO EM ANDAMENTO
+  //    Só continua se o dataset estiver em modo de inserção ou edição.
+  if not (GTDMCadastroPessoa.QueryDadosPessoa.State in [dsEdit, dsInsert]) then
+  begin
+    ShowMessage('Nenhuma inclusão ou edição em andamento para salvar!');
+    Exit; // Sai do procedimento, pois não há o que fazer.
+  end;
+
+  // B. VALIDAÇÃO DOS CAMPOS (lógica que estava no botão Incluir)
+  LCpfFormatado := StringReplace(edtCPF.Text, '.', '', [rfReplaceAll]);
+  LCpfFormatado := StringReplace(LCpfFormatado, '-', '', [rfReplaceAll]);
+
+  if Length(edtNomeCompleto.Text) < 10 then
+  begin
+    ShowMessage('O nome precisa conter no mínimo 10 caracteres.');
+    edtNomeCompleto.SetFocus;
+    Exit; // Interrompe o salvamento
+  end;
+
+  if Length(LCpfFormatado) <> 11 then
+  begin
+    ShowMessage('O CPF precisa ter 11 dígitos.');
+    edtCPF.SetFocus;
+    Exit; // Interrompe o salvamento
+  end;
+
+  // A validação do telefone deve considerar o formato com máscara: (XX)XXXXX-XXXX -> 14 caracteres
+  if Length(edttelefone.Text) < 14 then
+  begin
+    ShowMessage('O telefone precisa ser preenchido completamente (DDD + número).');
+    edttelefone.SetFocus;
+    Exit; // Interrompe o salvamento
+  end;
+
+  // C. SALVAR OS DADOS
+  //    Se todas as validações passaram, o código chega até aqui.
+
+  // Atribui o próximo ID apenas se for uma nova inclusão (dsInsert)
+  if GTDMCadastroPessoa.QueryDadosPessoa.State = dsInsert then
+  begin
+    GTDMCadastroPessoa.QueryDadosPessoa.FieldByName('ID_PESSOA').AsInteger :=
+      GTDMCadastroPessoa.BuscarProximoID;
+  end;
+
+  // Efetivamente salva os dados
+  GTDMCadastroPessoa.QueryDadosPessoa.Post;
+  GTDMCadastroPessoa.QueryDadosPessoa.ApplyUpdates;
+
+  ShowMessage('Dados salvos com sucesso!');
+end;
 
 procedure TTela_Cadastrp.BtnVoltarClick(Sender: TObject);
 begin
@@ -69,45 +126,51 @@ begin
 
 end;
 
-procedure TTela_Cadastrp.BtnIncluirClick(Sender: TObject);
-var
-  LCpfFormatado: string;
+procedure TTela_Cadastrp.BtnExcluirClick(Sender: TObject);
 begin
-  LCpfFormatado := StringReplace(edtCPF.Text, '.', '', [rfReplaceAll]);
-  LCpfFormatado := StringReplace(LCpfFormatado, '-', '', [rfReplaceAll]);
-
-  if Length(edtNomeCompleto.Text) < 10 then
+  // 1. VERIFICAR SE HÁ UM REGISTRO SELECIONADO
+  //    Se a Query estiver vazia (sem registros), não há o que excluir.
+  if GTDMCadastroPessoa.QueryDadosPessoa.IsEmpty then
   begin
-    ShowMessage('O nome precisa conter no mínimo 10 caracteres');
-    edtNomeCompleto.SetFocus
-  end
-  else if Length(LCpfFormatado) <> 11 then
-  begin
-    ShowMessage('O CPF precisa ter 11 digitos');
-    edtcpf.SetFocus
-  end
-  else if Length(edttelefone.Text) <> 14 then
-  begin
-    ShowMessage('O telefone precisa conter 11 digitos');
-    edttelefone.SetFocus;
+    ShowMessage('Não há nenhum registro para excluir.');
+    Exit;
   end;
 
-  if (Length(edtNomeCompleto.Text) >= 10)
-    and (Length(LCpfFormatado) = 11) and (Length(edttelefone.Text) = 14) then
+  // 2. ADICIONAR UMA MENSAGEM DE CONFIRMAÇÃO (BOA PRÁTICA)
+  //    Isso evita que o usuário exclua registros acidentalmente.
+  if MessageDlg('Tem certeza que deseja excluir o registro selecionado?',
+               mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
-
-    if GTDMCadastroPessoa.QueryDadosPessoa.State in [dsEdit, dsInsert] then
-
-    begin
-      GTDMCadastroPessoa.QueryDadosPessoa.FieldByName('ID_PESSOA').AsInteger :=
-        GTDMCadastroPessoa.BuscarProximoID;
-      GTDMCadastroPessoa.QueryDadosPessoa.Post;
+    // 3. ADICIONAR TRATAMENTO DE ERROS (A PARTE MAIS IMPORTANTE)
+    //    Isso vai capturar qualquer erro que o banco de dados retorne.
+    try
+      // Executa o comando de exclusão no registro atualmente selecionado na grid
+      GTDMCadastroPessoa.QueryDadosPessoa.Delete;
       GTDMCadastroPessoa.QueryDadosPessoa.ApplyUpdates;
-    end
-    else
-      GTDMCadastroPessoa.QueryDadosPessoa.Append;
-  end;
 
+      ShowMessage('Registro excluído com sucesso!');
+    except
+      on E: Exception do
+      begin
+        // Se algo der errado (ex: chave estrangeira), esta mensagem será exibida.
+        ShowMessage('Não foi possível excluir o registro.' + #13#10 +
+                    'Erro retornado pelo banco de dados: ' + E.Message);
+
+        // Cancela a operação de exclusão localmente para o dataset voltar ao normal
+        GTDMCadastroPessoa.QueryDadosPessoa.CancelUpdates;
+      end;
+    end;
+  end;
+end;
+
+procedure TTela_Cadastrp.BtnIncluirClick(Sender: TObject);
+begin
+  // 1. Coloca o dataset em modo de inserção.
+  //    Isso limpa automaticamente os campos (DBEdits) ligados a ele.
+  GTDMCadastroPessoa.QueryDadosPessoa.Append;
+
+  // 2. Coloca o foco no primeiro campo para facilitar a digitação.
+  edtNomeCompleto.SetFocus;
 end;
 
 procedure TTela_Cadastrp.FormShow(Sender: TObject);

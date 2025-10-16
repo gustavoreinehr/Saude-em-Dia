@@ -50,6 +50,7 @@ begin
     TelaPrincipal := TTelaPrincipal.Create(nil);
     try
       TelaPrincipal.ShowModal;
+      Form3.Close;
     finally
       FreeAndNil(TelaPrincipal);
     end;

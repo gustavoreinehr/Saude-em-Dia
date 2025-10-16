@@ -14,10 +14,8 @@ type
     QryIDPessoa: TFDQuery;
     QueryDadosPessoaID_PESSOA: TIntegerField;
     QueryDadosPessoaNOME: TStringField;
-    QueryDadosPessoaTIPO: TStringField;
     QueryDadosPessoaCPF: TStringField;
     QueryDadosPessoaTELEFONE: TStringField;
-    QueryDadosPessoaID_FARMACIA: TIntegerField;
     QryIDPessoaIDPESSOA: TLargeintField;
     procedure BuscarDadosPessoas;
   private

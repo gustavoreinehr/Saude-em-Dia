@@ -28,6 +28,7 @@ type
     DsLembrete: TDataSource;
     DBLookupComboBox1: TDBLookupComboBox;
     DSRemedios: TDataSource;
+    DSPessoa: TDataSource;
     DBLookupComboBox2: TDBLookupComboBox;
     Label4: TLabel;
     DBEdtData: TDBEdit;
@@ -40,6 +41,8 @@ type
     procedure AVoltarClick(Sender: TObject);
     procedure DBEdit1Change(Sender: TObject);
     procedure DBEdtDataChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,15 +58,56 @@ implementation
 
 procedure TTela_Lembretes.BotaoSalvarClick(Sender: TObject);
 begin
-  if GDmTelaLembrete.QryLembretes.State in [dsEdit, dsInsert] then
+  // A. VERIFICA SE HÁ UMA OPERAÇÃO EM ANDAMENTO
+  if not (GDmTelaLembrete.QryLembretes.State in [dsEdit, dsInsert]) then
   begin
-    GDmTelaLembrete.QryLembretes.Post;
-    GDmTelaLembrete.QryLembretes.ApplyUpdates;
-
-    // Lembre-se de adicionar a lógica para controlar
-    // a aparência dos botões (habilitar/desabilitar)
+    ShowMessage('Clique em "Incluir" para adicionar um novo lembrete.');
+    Exit;
   end;
 
+  // B. VALIDAÇÃO DOS CAMPOS OBRIGATÓRIOS
+  // Adapte os nomes dos componentes se necessário (DBLookupComboBox1, 2)
+  if DBLookupComboBox1.Text = '' then
+  begin
+    ShowMessage('O campo "Remédio" é obrigatório.');
+    DBLookupComboBox1.SetFocus;
+    Exit;
+  end;
+
+  if DBLookupComboBox2.Text = '' then // Supondo ser o paciente
+  begin
+    ShowMessage('O campo "Paciente" é obrigatório.');
+    DBLookupComboBox2.SetFocus;
+    Exit;
+  end;
+
+  if (Trim(DBEdtData.Text) = '') or (Length(DBEdtData.Text) < 10) then
+  begin
+    ShowMessage('O campo "Data" é obrigatório e deve ser preenchido completamente.');
+    DBEdtData.SetFocus;
+    Exit;
+  end;
+
+  if (Trim(DBEdit1.Text) = '') or (Length(DBEdit1.Text) < 8) then // Supondo ser o horário
+  begin
+    ShowMessage('O campo "Horário" é obrigatório e deve ser preenchido como hh:mm:ss.');
+    DBEdit1.SetFocus;
+    Exit;
+  end;
+
+  // C. SALVAR OS DADOS
+  try
+    GDmTelaLembrete.QryLembretes.Post;
+    GDmTelaLembrete.QryLembretes.ApplyUpdates;
+    ShowMessage('Lembrete salvo com sucesso!'); // <-- MENSAGEM DE SUCESSO
+
+  except
+    on E: Exception do
+    begin
+      ShowMessage('Não foi possível salvar o lembrete.' + #13#10 + 'Erro: ' + E.Message);
+      GDmTelaLembrete.QryLembretes.CancelUpdates;
+    end;
+  end;
 end;
 
 procedure TTela_Lembretes.DBEdit1Change(Sender: TObject);
@@ -185,8 +229,31 @@ end;
 
 procedure TTela_Lembretes.BotaoExcluirClick(Sender: TObject);
 begin
-  GDmTelaLembrete.QryLembretes.Delete;
-  GDmTelaLembrete.QryLembretes.ApplyUpdates;
+  // 1. VERIFICA SE HÁ ALGO PARA EXCLUIR
+  if GDmTelaLembrete.QryLembretes.IsEmpty then
+  begin
+    ShowMessage('Não há lembretes para excluir.');
+    Exit;
+  end;
+
+  // 2. MENSAGEM DE CONFIRMAÇÃO
+  if MessageDlg('Tem certeza que deseja excluir o lembrete selecionado?',
+               mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  begin
+    // 3. TRATAMENTO DE ERROS
+    try
+      GDmTelaLembrete.QryLembretes.Delete;
+      GDmTelaLembrete.QryLembretes.ApplyUpdates;
+      ShowMessage('Lembrete excluído com sucesso!'); // <-- MENSAGEM DE SUCESSO
+
+    except
+      on E: Exception do
+      begin
+        ShowMessage('Não foi possível excluir o lembrete.' + #13#10 + 'Erro: ' + E.Message);
+        GDmTelaLembrete.QryLembretes.CancelUpdates;
+      end;
+    end;
+  end;
 end;
 
 procedure TTela_Lembretes.BotaoIncluirClick(Sender: TObject);
@@ -196,17 +263,28 @@ end;
 
 { ========================== FORM SHOW ========================== }
 
+procedure TTela_Lembretes.FormCreate(Sender: TObject);
+begin
+  GDmTelaLembrete := TDataModuleLembrete.Create(nil);
+end;
+
+procedure TTela_Lembretes.FormDestroy(Sender: TObject);
+begin
+  FreeAndNil(GDmTelaLembrete);
+end;
+
 procedure TTela_Lembretes.FormShow(Sender: TObject);
 begin
-  try
-    GDmTelaLembrete := TDataModuleLembrete.Create(nil);
-    GDmTelaLembrete.BuscarDadosPessoas;
-    GDmTelaLembrete.AbrirDataSetPessoas;
-    GDmTelaLembrete.AbrirDataSetRemedios;
-  finally
-    FreeAndNil(GDmTelaLembrete);
-  end;
+  DsLembrete.DataSet := GDmTelaLembrete.QryLembretes;
+  DSPessoa.DataSet   := GDmTelaLembrete.QryPessoas;
+  DSRemedios.DataSet := GDmTelaLembrete.QryRemedios;
+  DSRemedios.DataSet.Active := true;
+  DsLembrete.DataSet.Active := true;
+  DSPessoa.DataSet.Active := true;
 
+  GDmTelaLembrete.BuscarDadosPessoas; // Suponho que isso abra a QryLembretes
+  GDmTelaLembrete.AbrirDataSetPessoas;
+  GDmTelaLembrete.AbrirDataSetRemedios;
 end;
 
 end.

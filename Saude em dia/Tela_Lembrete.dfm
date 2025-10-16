@@ -12,6 +12,8 @@ object Tela_Lembretes: TTela_Lembretes
   Font.Style = []
   Position = poDesktopCenter
   OnClick = BotaoExcluirClick
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnShow = FormShow
   TextHeight = 15
   object BarraInferior: TPanel
@@ -92,8 +94,6 @@ object Tela_Lembretes: TTela_Lembretes
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitWidth = 1098
-    ExplicitHeight = 597
     DesignSize = (
       1100
       605)
@@ -220,7 +220,7 @@ object Tela_Lembretes: TTela_Lembretes
     object Tabela: TDBGrid
       Left = 1
       Top = 272
-      Width = 1085
+      Width = 1083
       Height = 329
       Anchors = [akLeft, akTop, akRight, akBottom]
       DataSource = DSLembrete
@@ -233,7 +233,8 @@ object Tela_Lembretes: TTela_Lembretes
       Columns = <
         item
           Expanded = False
-          FieldName = 'Pessoa'
+          FieldName = 'NOMEPESSOA'
+          Width = 98
           Visible = True
         end
         item
@@ -249,13 +250,12 @@ object Tela_Lembretes: TTela_Lembretes
         item
           Expanded = False
           FieldName = 'DOSAGEM'
-          Width = 64
+          Width = 110
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'MENSAGEM_LEMBRETE'
-          Width = 64
           Visible = True
         end>
     end
