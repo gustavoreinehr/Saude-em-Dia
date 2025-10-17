@@ -28,8 +28,8 @@ object Form3: TForm3
     Align = alClient
     ShowCaption = False
     TabOrder = 0
-    ExplicitWidth = 1028
-    ExplicitHeight = 697
+    ExplicitLeft = 5
+    ExplicitTop = -5
     object Panel1: TPanel
       AlignWithMargins = True
       Left = 4
@@ -45,7 +45,6 @@ object Form3: TForm3
       ShowCaption = False
       ShowHint = False
       TabOrder = 1
-      ExplicitWidth = 1020
       object img1: TImage
         AlignWithMargins = True
         Left = 0
@@ -8242,7 +8241,6 @@ object Form3: TForm3
       Caption = 'Painel_CNPJ'
       ShowCaption = False
       TabOrder = 0
-      ExplicitWidth = 1026
       object LabelCNPJ: TLabel
         AlignWithMargins = True
         Left = 0
@@ -8259,12 +8257,11 @@ object Form3: TForm3
         Caption = 'CNPJ'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -33
+        Font.Height = -21
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitWidth = 80
-        ExplicitHeight = 45
+        ExplicitTop = 16
       end
     end
     object PanelEditCNPJ: TPanel
@@ -8278,15 +8275,15 @@ object Form3: TForm3
       Caption = '0'
       ShowCaption = False
       TabOrder = 2
-      ExplicitWidth = 1026
+      ExplicitTop = 317
       DesignSize = (
         1028
         56)
       object MaskEdit1: TMaskEdit
-        Left = 285
+        Left = 282
         Top = 3
         Width = 458
-        Height = 45
+        Height = 29
         Margins.Left = 320
         Margins.Right = 320
         Alignment = taCenter
@@ -8294,14 +8291,13 @@ object Form3: TForm3
         EditMask = '00.000.000/0000-00;1;_'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -27
+        Font.Height = -16
         Font.Name = 'Segoe UI'
-        Font.Style = []
+        Font.Style = [fsBold]
         MaxLength = 18
         ParentFont = False
         TabOrder = 0
         Text = '  .   .   /    -  '
-        ExplicitLeft = 284
       end
     end
     object PanelEditSenha: TPanel
@@ -8315,13 +8311,12 @@ object Form3: TForm3
       Caption = 'PanelSenha'
       ShowCaption = False
       TabOrder = 3
-      ExplicitWidth = 1026
       object Label1: TLabel
         AlignWithMargins = True
         Left = 0
         Top = 0
         Width = 1028
-        Height = 45
+        Height = 30
         Margins.Left = 0
         Margins.Top = 0
         Margins.Right = 0
@@ -8332,11 +8327,11 @@ object Form3: TForm3
         Caption = 'Senha'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -33
+        Font.Height = -21
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitWidth = 95
+        ExplicitWidth = 60
       end
     end
     object Panel3: TPanel
@@ -8352,7 +8347,6 @@ object Form3: TForm3
       Caption = 'PanelSenha'
       ShowCaption = False
       TabOrder = 4
-      ExplicitWidth = 1020
       DesignSize = (
         1022
         56)
@@ -8361,7 +8355,7 @@ object Form3: TForm3
         Left = 285
         Top = 3
         Width = 452
-        Height = 45
+        Height = 29
         Hint = 'Senha'
         Margins.Left = 320
         Margins.Right = 320
@@ -8369,15 +8363,14 @@ object Form3: TForm3
         Anchors = []
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -27
+        Font.Height = -16
         Font.Name = 'Segoe UI'
-        Font.Style = []
+        Font.Style = [fsBold]
         ParentFont = False
         PasswordChar = '*'
         TabOrder = 0
         TextHint = 'Senha'
         OnKeyDown = Edit1KeyDown
-        ExplicitLeft = 284
       end
     end
     object Panel2: TPanel
@@ -8396,14 +8389,13 @@ object Form3: TForm3
       Caption = 'Panel2'
       ShowCaption = False
       TabOrder = 5
-      ExplicitWidth = 1026
       DesignSize = (
         1028
         41)
       object ALoginButton: TButton
-        Left = 478
+        Left = 470
         Top = 0
-        Width = 72
+        Width = 80
         Height = 32
         Margins.Left = 470
         Margins.Top = 0
@@ -8413,14 +8405,13 @@ object Form3: TForm3
         Caption = 'Log-in'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = 30
+        Font.Height = -16
         Font.Name = 'Segoe UI'
-        Font.Style = []
+        Font.Style = [fsBold]
         ImageAlignment = iaCenter
         ParentFont = False
         TabOrder = 0
         OnClick = ALoginButtonClick
-        ExplicitLeft = 477
       end
     end
   end
