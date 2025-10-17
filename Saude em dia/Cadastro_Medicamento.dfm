@@ -18,73 +18,74 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Left = 0
     Top = 0
     Width = 1100
-    Height = 393
+    Height = 377
     Align = alTop
     TabOrder = 4
-    ExplicitWidth = 1098
+    ExplicitLeft = 8
+    ExplicitTop = -6
     object Label1: TLabel
       Left = 24
       Top = 68
-      Width = 43
+      Width = 47
       Height = 21
       Caption = 'Nome'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentFont = False
     end
     object Label3: TLabel
       Left = 24
       Top = 124
-      Width = 140
+      Width = 154
       Height = 21
       Caption = 'Forma Farmaceutica'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentFont = False
     end
     object Label4: TLabel
       Left = 24
       Top = 180
-      Width = 59
+      Width = 67
       Height = 21
       Caption = 'Validade'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentFont = False
     end
     object Label7: TLabel
       Left = 24
       Top = 235
-      Width = 88
+      Width = 98
       Height = 21
       Caption = 'Classifica'#231#227'o'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentFont = False
     end
     object Label9: TLabel
       Left = 362
       Top = 180
-      Width = 147
+      Width = 163
       Height = 21
       Caption = 'Via de Administra'#231#227'o'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentFont = False
     end
     object Label8: TLabel
@@ -97,27 +98,27 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     object Label10: TLabel
       Left = 362
       Top = 124
-      Width = 135
+      Width = 150
       Height = 21
       Caption = 'Unidade de Medida'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentFont = False
     end
     object Label11: TLabel
       Left = 24
-      Top = 307
-      Width = 67
+      Top = 291
+      Width = 74
       Height = 21
       Caption = 'Descri'#231#227'o'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentFont = False
     end
     object Button1: TButton
@@ -342,7 +343,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     end
     object Edit_Descricao: TDBEdit
       Left = 24
-      Top = 334
+      Top = 310
       Width = 619
       Height = 29
       DataField = 'DESCRICAO'
@@ -371,19 +372,24 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       TabOrder = 8
     end
     object Panel1: TPanel
-      Left = 0
-      Top = 0
-      Width = 1100
+      Left = 1
+      Top = 1
+      Width = 1098
       Height = 62
-      Color = clSkyBlue
+      Align = alTop
+      Color = clCornflowerblue
       ParentBackground = False
       TabOrder = 9
       StyleName = 'Windows'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 1100
       object Image1: TImage
-        Left = 1030
-        Top = -8
+        Left = 1027
+        Top = 1
         Width = 70
-        Height = 70
+        Height = 60
+        Align = alRight
         Picture.Data = {
           0954506E67496D61676589504E470D0A1A0A0000000D49484452000004B00000
           04B00806000000EB21B3CF000000097048597300000EC400000EC401952B0E1B
@@ -5768,6 +5774,9 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
           6600000000E0422DC09ACBB6B4DE6F0400000000D6F2FF01E250F1C11E0F5698
           0000000049454E44AE426082}
         Stretch = True
+        ExplicitLeft = 1030
+        ExplicitTop = -8
+        ExplicitHeight = 70
       end
     end
   end
@@ -5787,55 +5796,55 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     OnClick = AVoltarClick
   end
   object Incluir_Button: TButton
-    Left = 320
-    Top = 8
+    Left = 273
+    Top = 12
     Width = 97
-    Height = 41
+    Height = 30
     Caption = 'Incluir'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -20
+    Font.Height = -16
     Font.Name = 'Segoe UI'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
     OnClick = Incluir_ButtonClick
   end
   object Editar_Button: TButton
-    Left = 80
-    Top = 8
+    Left = 67
+    Top = 12
     Width = 97
-    Height = 41
+    Height = 30
     Caption = 'Salvar'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -20
+    Font.Height = -16
     Font.Name = 'Segoe UI'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
     OnClick = Editar_ButtonClick
   end
   object Excluir_Button: TButton
-    Left = 200
-    Top = 8
+    Left = 170
+    Top = 12
     Width = 97
-    Height = 41
+    Height = 30
     Caption = 'Excluir'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -20
+    Font.Height = -16
     Font.Name = 'Segoe UI'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 3
     OnClick = Excluir_ButtonClick
   end
   object Grid_Cadastrados: TDBGrid
     Left = 0
-    Top = 393
+    Top = 377
     Width = 1100
-    Height = 312
+    Height = 328
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -5852,11 +5861,12 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 393
+    Top = 377
     Width = 1100
-    Height = 312
+    Height = 328
     Align = alClient
     DataSource = DataSourceBuscarMedicamentos
+    GradientEndColor = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -16
@@ -5866,50 +5876,51 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     TabOrder = 6
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
-    TitleFont.Height = -12
+    TitleFont.Height = -13
     TitleFont.Name = 'Segoe UI'
-    TitleFont.Style = []
+    TitleFont.Style = [fsBold]
+    StyleName = 'Windows'
     Columns = <
       item
         Expanded = False
         FieldName = 'ID_REMEDIO'
-        Width = 92
+        Width = 154
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'NOME'
-        Width = 168
+        Width = 108
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'CLASSIFICACAO'
-        Width = 150
+        Width = 133
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'FORMA_FARMACEUTICA'
-        Width = 115
+        Width = 201
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'VALIDADE'
-        Width = 103
+        Width = 109
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'VIA_ADMINISTRACAO'
-        Width = 137
+        Width = 146
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'UNIDADE_MEDIDA'
-        Width = 112
+        Width = 168
         Visible = True
       end
       item
@@ -5919,24 +5930,10 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
         Visible = True
       end>
   end
-  object Button3: TButton
-    Left = 448
-    Top = 8
-    Width = 97
-    Height = 41
-    Caption = 'Limpar'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -20
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 7
-    OnClick = Button3Click
-  end
   object DataSourceBuscarMedicamentos: TDataSource
+    AutoEdit = False
     DataSet = DMMedicamento.FDQRYBuscarMedicamntos
     Left = 928
-    Top = 312
+    Top = 208
   end
 end

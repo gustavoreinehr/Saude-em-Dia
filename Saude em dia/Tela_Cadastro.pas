@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask,
-  Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, DataModuleCadastroPessoas;
+  Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, DataModuleCadastroPessoas,
+  Vcl.Imaging.pngimage;
 
 type
   TTela_Cadastrp = class(TForm)
@@ -17,7 +18,6 @@ type
     BtnSalvar: TButton;
     BtnExcluir: TButton;
     BtnIncluir: TButton;
-    PnlBotoes: TPanel;
     PnlGrid: TPanel;
     GridDadosPessoa: TDBGrid;
     BtnVoltar: TButton;
@@ -25,6 +25,8 @@ type
     edtCPF: TDBEdit;
     edttelefone: TDBEdit;
     DataSourcePessoas: TDataSource;
+    Panel1: TPanel;
+    Image1: TImage;
     procedure BtnVoltarClick(Sender: TObject);
     procedure BtnIncluirClick(Sender: TObject);
     procedure edtCPFChange(Sender: TObject);

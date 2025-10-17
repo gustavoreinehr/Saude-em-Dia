@@ -20,7 +20,6 @@ type
     Button2: TButton;
     Grid_Cadastrados: TDBGrid;
     DBGrid1: TDBGrid;
-    Button3: TButton;
     Label1: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -40,7 +39,6 @@ type
     Panel1: TPanel;
     Image1: TImage;
     procedure AVoltarClick(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Incluir_ButtonClick(Sender: TObject);
@@ -66,18 +64,6 @@ implementation
 procedure TFCadastro_Medicamento.AVoltarClick(Sender: TObject);
 begin
   Close;
-end;
-
-procedure TFCadastro_Medicamento.Button3Click(Sender: TObject);
-begin
-
-  Nome_Medicamento_Edit.Text := '';
-  Unidade_Medida_Comb.Text := '';
-  Via_Adm_Comb.Text := '';
-  Forma_Farmaceutica_Comb.Text := '';
-  Classificacao_Comb.Text := '';
-  Edit_Descricao.Text := '';
-  Validade_Time.Text := FormatDateTime('dd/mm/yyyy', Date);
 end;
 
 procedure TFCadastro_Medicamento.Class_Obrigatorio;

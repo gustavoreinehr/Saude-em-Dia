@@ -19,7 +19,7 @@ object TelaPrincipal: TTelaPrincipal
     Height = 73
     Align = alTop
     BevelOuter = bvNone
-    Color = clLightskyblue
+    Color = clCornflowerblue
     ParentBackground = False
     ShowCaption = False
     TabOrder = 0
@@ -27,7 +27,7 @@ object TelaPrincipal: TTelaPrincipal
     object Label2: TLabel
       Left = 88
       Top = 6
-      Width = 164
+      Width = 175
       Height = 37
       Caption = 'Saude em Dia'
       Color = clWhite
@@ -35,7 +35,7 @@ object TelaPrincipal: TTelaPrincipal
       Font.Color = clWhite
       Font.Height = -27
       Font.Name = 'Segoe UI'
-      Font.Style = []
+      Font.Style = [fsBold]
       ParentColor = False
       ParentFont = False
       StyleName = 'Windows'
@@ -27541,7 +27541,7 @@ object TelaPrincipal: TTelaPrincipal
       Alignment = taCenter
       Caption = 'Bem-vindo ao Sistema de Gest'#227'o de Sa'#250'de'
       Font.Charset = ANSI_CHARSET
-      Font.Color = clDarkblue
+      Font.Color = clBlack
       Font.Height = -40
       Font.Name = 'Tw Cen MT Condensed Extra Bold'
       Font.Style = []
@@ -27564,11 +27564,13 @@ object TelaPrincipal: TTelaPrincipal
       Caption = 
         'Gerencie cadastros de pessoas, medicamentos e '#13#10'lembretes de for' +
         'ma simples e eficiente'
+      Color = clBackground
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clCadetblue
+      Font.Color = clBlack
       Font.Height = -20
       Font.Name = 'Segoe UI'
       Font.Style = []
+      ParentColor = False
       ParentFont = False
       StyleName = 'Windows'
       ExplicitWidth = 421
@@ -27893,13 +27895,13 @@ object TelaPrincipal: TTelaPrincipal
             Alignment = taCenter
             Caption = 'Cadastro de '#13#10'Lembretes'#13#10
             Font.Charset = DEFAULT_CHARSET
-            Font.Color = clDarkblue
+            Font.Color = clBlack
             Font.Height = -25
             Font.Name = 'Segoe UI'
-            Font.Style = []
+            Font.Style = [fsBold]
             ParentFont = False
             StyleName = 'Windows'
-            ExplicitWidth = 141
+            ExplicitWidth = 146
             ExplicitHeight = 105
           end
           object Label9: TLabel
@@ -27914,7 +27916,7 @@ object TelaPrincipal: TTelaPrincipal
             Alignment = taCenter
             Caption = 'Configure alertas e lembretes'#13#10' importantes'
             Font.Charset = DEFAULT_CHARSET
-            Font.Color = clCornflowerblue
+            Font.Color = clBlack
             Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = []
@@ -27939,7 +27941,7 @@ object TelaPrincipal: TTelaPrincipal
             Font.Color = clWindowText
             Font.Height = -19
             Font.Name = 'Segoe UI'
-            Font.Style = []
+            Font.Style = [fsBold]
             ParentFont = False
             TabOrder = 0
             OnClick = A2Click
@@ -28422,13 +28424,13 @@ object TelaPrincipal: TTelaPrincipal
             Alignment = taCenter
             Caption = 'Cadastro de '#13#10'Pessoas'
             Font.Charset = DEFAULT_CHARSET
-            Font.Color = clDarkblue
+            Font.Color = clBlack
             Font.Height = -25
             Font.Name = 'Segoe UI'
-            Font.Style = []
+            Font.Style = [fsBold]
             ParentFont = False
             StyleName = 'Windows'
-            ExplicitWidth = 141
+            ExplicitWidth = 146
             ExplicitHeight = 70
           end
           object Label7: TLabel
@@ -28443,7 +28445,7 @@ object TelaPrincipal: TTelaPrincipal
             Alignment = taCenter
             Caption = 'Gerencie informa'#231#245'es de pacientes,'#13#10'm'#233'dicos e funcion'#225'rios'
             Font.Charset = DEFAULT_CHARSET
-            Font.Color = clCornflowerblue
+            Font.Color = clBlack
             Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = []
@@ -28465,10 +28467,10 @@ object TelaPrincipal: TTelaPrincipal
             Align = alBottom
             Caption = 'Acessar'
             Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
+            Font.Color = clBlack
             Font.Height = -19
             Font.Name = 'Segoe UI'
-            Font.Style = []
+            Font.Style = [fsBold]
             ParentFont = False
             TabOrder = 0
             OnClick = A1Click
@@ -28845,13 +28847,13 @@ object TelaPrincipal: TTelaPrincipal
             Alignment = taCenter
             Caption = 'Cadastro de '#13#10'Medicamentos'
             Font.Charset = DEFAULT_CHARSET
-            Font.Color = clDarkblue
+            Font.Color = clBlack
             Font.Height = -25
             Font.Name = 'Segoe UI'
-            Font.Style = []
+            Font.Style = [fsBold]
             ParentFont = False
             StyleName = 'Windows'
-            ExplicitWidth = 164
+            ExplicitWidth = 173
             ExplicitHeight = 70
           end
           object Label11: TLabel
@@ -28866,7 +28868,7 @@ object TelaPrincipal: TTelaPrincipal
             Alignment = taCenter
             Caption = 'Controle estoque e'#13#10'informa'#231#245'es de medicamentos'
             Font.Charset = DEFAULT_CHARSET
-            Font.Color = clCornflowerblue
+            Font.Color = clBlack
             Font.Height = -16
             Font.Name = 'Segoe UI'
             Font.Style = []
@@ -28892,7 +28894,7 @@ object TelaPrincipal: TTelaPrincipal
             Font.Color = clWindowText
             Font.Height = -19
             Font.Name = 'Segoe UI'
-            Font.Style = []
+            Font.Style = [fsBold]
             ParentFont = False
             TabOrder = 0
             OnClick = A3Click

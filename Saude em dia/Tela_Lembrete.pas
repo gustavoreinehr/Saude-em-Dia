@@ -6,11 +6,11 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB,
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls,
-  DataModuleLembretes, Vcl.WinXPickers, Vcl.WinXCalendars, DataModulePrincipal;
+  DataModuleLembretes, Vcl.WinXPickers, Vcl.WinXCalendars, DataModulePrincipal,
+  Vcl.Imaging.pngimage;
 
 type
   TTela_Lembretes = class(TForm)
-    BarraInferior: TPanel;
     BotaoSalvar: TButton;
     BotaoExcluir: TButton;
     BotaoIncluir: TButton;
@@ -34,6 +34,8 @@ type
     DBEdtData: TDBEdit;
     DBEdit2: TDBEdit;
     LblPeriodicidadeEmDias: TLabel;
+    Panel1: TPanel;
+    Image1: TImage;
     procedure FormShow(Sender: TObject);
     procedure BotaoIncluirClick(Sender: TObject);
     procedure BotaoExcluirClick(Sender: TObject);
