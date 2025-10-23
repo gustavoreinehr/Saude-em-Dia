@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Imaging.pngimage, Tela_Cadastro, Cadastro_Medicamento,Tela_Lembrete;
+  Vcl.Imaging.pngimage, Tela_CadastroPessoa, Tela_CadastroMedicamento, Tela_CadastroLembrete;
 
 type
   TTelaPrincipal = class(TForm)
@@ -51,7 +51,7 @@ var
 implementation
 
 uses
-  Saude_em_dia;
+  Tela_Login;
 
 procedure TTelaPrincipal.A1Click(Sender: TObject);
 begin

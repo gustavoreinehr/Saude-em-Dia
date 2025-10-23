@@ -134,22 +134,22 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="Saude_em_dia.pas">
+        <DCCReference Include="Tela_Login.pas">
             <Form>Form3</Form>
         </DCCReference>
         <DCCReference Include="Tela_Principal.pas">
             <ModuleName>TTela_Principal</ModuleName>
             <Form>TelaPrincipal</Form>
         </DCCReference>
-        <DCCReference Include="Cadastro_Medicamento.pas">
+        <DCCReference Include="Tela_CadastroMedicamento.pas">
             <Form>FCadastro_Medicamento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Tela_Cadastro.pas">
+        <DCCReference Include="Tela_CadastroPessoa.pas">
             <Form>Tela_Cadastrp</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Tela_Lembrete.pas">
+        <DCCReference Include="Tela_CadastroLembrete.pas">
             <Form>Tela_Lembretes</Form>
             <FormType>dfm</FormType>
         </DCCReference>
@@ -158,12 +158,12 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="DataModuleMeticamento.pas">
+        <DCCReference Include="DataModuleMedicamento.pas">
             <Form>DMMedicamento</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="DataModuleCadastroPessoas.pas">
+        <DCCReference Include="DataModulePessoa.pas">
             <Form>DMCadastroPessoa</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
