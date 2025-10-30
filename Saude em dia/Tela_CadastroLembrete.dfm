@@ -24,7 +24,6 @@ object Tela_Lembretes: TTela_Lembretes
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitTop = 68
     DesignSize = (
       1100
       643)
@@ -173,7 +172,7 @@ object Tela_Lembretes: TTela_Lembretes
       TitleFont.Height = -13
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = [fsBold]
-      StyleName = 'Windows'
+      StyleName = 'Light'
       Columns = <
         item
           Expanded = False
@@ -189,6 +188,7 @@ object Tela_Lembretes: TTela_Lembretes
         item
           Expanded = False
           FieldName = 'HORA'
+          Width = 64
           Visible = True
         end
         item
@@ -200,6 +200,7 @@ object Tela_Lembretes: TTela_Lembretes
         item
           Expanded = False
           FieldName = 'MENSAGEM_LEMBRETE'
+          Width = 64
           Visible = True
         end>
     end
@@ -297,7 +298,6 @@ object Tela_Lembretes: TTela_Lembretes
     ParentBackground = False
     TabOrder = 1
     StyleName = 'Windows'
-    ExplicitTop = -4
     object Image1: TImage
       Left = 1029
       Top = 1

@@ -14,6 +14,7 @@ object Form3: TForm3
   Font.Style = []
   Position = poDesktopCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   TextHeight = 15
   object pnl1: TPanel
     AlignWithMargins = True
@@ -32,7 +33,7 @@ object Form3: TForm3
       AlignWithMargins = True
       Left = 4
       Top = 61
-      Width = 1022
+      Width = 1020
       Height = 209
       Margins.Top = 60
       Align = alTop
@@ -43,12 +44,11 @@ object Form3: TForm3
       ShowCaption = False
       ShowHint = False
       TabOrder = 1
-      ExplicitWidth = 1020
       object img1: TImage
         AlignWithMargins = True
         Left = 0
         Top = 40
-        Width = 1022
+        Width = 1020
         Height = 169
         Margins.Left = 0
         Margins.Top = 40
@@ -8228,7 +8228,7 @@ object Form3: TForm3
       AlignWithMargins = True
       Left = 1
       Top = 273
-      Width = 1028
+      Width = 1026
       Height = 47
       Margins.Left = 0
       Margins.Top = 0
@@ -8240,12 +8240,11 @@ object Form3: TForm3
       Caption = 'Painel_CNPJ'
       ShowCaption = False
       TabOrder = 0
-      ExplicitWidth = 1026
       object LabelCNPJ: TLabel
         AlignWithMargins = True
         Left = 0
         Top = 0
-        Width = 1028
+        Width = 1026
         Height = 47
         Margins.Left = 0
         Margins.Top = 0
@@ -8268,7 +8267,7 @@ object Form3: TForm3
     object PanelEditCNPJ: TPanel
       Left = 1
       Top = 320
-      Width = 1028
+      Width = 1026
       Height = 56
       Align = alTop
       Anchors = []
@@ -8276,12 +8275,11 @@ object Form3: TForm3
       Caption = '0'
       ShowCaption = False
       TabOrder = 2
-      ExplicitWidth = 1026
       DesignSize = (
         1026
         56)
       object MaskEdit1: TMaskEdit
-        Left = 281
+        Left = 280
         Top = 3
         Width = 458
         Height = 29
@@ -8316,7 +8314,7 @@ object Form3: TForm3
         AlignWithMargins = True
         Left = 0
         Top = 0
-        Width = 1028
+        Width = 1026
         Height = 30
         Margins.Left = 0
         Margins.Top = 0

@@ -7,7 +7,7 @@ uses
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Imaging.jpeg,
   Vcl.StdCtrls, Vcl.Mask, Tela_Principal, Vcl.Imaging.pngimage, Vcl.DBCtrls,
-  DataModuleTelaLogin, Data.DB;
+  DataModuleTelaLogin, Data.DB, DataModulePrincipal;
 
 type
   TForm3 = class(TForm)
@@ -28,6 +28,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure ALoginButtonClick(Sender: TObject);
     procedure Edit1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
   private
   public
   end;
@@ -67,13 +68,17 @@ begin
   begin
     ALoginButton.Click;
   end;
-
 end;
 
 procedure TForm3.FormCreate(Sender: TObject);
 begin
   GDMLogin := TDataModuleLogin.Create(Self);
 
+end;
+
+procedure TForm3.FormShow(Sender: TObject);
+begin
+DmPrincipal.ConectarBanco;
 end;
 
 end.

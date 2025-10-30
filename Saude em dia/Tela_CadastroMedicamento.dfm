@@ -21,7 +21,6 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Height = 377
     Align = alTop
     TabOrder = 4
-    ExplicitWidth = 1098
     object Label1: TLabel
       Left = 24
       Top = 68
@@ -380,7 +379,6 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       ParentBackground = False
       TabOrder = 9
       StyleName = 'Windows'
-      ExplicitWidth = 1096
       object Image1: TImage
         Left = 1027
         Top = 1
@@ -5862,7 +5860,9 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Width = 1100
     Height = 328
     Align = alClient
+    Color = clBtnHighlight
     DataSource = DataSourceBuscarMedicamentos
+    FixedColor = clWindow
     GradientEndColor = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -5876,7 +5876,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     TitleFont.Height = -13
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = [fsBold]
-    StyleName = 'Windows'
+    StyleName = 'Light'
     Columns = <
       item
         Expanded = False
