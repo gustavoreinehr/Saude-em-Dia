@@ -1,16 +1,14 @@
 object DMMedicamento: TDMMedicamento
-  Height = 996
-  Width = 1461
-  PixelsPerInch = 120
+  Height = 797
+  Width = 1169
   object FDQRYBuscarMedicamntos: TFDQuery
-    Active = True
     OnNewRecord = FDQRYBuscarMedicamntosNewRecord
     CachedUpdates = True
     Connection = DmPrincipal.FDConnection1
     SQL.Strings = (
       'SELECT *FROM REMEDIO;')
-    Left = 303
-    Top = 173
+    Left = 242
+    Top = 138
     object FDQRYBuscarMedicamntosID_REMEDIO: TIntegerField
       FieldName = 'ID_REMEDIO'
       Origin = 'ID_REMEDIO'
@@ -32,10 +30,6 @@ object DMMedicamento: TDMMedicamento
       FieldName = 'FORMA_FARMACEUTICA'
       Origin = 'FORMA_FARMACEUTICA'
       Size = 50
-    end
-    object FDQRYBuscarMedicamntosVALIDADE: TDateField
-      FieldName = 'VALIDADE'
-      Origin = 'VALIDADE'
     end
     object FDQRYBuscarMedicamntosVIA_ADMINISTRACAO: TStringField
       FieldName = 'VIA_ADMINISTRACAO'

@@ -15,7 +15,6 @@ type
     FDQRYBuscarMedicamntosNOME: TStringField;
     FDQRYBuscarMedicamntosCLASSIFICACAO: TStringField;
     FDQRYBuscarMedicamntosFORMA_FARMACEUTICA: TStringField;
-    FDQRYBuscarMedicamntosVALIDADE: TDateField;
     FDQRYBuscarMedicamntosVIA_ADMINISTRACAO: TStringField;
     FDQRYBuscarMedicamntosUNIDADE_MEDIDA: TStringField;
     FDQRYBuscarMedicamntosDESCRICAO: TStringField;

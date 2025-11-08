@@ -54,6 +54,8 @@ implementation
 procedure TTela_Cadastrp.BtnSalvarClick(Sender: TObject);
 var
   LCpfFormatado: string;
+
+
 begin
   // A. VERIFICA SE HÁ UMA OPERAÇÃO EM ANDAMENTO
   //    Só continua se o dataset estiver em modo de inserção ou edição.
@@ -61,6 +63,12 @@ begin
   begin
     ShowMessage('Nenhuma inclusão ou edição em andamento para salvar!');
     Exit; // Sai do procedimento, pois não há o que fazer.
+  end;
+
+  if GTDMCadastroPessoa.ValidarCPF(edtCPF.Text) then
+  begin
+  ShowMessage('CPF Já cadastrado');
+  exit;
   end;
 
   // B. VALIDAÇÃO DOS CAMPOS (lógica que estava no botão Incluir)

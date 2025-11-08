@@ -11,7 +11,6 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poDesktopCenter
-  OnCreate = FormCreate
   OnShow = FormShow
   TextHeight = 15
   object Painel_Principal: TPanel
@@ -21,6 +20,8 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     Height = 377
     Align = alTop
     TabOrder = 4
+    ExplicitLeft = -144
+    ExplicitTop = -6
     object Label1: TLabel
       Left = 24
       Top = 68
@@ -47,22 +48,9 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Font.Style = [fsBold]
       ParentFont = False
     end
-    object Label4: TLabel
-      Left = 24
-      Top = 180
-      Width = 67
-      Height = 21
-      Caption = 'Validade'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
     object Label7: TLabel
       Left = 24
-      Top = 235
+      Top = 180
       Width = 98
       Height = 21
       Caption = 'Classifica'#231#227'o'
@@ -313,7 +301,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
     end
     object Classificacao_Comb: TDBComboBox
       Left = 24
-      Top = 256
+      Top = 200
       Width = 281
       Height = 29
       DataField = 'CLASSIFICACAO'
@@ -354,21 +342,6 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       ParentFont = False
       TabOrder = 7
     end
-    object Validade_Time: TDBEdit
-      Left = 24
-      Top = 200
-      Width = 281
-      Height = 29
-      DataField = 'VALIDADE'
-      DataSource = DataSourceBuscarMedicamentos
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 8
-    end
     object Panel1: TPanel
       Left = 1
       Top = 1
@@ -377,7 +350,7 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
       Align = alTop
       Color = clCornflowerblue
       ParentBackground = False
-      TabOrder = 9
+      TabOrder = 8
       StyleName = 'Windows'
       object Image1: TImage
         Left = 1027
@@ -5900,12 +5873,6 @@ object FCadastro_Medicamento: TFCadastro_Medicamento
         Expanded = False
         FieldName = 'FORMA_FARMACEUTICA'
         Width = 201
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'VALIDADE'
-        Width = 109
         Visible = True
       end
       item

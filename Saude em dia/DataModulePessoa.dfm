@@ -1,15 +1,13 @@
 object DMCadastroPessoa: TDMCadastroPessoa
-  Height = 750
-  Width = 1000
-  PixelsPerInch = 120
+  Height = 600
+  Width = 800
   object QueryDadosPessoa: TFDQuery
-    Active = True
     CachedUpdates = True
     Connection = DmPrincipal.FDConnection1
     SQL.Strings = (
       'select * from pessoa')
-    Left = 152
-    Top = 72
+    Left = 122
+    Top = 58
     object QueryDadosPessoaID_PESSOA: TIntegerField
       FieldName = 'ID_PESSOA'
       Origin = 'ID_PESSOA'
@@ -38,8 +36,8 @@ object DMCadastroPessoa: TDMCadastroPessoa
     Connection = DmPrincipal.FDConnection1
     SQL.Strings = (
       'select coalesce(max (ID_PESSOA) + 1, 1) as IDPESSOA from pessoa')
-    Left = 248
-    Top = 224
+    Left = 198
+    Top = 179
     object QryIDPessoaIDPESSOA: TLargeintField
       AutoGenerateValue = arDefault
       FieldName = 'IDPESSOA'
@@ -47,5 +45,11 @@ object DMCadastroPessoa: TDMCadastroPessoa
       ProviderFlags = []
       ReadOnly = True
     end
+  end
+  object FDQryValidarCPF: TFDQuery
+    CachedUpdates = True
+    Connection = DmPrincipal.FDConnection1
+    Left = 528
+    Top = 160
   end
 end

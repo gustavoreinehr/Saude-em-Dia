@@ -29,6 +29,8 @@ object Form3: TForm3
     Align = alClient
     ShowCaption = False
     TabOrder = 0
+    ExplicitLeft = -5
+    ExplicitTop = 5
     object Panel1: TPanel
       AlignWithMargins = True
       Left = 4
